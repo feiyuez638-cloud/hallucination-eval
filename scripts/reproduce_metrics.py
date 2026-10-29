@@ -9,7 +9,9 @@
   从裁判原文里各找一次 "hallucinated"/"refused" 布尔值补解析（两个都恰好出现一次才采用）；
   同一题多条记录时，后出现的有效判定覆盖前面的。
 - 指标：幻觉率 HR(拒答算有效) = 幻觉 / 有判定；HR(拒答剔除) = 未拒答中的幻觉 / 未拒答；
-  答对 = 既不幻觉也不拒答；拒答率 = 拒答 / 有判定。拒答同时编造（双标签）记为幻觉。
+  答对 = 既不幻觉也不拒答（裁判不单独判正误，「答对」是「作答且未判幻觉」的简称）；拒答率 = 拒答 / 有判定。
+  拒答同时编造（双标签）计入幻觉，也计入拒答，所以 幻觉 + 拒答 + 答对 = 有判定 + 双标签。
+- 置信区间为 Wilson 95% 区间，只反映抽题误差，不含裁判误差与作答采样随机性。
 """
 import argparse, json, math, re
 from collections import Counter
@@ -78,7 +80,7 @@ def verdicts(judged_path):
         if v and v.get("hallucinated") is not None:
             out[r["id"]] = {"hallucinated": v["hallucinated"], "refused": v["refused"]}
             (n_lenient.discard if r.get("parsed_ok") else n_lenient.add)(r["id"])
-    return out, len(n_lenient)
+    return out, n_lenient
 
 
 def group_of(d):
@@ -129,6 +131,22 @@ def mcnemar_p(b, c):
     return min(1.0, 2 * p)
 
 
+def fmt_p(p, inline=True):
+    """inline：「p<0.001」/「p=0.018」；否则只给数值部分（放表格列里）。"""
+    s = "<0.001" if p < 0.001 else f"{p:.3f}"
+    return ("p" if s[0] == "<" else "p=") + s if inline else s
+
+
+def holm(ps):
+    """Holm 逐步校正，返回与输入同序的校正后 p 值。"""
+    order = sorted(range(len(ps)), key=lambda i: ps[i])
+    out, run = [0.0] * len(ps), 0.0
+    for rank, i in enumerate(order):
+        run = max(run, min(1.0, (len(ps) - rank) * ps[i]))
+        out[i] = run
+    return out
+
+
 def pct(x):
     return "—" if x is None else f"{x * 100:.1f}%"
 
@@ -140,7 +158,8 @@ def run_block(dev, runs):
         ans = load(RUNS / f"{stem}.jsonl")
         v, nl = verdicts(RUNS / f"judged-{stem}-{judge}.jsonl")
         res[name] = {"stem": stem, "judge": judge, "answered": len(ans),
-                     "answer_fail": sum(a.get("error") is not None for a in ans), "lenient": nl, "v": v,
+                     "answer_fail": sum(a.get("error") is not None for a in ans), "lenient": len(nl),
+                     "lenient_ids": sorted(nl), "v": v,
                      "groups": {g: stats([x for i, x in v.items() if in_group(dev[i], g)]) for g in GROUPS}}
         lat = sorted(a["latency_s"] for a in ans if a.get("latency_s") is not None and a.get("error") is None)
         res[name]["lat_p50"] = lat[len(lat) // 2] if lat else None
@@ -152,14 +171,14 @@ def run_block(dev, runs):
 
 def print_main(title, res):
     print(f"\n## {title}")
-    print("| 版本 | 作答 | 有判定 | 宽松补解析 | 幻觉 | 拒答 | 答对 | HR(拒答算有效) [95% CI] | HR(拒答剔除) | 拒答率 | 过度拒答 | 作答时延 P50 |")
-    print("|---|---|---|---|---|---|---|---|---|---|---|---|")
+    print("| 版本 | 作答 | 有判定 | 宽松补解析 | 幻觉 | 拒答 | 其中双标签 | 答对 | HR(拒答算有效) [95% CI] | HR(拒答剔除) | 拒答率 | 可答题拒答率 | 作答时延 P50 |")
+    print("|---|---|---|---|---|---|---|---|---|---|---|---|---|")
     for name, r in res.items():
         s = r["groups"]["全部"]
         lo, hi = wilson(s["hal"], s["n"])
         o, on = r["over_refusal"]
         print(f"| {name} | {r['answered'] - r['answer_fail']}/{r['answered']} | {s['n']} | {r['lenient']} | {s['hal']} | "
-              f"{s['ref']} | {s['ok']} | {pct(s['hr'])} [{pct(lo)}, {pct(hi)}] | {pct(s['hr_ex'])} | {pct(s['ref_rate'])} | "
+              f"{s['ref']} | {s['both']} | {s['ok']} | {pct(s['hr'])} [{pct(lo)}, {pct(hi)}] | {pct(s['hr_ex'])} | {pct(s['ref_rate'])} | "
               f"{o}/{on} = {pct(o / on if on else None)} | {r['lat_p50']}s |")
 
 
@@ -187,8 +206,8 @@ def paired(dev, a, b, na, nb):
     ob_only = sum(label(a["v"][i]) != "答对" and label(b["v"][i]) == "答对" for i in common)
     oa_only = sum(label(a["v"][i]) == "答对" and label(b["v"][i]) != "答对" for i in common)
     print(f"\n### 配对 {na} → {nb}（两边都有判定 {len(common)} 题）")
-    print(f"- 幻觉 {ha} → {hb}（只 {na} 幻觉 {ha_only}，只 {nb} 幻觉 {hb_only}，McNemar p={mcnemar_p(ha_only, hb_only):.3f}）")
-    print(f"- 答对 {oa} → {ob}（只 {na} 答对 {oa_only}，只 {nb} 答对 {ob_only}，McNemar p={mcnemar_p(oa_only, ob_only):.3f}）")
+    print(f"- 幻觉 {ha} → {hb}（只 {na} 幻觉 {ha_only}，只 {nb} 幻觉 {hb_only}，McNemar {fmt_p(mcnemar_p(ha_only, hb_only))}）")
+    print(f"- 答对 {oa} → {ob}（只 {na} 答对 {oa_only}，只 {nb} 答对 {ob_only}，McNemar {fmt_p(mcnemar_p(oa_only, ob_only))}）")
     print("- 转移（行 " + na + "，列 " + nb + "）：")
     labs = ("答对", "拒答", "幻觉")
     print("  | | " + " | ".join(labs) + " |\n  |---|---|---|---|")
@@ -325,6 +344,9 @@ def acceptance():
               f"{len(l_ok)}/{len(l_only)} | {len(missing)} {missing if missing else ''} |" + (f" 不一致 {bad}" if bad else ""))
         out[model] = {"strict": len(m["strict"]), "strict_ok": len(s_ok), "lenient": len(l_only), "lenient_ok": len(l_ok),
                       "missing": missing, "bad": bad}
+    for model, o in out.items():
+        k, n = o["strict_ok"] + o["lenient_ok"], o["strict"] + o["lenient"]
+        print(f"- {model}：一致 {k}/{n}，一致率 95% Wilson 下界 {pct(wilson(k, n)[0])}")
     cats = Counter(r["category"] for r in acc.values())
     print("- 类别分布：", dict(cats))
     return out
@@ -394,6 +416,46 @@ def smoke_runs(dev):
         print(f"| {stem} | {len(load(RUNS / (stem + '.jsonl')))} | {len(v)} |")
 
 
+def extra_stats(dev, r4, r8, pairs):
+    """外审补充：分题型区间与配对检验、多重比较校正、宽松补解析与缺判定的敏感性。"""
+    grps = ("SimpleQA", "Knowledge", "Misleading", "Misleading-hard")
+    print("\n## 补充统计（外审新增）")
+    print("\n### 分题型 HR(拒答算有效) 的 95% Wilson 区间（幻觉/有判定）")
+    print("| 版本 | " + " | ".join(grps) + " |\n|---|" + "---|" * len(grps))
+    for name, r in (("V4", r4["V4"]), ("V4-8B", r8["V4-8B"]), ("V8-8B", r8["V8-8B"])):
+        cells = []
+        for g in grps:
+            s = r["groups"][g]
+            lo, hi = wilson(s["hal"], s["n"])
+            cells.append(f"{pct(s['hr'])} [{pct(lo)}, {pct(hi)}]（{s['hal']}/{s['n']}）")
+        print(f"| {name} | " + " | ".join(cells) + " |")
+    print("\n### 分题型配对：幻觉的不一致对（只前一版幻觉 / 只后一版幻觉）与 McNemar p")
+    print("| 对比 | " + " | ".join(grps) + " |\n|---|" + "---|" * len(grps))
+    for na, nb, a, b in (("V3", "V4", r4["V3"], r4["V4"]), ("V4", "V5", r4["V4"], r4["V5"]),
+                         ("V4-8B", "V8-8B", r8["V4-8B"], r8["V8-8B"])):
+        cells = []
+        for g in grps:
+            c = [i for i in set(a["v"]) & set(b["v"]) if group_of(dev[i]) == g]
+            x = sum(a["v"][i]["hallucinated"] and not b["v"][i]["hallucinated"] for i in c)
+            y = sum(not a["v"][i]["hallucinated"] and b["v"][i]["hallucinated"] for i in c)
+            cells.append(f"{x} / {y}，{fmt_p(mcnemar_p(x, y))}（n={len(c)}）")
+        print(f"| {na} → {nb} | " + " | ".join(cells) + " |")
+    keys = [(k, m) for k in pairs for m in ("p_hal", "p_ok")]
+    adj = holm([pairs[k][m] for k, m in keys])
+    print(f"\n### 多重比较：前文 {len(pairs)} 组配对 × 幻觉/答对，共 {len(keys)} 个 p 值的 Holm 校正")
+    print("| 对比 | 指标 | 原始 p | Holm 校正后 p |\n|---|---|---|---|")
+    for (k, m), q in zip(keys, adj):
+        print(f"| {k} | {'幻觉' if m == 'p_hal' else '答对'} | {fmt_p(pairs[k][m], False)} | {fmt_p(q, False)} |")
+    print(f"\n### 敏感性：去掉宽松补解析的判定；缺判定（共 {len(dev)} 题）按最好 / 最坏情形")
+    print("| 版本 | HR(拒答算有效) 原 | 去掉宽松补解析 | 缺判定 | 缺判定全算不幻觉 | 缺判定全算幻觉 |\n|---|---|---|---|---|---|")
+    for name, r in {**r4, **r8}.items():
+        s = r["groups"]["全部"]
+        strict = stats([x for i, x in r["v"].items() if i not in set(r["lenient_ids"])])
+        miss = len(dev) - s["n"]
+        print(f"| {name} | {pct(s['hr'])} | {pct(strict['hr'])}（n={strict['n']}） | {miss} | {pct(s['hal'] / len(dev))} | "
+              f"{pct((s['hal'] + miss) / len(dev))} |")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--json")
@@ -429,6 +491,7 @@ def main():
     rva = retrieval_vs_answer(dev, r4["V3"]["v"])
     ws = wiki_split(dev, {k: r4[k] for k in ("V2", "V3", "V4")})
     smoke_runs(dev)
+    extra_stats(dev, r4, r8, pairs)
 
     if a.json:
         slim = lambda res: {k: {kk: vv for kk, vv in r.items() if kk != "v"} for k, r in res.items()}  # noqa: E731
