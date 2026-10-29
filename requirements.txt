@@ -1,0 +1,2 @@
+# 复现报告数字只需要标准库；画图需要 matplotlib（中文字体用系统自带的，如 Noto Sans CJK / 文泉驿 / 微软雅黑）
+matplotlib>=3.7
