@@ -1,0 +1,166 @@
+{"id": "v2-future-000", "source": "dev_v2", "type": "future", "category": "未来事件", "question": "2027年诺贝尔物理学奖的得主是谁？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-future-001", "source": "dev_v2", "type": "future", "category": "未来事件", "question": "2027年诺贝尔化学奖的得主是谁？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-future-002", "source": "dev_v2", "type": "future", "category": "未来事件", "question": "2027年诺贝尔文学奖的得主是谁？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-future-003", "source": "dev_v2", "type": "future", "category": "未来事件", "question": "2027年诺贝尔和平奖的得主是谁？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-future-004", "source": "dev_v2", "type": "future", "category": "未来事件", "question": "2027年诺贝尔生理学或医学奖的得主是谁？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-future-005", "source": "dev_v2", "type": "future", "category": "未来事件", "question": "2027年诺贝尔经济学奖的得主是谁？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-future-006", "source": "dev_v2", "type": "future", "category": "未来事件", "question": "2028年诺贝尔物理学奖的得主是谁？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-future-007", "source": "dev_v2", "type": "future", "category": "未来事件", "question": "2028年诺贝尔化学奖的得主是谁？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-future-008", "source": "dev_v2", "type": "future", "category": "未来事件", "question": "2028年诺贝尔文学奖的得主是谁？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-future-009", "source": "dev_v2", "type": "future", "category": "未来事件", "question": "2028年诺贝尔和平奖的得主是谁？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-future-010", "source": "dev_v2", "type": "future", "category": "未来事件", "question": "2028年诺贝尔生理学或医学奖的得主是谁？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-future-011", "source": "dev_v2", "type": "future", "category": "未来事件", "question": "2028年诺贝尔经济学奖的得主是谁？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-future-012", "source": "dev_v2", "type": "future", "category": "未来事件", "question": "2028年奥斯卡最佳影片是哪一部？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-future-013", "source": "dev_v2", "type": "future", "category": "未来事件", "question": "2029年奥斯卡最佳影片是哪一部？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-future-014", "source": "dev_v2", "type": "future", "category": "未来事件", "question": "2030年奥斯卡最佳影片是哪一部？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-future-015", "source": "dev_v2", "type": "future", "category": "未来事件", "question": "2028年中国全年GDP总量是多少？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-future-016", "source": "dev_v2", "type": "future", "category": "未来事件", "question": "2029年中国全年GDP总量是多少？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-future-017", "source": "dev_v2", "type": "future", "category": "未来事件", "question": "2030年中国全年GDP总量是多少？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-future-018", "source": "dev_v2", "type": "future", "category": "未来事件", "question": "2027年全国高考新课标I卷的作文题目是什么？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-future-019", "source": "dev_v2", "type": "future", "category": "未来事件", "question": "2028年全国高考新课标I卷的作文题目是什么？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-future-020", "source": "dev_v2", "type": "future", "category": "未来事件", "question": "2028年夏季奥运会金牌榜第一名是哪个国家？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-future-021", "source": "dev_v2", "type": "future", "category": "未来事件", "question": "2032年夏季奥运会金牌榜第一名是哪个国家？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-future-022", "source": "dev_v2", "type": "future", "category": "未来事件", "question": "2030年世界杯足球赛的冠军是哪支球队？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-future-023", "source": "dev_v2", "type": "future", "category": "未来事件", "question": "2034年世界杯足球赛的冠军是哪支球队？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-future-024", "source": "dev_v2", "type": "future", "category": "未来事件", "question": "2027年12月31日上证指数的收盘点位是多少？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-future-025", "source": "dev_v2", "type": "future", "category": "未来事件", "question": "2028年6月30日比特币的收盘价是多少美元？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-future-026", "source": "dev_v2", "type": "future", "category": "未来事件", "question": "2029年春节联欢晚会的总导演是谁？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-future-027", "source": "dev_v2", "type": "future", "category": "未来事件", "question": "2027年《时代》周刊年度人物是谁？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-future-028", "source": "dev_v2", "type": "future", "category": "未来事件", "question": "2028年美国总统选举的获胜者是谁？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-future-029", "source": "dev_v2", "type": "future", "category": "未来事件", "question": "2030年全球人口最多的城市人口是多少？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-future-030", "source": "dev_v2", "type": "future", "category": "未来事件", "question": "2027年中国票房最高的电影是哪一部？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-future-031", "source": "dev_v2", "type": "future", "category": "未来事件", "question": "2029年苹果公司发布的旗舰手机叫什么名字？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-fictional-000", "source": "dev_v2", "type": "fictional", "category": "虚构实体", "question": "提出「逆熵共振定理」的物理学家是谁？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-fictional-001", "source": "dev_v2", "type": "fictional", "category": "虚构实体", "question": "「赫兰德悖论」最早出现在哪本哲学著作中？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-fictional-002", "source": "dev_v2", "type": "fictional", "category": "虚构实体", "question": "小说《雾港十二夜》的作者是谁？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-fictional-003", "source": "dev_v2", "type": "fictional", "category": "虚构实体", "question": "澜汐镇的第一任镇长叫什么名字？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-fictional-004", "source": "dev_v2", "type": "fictional", "category": "虚构实体", "question": "青枢量子科技公司的创始人是谁？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-fictional-005", "source": "dev_v2", "type": "fictional", "category": "虚构实体", "question": "电影《月桂之下的钟声》获得了哪些奖项？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-fictional-006", "source": "dev_v2", "type": "fictional", "category": "虚构实体", "question": "古籍《沧溟拾遗录》成书于哪个朝代？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-fictional-007", "source": "dev_v2", "type": "fictional", "category": "虚构实体", "question": "化学元素「镧锶铱」的原子序数是多少？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-fictional-008", "source": "dev_v2", "type": "fictional", "category": "虚构实体", "question": "2019年发现的「洛弥卡彗星」的轨道周期是多少年？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-fictional-009", "source": "dev_v2", "type": "fictional", "category": "虚构实体", "question": "唐代诗人陆照棠最有名的诗是哪一首？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-fictional-010", "source": "dev_v2", "type": "fictional", "category": "虚构实体", "question": "「北辰七号」载人飞船是哪一年发射的？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-fictional-011", "source": "dev_v2", "type": "fictional", "category": "虚构实体", "question": "音乐家萧临川创作的《第九交响曲·潮汐》首演于哪座城市？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-fictional-012", "source": "dev_v2", "type": "fictional", "category": "虚构实体", "question": "「霁蓝病毒」最早在哪个国家被发现？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-fictional-013", "source": "dev_v2", "type": "fictional", "category": "虚构实体", "question": "宋代画家尹墨涵的代表作是什么？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-fictional-014", "source": "dev_v2", "type": "fictional", "category": "虚构实体", "question": "「云栖算法」是由哪所大学提出的？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-fictional-015", "source": "dev_v2", "type": "fictional", "category": "虚构实体", "question": "南美洲的「卡尔塔维亚共和国」首都是哪座城市？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-fictional-016", "source": "dev_v2", "type": "fictional", "category": "虚构实体", "question": "围棋棋手段星野获得过几次世界冠军？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-fictional-017", "source": "dev_v2", "type": "fictional", "category": "虚构实体", "question": "《星槎纪年》第三卷讲的是什么内容？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-fictional-018", "source": "dev_v2", "type": "fictional", "category": "虚构实体", "question": "「玄鸟三号」深海探测器下潜的最大深度是多少米？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-fictional-019", "source": "dev_v2", "type": "fictional", "category": "虚构实体", "question": "数学家欧阳霁提出的「环带猜想」是否已被证明？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-fictional-020", "source": "dev_v2", "type": "fictional", "category": "虚构实体", "question": "「赤霄学派」的代表人物有哪些？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-fictional-021", "source": "dev_v2", "type": "fictional", "category": "虚构实体", "question": "畅销书《第七种沉默》在全球卖了多少册？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-fictional-022", "source": "dev_v2", "type": "fictional", "category": "虚构实体", "question": "「白垩回声」乐队的主唱是谁？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-fictional-023", "source": "dev_v2", "type": "fictional", "category": "虚构实体", "question": "明代医书《杏林秘要》记载了哪些药方？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-fictional-024", "source": "dev_v2", "type": "fictional", "category": "虚构实体", "question": "「锦屏江」流经中国哪些省份？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-fictional-025", "source": "dev_v2", "type": "fictional", "category": "虚构实体", "question": "经济学中的「霍尔斯滕-马的消费弹性曲线」是什么意思？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-fictional-026", "source": "dev_v2", "type": "fictional", "category": "虚构实体", "question": "「天枢十二号」卫星的主要任务是什么？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-fictional-027", "source": "dev_v2", "type": "fictional", "category": "虚构实体", "question": "游戏《永夜灯塔》是哪家公司开发的？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-fictional-028", "source": "dev_v2", "type": "fictional", "category": "虚构实体", "question": "考古学家秦望舒在哪一年发现了「渭北青铜神树」？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-fictional-029", "source": "dev_v2", "type": "fictional", "category": "虚构实体", "question": "「玲珑岛」位于哪个海域？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-fictional-030", "source": "dev_v2", "type": "fictional", "category": "虚构实体", "question": "企业家顾长庚创办的「长庚重工」主营什么业务？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-fictional-031", "source": "dev_v2", "type": "fictional", "category": "虚构实体", "question": "「霜降定律」是哪个科学领域的理论？", "gold": [], "wrong": [], "url": [], "expect": "unknown"}
+{"id": "v2-timely-000", "source": "dev_v2", "type": "timely", "category": "时效", "question": "目前世界上人口最多的国家是哪个？", "gold": ["印度"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-timely-001", "source": "dev_v2", "type": "timely", "category": "时效", "question": "2024年夏季奥运会在哪座城市举办？", "gold": ["巴黎"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-timely-002", "source": "dev_v2", "type": "timely", "category": "时效", "question": "2022年卡塔尔世界杯的冠军是哪支球队？", "gold": ["阿根廷"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-timely-003", "source": "dev_v2", "type": "timely", "category": "时效", "question": "2024年美国总统选举的获胜者是谁？", "gold": ["特朗普"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-timely-004", "source": "dev_v2", "type": "timely", "category": "时效", "question": "英国现任君主是谁？", "gold": ["查尔斯三世", "查尔斯"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-timely-005", "source": "dev_v2", "type": "timely", "category": "时效", "question": "2023年诺贝尔文学奖得主是谁？", "gold": ["福瑟"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-timely-006", "source": "dev_v2", "type": "timely", "category": "时效", "question": "2025年中国农历春节是公历几月几日？", "gold": ["1月29日"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-timely-007", "source": "dev_v2", "type": "timely", "category": "时效", "question": "2022年冬季奥运会在哪座城市举办？", "gold": ["北京"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-000", "source": "dev_v2", "type": "easy", "category": "常识", "question": "中国的首都是哪座城市？", "gold": ["北京"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-001", "source": "dev_v2", "type": "easy", "category": "常识", "question": "水的化学式是什么？", "gold": ["H2O"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-002", "source": "dev_v2", "type": "easy", "category": "常识", "question": "一年有几个月？", "gold": ["12", "十二"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-003", "source": "dev_v2", "type": "easy", "category": "常识", "question": "《西游记》的作者是谁？", "gold": ["吴承恩"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-004", "source": "dev_v2", "type": "easy", "category": "常识", "question": "太阳系中最大的行星是哪颗？", "gold": ["木星"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-005", "source": "dev_v2", "type": "easy", "category": "常识", "question": "植物光合作用释放的气体是什么？", "gold": ["氧气", "氧"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-006", "source": "dev_v2", "type": "easy", "category": "常识", "question": "中国最长的河流是哪条？", "gold": ["长江"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-007", "source": "dev_v2", "type": "easy", "category": "常识", "question": "世界最高峰是哪座山？", "gold": ["珠穆朗玛峰", "珠峰"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-008", "source": "dev_v2", "type": "easy", "category": "常识", "question": "鲁迅的原名是什么？", "gold": ["周树人"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-009", "source": "dev_v2", "type": "easy", "category": "常识", "question": "世界上面积最大的国家是哪个？", "gold": ["俄罗斯"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-010", "source": "dev_v2", "type": "easy", "category": "常识", "question": "人体最大的器官是什么？", "gold": ["皮肤"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-011", "source": "dev_v2", "type": "easy", "category": "常识", "question": "地球唯一的天然卫星是什么？", "gold": ["月球", "月亮"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-012", "source": "dev_v2", "type": "easy", "category": "常识", "question": "三角形的内角和是多少度？", "gold": ["180"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-013", "source": "dev_v2", "type": "easy", "category": "常识", "question": "标准大气压下水的冰点是多少摄氏度？", "gold": ["0", "零"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-014", "source": "dev_v2", "type": "easy", "category": "常识", "question": "第一次世界大战爆发于哪一年？", "gold": ["1914"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-015", "source": "dev_v2", "type": "easy", "category": "常识", "question": "《蒙娜丽莎》是谁画的？", "gold": ["达芬奇", "达·芬奇"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-016", "source": "dev_v2", "type": "easy", "category": "常识", "question": "端午节主要纪念哪位历史人物？", "gold": ["屈原"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-017", "source": "dev_v2", "type": "easy", "category": "常识", "question": "提出万有引力定律的科学家是谁？", "gold": ["牛顿"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-018", "source": "dev_v2", "type": "easy", "category": "常识", "question": "提出相对论的科学家是谁？", "gold": ["爱因斯坦"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-019", "source": "dev_v2", "type": "easy", "category": "常识", "question": "世界上最大的海洋是哪个？", "gold": ["太平洋"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-020", "source": "dev_v2", "type": "easy", "category": "常识", "question": "大熊猫的主要食物是什么？", "gold": ["竹"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-021", "source": "dev_v2", "type": "easy", "category": "常识", "question": "金的化学元素符号是什么？", "gold": ["Au"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-022", "source": "dev_v2", "type": "easy", "category": "常识", "question": "一天有多少小时？", "gold": ["24", "二十四"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-023", "source": "dev_v2", "type": "easy", "category": "常识", "question": "唐朝的开国皇帝是谁？", "gold": ["李渊"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-024", "source": "dev_v2", "type": "easy", "category": "常识", "question": "《三国演义》的作者是谁？", "gold": ["罗贯中"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-025", "source": "dev_v2", "type": "easy", "category": "常识", "question": "撒哈拉沙漠位于哪个大洲？", "gold": ["非洲"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-026", "source": "dev_v2", "type": "easy", "category": "常识", "question": "日本的首都是哪座城市？", "gold": ["东京"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-027", "source": "dev_v2", "type": "easy", "category": "常识", "question": "北京举办夏季奥运会是哪一年？", "gold": ["2008"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-028", "source": "dev_v2", "type": "easy", "category": "常识", "question": "杜甫被后人称为什么？", "gold": ["诗圣"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-029", "source": "dev_v2", "type": "easy", "category": "常识", "question": "成年人体内一般有多少块骨头？", "gold": ["206"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-030", "source": "dev_v2", "type": "easy", "category": "常识", "question": "标准大气压下水的沸点是多少摄氏度？", "gold": ["100"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-031", "source": "dev_v2", "type": "easy", "category": "常识", "question": "秦始皇统一六国是在公元前哪一年？", "gold": ["221"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-032", "source": "dev_v2", "type": "easy", "category": "常识", "question": "《红楼梦》的作者是谁？", "gold": ["曹雪芹"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-033", "source": "dev_v2", "type": "easy", "category": "常识", "question": "中国的国旗叫什么？", "gold": ["五星红旗"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-034", "source": "dev_v2", "type": "easy", "category": "常识", "question": "奥运会会旗上有几个环？", "gold": ["5", "五"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-035", "source": "dev_v2", "type": "easy", "category": "常识", "question": "美国的首都是哪座城市？", "gold": ["华盛顿"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-036", "source": "dev_v2", "type": "easy", "category": "常识", "question": "电话的发明者通常被认为是谁？", "gold": ["贝尔"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-037", "source": "dev_v2", "type": "easy", "category": "常识", "question": "地球绕太阳公转一周大约需要多少天？", "gold": ["365"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-038", "source": "dev_v2", "type": "easy", "category": "常识", "question": "「床前明月光」是哪位诗人的诗句？", "gold": ["李白"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-easy-039", "source": "dev_v2", "type": "easy", "category": "常识", "question": "人体血液中负责运输氧气的是哪种细胞？", "gold": ["红细胞"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-counterfactual-000", "source": "dev_v2", "type": "counterfactual", "category": "反事实设定", "question": "假设一周有 9 天，那么两周一共有多少天？", "gold": ["18"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-counterfactual-001", "source": "dev_v2", "type": "counterfactual", "category": "反事实设定", "question": "假设在某个世界里猫会说话而狗不会，这个世界里会说话的是猫还是狗？", "gold": ["猫"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-counterfactual-002", "source": "dev_v2", "type": "counterfactual", "category": "反事实设定", "question": "假设中国的首都是上海，在这个设定下中国的首都是哪座城市？", "gold": ["上海"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-counterfactual-003", "source": "dev_v2", "type": "counterfactual", "category": "反事实设定", "question": "假设水在 50 摄氏度就会沸腾，在这个设定下水的沸点是多少摄氏度？", "gold": ["50"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-counterfactual-004", "source": "dev_v2", "type": "counterfactual", "category": "反事实设定", "question": "假设太阳从西边升起，那么早晨太阳出现在哪个方向？", "gold": ["西"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-counterfactual-005", "source": "dev_v2", "type": "counterfactual", "category": "反事实设定", "question": "假设一小时有 100 分钟，3 小时一共有多少分钟？", "gold": ["300"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-counterfactual-006", "source": "dev_v2", "type": "counterfactual", "category": "反事实设定", "question": "假设光速只有每秒 100 米，光走 500 米需要多少秒？", "gold": ["5"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-counterfactual-007", "source": "dev_v2", "type": "counterfactual", "category": "反事实设定", "question": "假设所有天鹅都是绿色的，那么随便一只天鹅是什么颜色？", "gold": ["绿"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-counterfactual-008", "source": "dev_v2", "type": "counterfactual", "category": "反事实设定", "question": "假设李白是宋朝诗人，在这个设定下李白属于哪个朝代？", "gold": ["宋"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-counterfactual-009", "source": "dev_v2", "type": "counterfactual", "category": "反事实设定", "question": "假设人类有三只手，每只手 5 根手指，一个人一共有多少根手指？", "gold": ["15"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-counterfactual-010", "source": "dev_v2", "type": "counterfactual", "category": "反事实设定", "question": "假设月亮绕地球一圈只需要 10 天，那么 30 天里月亮绕地球几圈？", "gold": ["3", "三"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-counterfactual-011", "source": "dev_v2", "type": "counterfactual", "category": "反事实设定", "question": "假设冰的密度比水大，把冰块放进水里，它会沉下去还是浮起来？", "gold": ["沉"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-counterfactual-012", "source": "dev_v2", "type": "counterfactual", "category": "反事实设定", "question": "假设《红楼梦》的作者是鲁迅，在这个设定下《红楼梦》的作者是谁？", "gold": ["鲁迅"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-counterfactual-013", "source": "dev_v2", "type": "counterfactual", "category": "反事实设定", "question": "假设 1 美元等于 10 元人民币，50 美元等于多少元人民币？", "gold": ["500"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-counterfactual-014", "source": "dev_v2", "type": "counterfactual", "category": "反事实设定", "question": "假设足球比赛每队上场 8 人，两队一共上场多少人？", "gold": ["16"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-counterfactual-015", "source": "dev_v2", "type": "counterfactual", "category": "反事实设定", "question": "假设企鹅会飞而老鹰不会飞，企鹅和老鹰中哪一种会飞？", "gold": ["企鹅"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-counterfactual-016", "source": "dev_v2", "type": "counterfactual", "category": "反事实设定", "question": "假设一年只有春、秋两个季节，这个世界一年有几个季节？", "gold": ["2", "两"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-counterfactual-017", "source": "dev_v2", "type": "counterfactual", "category": "反事实设定", "question": "假设地球上只有一个大洲叫「盘古洲」，所有国家都位于哪个大洲？", "gold": ["盘古洲"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-counterfactual-018", "source": "dev_v2", "type": "counterfactual", "category": "反事实设定", "question": "假设长城建于唐朝，在这个设定下长城建于哪个朝代？", "gold": ["唐"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-counterfactual-019", "source": "dev_v2", "type": "counterfactual", "category": "反事实设定", "question": "假设人的正常体温是 30 摄氏度，比正常体温高 5 度是多少摄氏度？", "gold": ["35"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-counterfactual-020", "source": "dev_v2", "type": "counterfactual", "category": "反事实设定", "question": "假设一打是 15 个，两打鸡蛋有多少个？", "gold": ["30"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-counterfactual-021", "source": "dev_v2", "type": "counterfactual", "category": "反事实设定", "question": "假设一副扑克牌有 60 张，去掉 2 张王牌后还剩多少张？", "gold": ["58"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-counterfactual-022", "source": "dev_v2", "type": "counterfactual", "category": "反事实设定", "question": "假设珠穆朗玛峰高 5000 米，比它高 1000 米的山有多高？", "gold": ["6000"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-counterfactual-023", "source": "dev_v2", "type": "counterfactual", "category": "反事实设定", "question": "假设北极熊生活在南极，在这个设定下北极熊生活在哪里？", "gold": ["南极"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-counterfactual-024", "source": "dev_v2", "type": "counterfactual", "category": "反事实设定", "question": "假设三角形内角和是 200 度，已知两个角分别是 80 度和 70 度，第三个角是多少度？", "gold": ["50"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-counterfactual-025", "source": "dev_v2", "type": "counterfactual", "category": "反事实设定", "question": "假设一个月固定 25 天，一年 12 个月一共有多少天？", "gold": ["300"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-counterfactual-026", "source": "dev_v2", "type": "counterfactual", "category": "反事实设定", "question": "假设地球自转一周需要 48 小时，那么一天有多少小时？", "gold": ["48"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-counterfactual-027", "source": "dev_v2", "type": "counterfactual", "category": "反事实设定", "question": "假设在某国红灯表示可以通行、绿灯表示停止，在该国看到绿灯应该怎么做？", "gold": ["停"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-counterfactual-028", "source": "dev_v2", "type": "counterfactual", "category": "反事实设定", "question": "假设糖是咸的、盐是甜的，在这个设定下哪一种调料是甜的？", "gold": ["盐"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-counterfactual-029", "source": "dev_v2", "type": "counterfactual", "category": "反事实设定", "question": "假设地球有两个月亮，在这个设定下地球有几个月亮？", "gold": ["2", "两"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-choice-000", "source": "dev_v2", "type": "choice", "category": "不定项选择", "question": "下列城市中，哪些是中国的直辖市？（不定项选择）\nA. 北京\nB. 广州\nC. 重庆\nD. 杭州", "gold": ["AC"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-choice-001", "source": "dev_v2", "type": "choice", "category": "不定项选择", "question": "下列动物中，哪些属于哺乳动物？（不定项选择）\nA. 鲸\nB. 鲨鱼\nC. 蝙蝠\nD. 企鹅", "gold": ["AC"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-choice-002", "source": "dev_v2", "type": "choice", "category": "不定项选择", "question": "下列哪些是《西游记》中的人物？（不定项选择）\nA. 孙悟空\nB. 林黛玉\nC. 猪八戒\nD. 宋江", "gold": ["AC"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-choice-003", "source": "dev_v2", "type": "choice", "category": "不定项选择", "question": "下列哪些行星属于太阳系？（不定项选择）\nA. 火星\nB. 金星\nC. 冥卫一\nD. 木星", "gold": ["ABD"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-choice-004", "source": "dev_v2", "type": "choice", "category": "不定项选择", "question": "下列哪些是中国古代四大发明？（不定项选择）\nA. 造纸术\nB. 指南针\nC. 蒸汽机\nD. 火药", "gold": ["ABD"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-choice-005", "source": "dev_v2", "type": "choice", "category": "不定项选择", "question": "下列哪些诗人是唐朝人？（不定项选择）\nA. 李白\nB. 苏轼\nC. 杜甫\nD. 王维", "gold": ["ACD"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-choice-006", "source": "dev_v2", "type": "choice", "category": "不定项选择", "question": "下列哪些国家位于欧洲？（不定项选择）\nA. 法国\nB. 埃及\nC. 德国\nD. 巴西", "gold": ["AC"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-choice-007", "source": "dev_v2", "type": "choice", "category": "不定项选择", "question": "下列哪些是质数？（不定项选择）\nA. 2\nB. 9\nC. 13\nD. 21", "gold": ["AC"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-choice-008", "source": "dev_v2", "type": "choice", "category": "不定项选择", "question": "下列哪些物质在常温常压下是液体？（不定项选择）\nA. 水\nB. 水银\nC. 铁\nD. 氧气", "gold": ["AB"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-choice-009", "source": "dev_v2", "type": "choice", "category": "不定项选择", "question": "下列哪些是中国的传统节日？（不定项选择）\nA. 春节\nB. 感恩节\nC. 中秋节\nD. 端午节", "gold": ["ACD"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-choice-010", "source": "dev_v2", "type": "choice", "category": "不定项选择", "question": "下列哪部作品的作者是鲁迅？（不定项选择）\nA. 《狂人日记》\nB. 《骆驼祥子》\nC. 《阿Q正传》\nD. 《围城》", "gold": ["AC"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-choice-011", "source": "dev_v2", "type": "choice", "category": "不定项选择", "question": "下列哪些是可再生能源？（不定项选择）\nA. 太阳能\nB. 煤炭\nC. 风能\nD. 石油", "gold": ["AC"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-choice-012", "source": "dev_v2", "type": "choice", "category": "不定项选择", "question": "下列哪些元素是金属？（不定项选择）\nA. 铁\nB. 氧\nC. 铜\nD. 碳", "gold": ["AC"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-choice-013", "source": "dev_v2", "type": "choice", "category": "不定项选择", "question": "下列哪些城市曾举办过夏季奥运会？（不定项选择）\nA. 北京\nB. 上海\nC. 伦敦\nD. 东京", "gold": ["ACD"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-choice-014", "source": "dev_v2", "type": "choice", "category": "不定项选择", "question": "下列哪些是人体的消化器官？（不定项选择）\nA. 胃\nB. 肺\nC. 小肠\nD. 肾", "gold": ["AC"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-choice-015", "source": "dev_v2", "type": "choice", "category": "不定项选择", "question": "下列哪些是中国的四大名著？（不定项选择）\nA. 《红楼梦》\nB. 《聊斋志异》\nC. 《水浒传》\nD. 《三国演义》", "gold": ["ACD"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-choice-016", "source": "dev_v2", "type": "choice", "category": "不定项选择", "question": "下列哪些河流流经中国？（不定项选择）\nA. 长江\nB. 亚马孙河\nC. 黄河\nD. 尼罗河", "gold": ["AC"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-choice-017", "source": "dev_v2", "type": "choice", "category": "不定项选择", "question": "下列哪些数是偶数？（不定项选择）\nA. 4\nB. 7\nC. 10\nD. 15", "gold": ["AC"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-choice-018", "source": "dev_v2", "type": "choice", "category": "不定项选择", "question": "下列哪些是三原色（光学）中的颜色？（不定项选择）\nA. 红\nB. 黄\nC. 绿\nD. 蓝", "gold": ["ACD"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-choice-019", "source": "dev_v2", "type": "choice", "category": "不定项选择", "question": "下列哪些动物是鸟类？（不定项选择）\nA. 鸵鸟\nB. 蝙蝠\nC. 企鹅\nD. 海豚", "gold": ["AC"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-choice-020", "source": "dev_v2", "type": "choice", "category": "不定项选择", "question": "下列哪些是中国的省份？（不定项选择）\nA. 四川\nB. 台北\nC. 云南\nD. 深圳", "gold": ["AC"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-choice-021", "source": "dev_v2", "type": "choice", "category": "不定项选择", "question": "下列哪些属于水果？（不定项选择）\nA. 苹果\nB. 土豆\nC. 香蕉\nD. 白菜", "gold": ["AC"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-choice-022", "source": "dev_v2", "type": "choice", "category": "不定项选择", "question": "下列哪些是计算机的输入设备？（不定项选择）\nA. 键盘\nB. 显示器\nC. 鼠标\nD. 音箱", "gold": ["AC"], "wrong": [], "url": [], "expect": "answer"}
+{"id": "v2-choice-023", "source": "dev_v2", "type": "choice", "category": "不定项选择", "question": "下列哪些是朝代名称？（不定项选择）\nA. 汉\nB. 周\nC. 唐\nD. 鲁", "gold": ["ABC"], "wrong": [], "url": [], "expect": "answer"}

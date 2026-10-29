@@ -1,0 +1,19 @@
+# 冻结记录 v4 2026-10-20（换裁判 gemini-3.8-flash-high；v1–v3 原样保留）
+
+用途：越越 2026-10-20 同意用会员道当裁判给练习基线 p0 判对错；原定的 gemini-3.1-pro-high 在 agy 1.2.9 里已不可选
+（`agy models` 只列 gemini-3.8-flash-high/medium/low、claude-sonnet-4-6、claude-opus-4-6-thinking、gpt-oss-120b-medium）。
+越越选「3.8 Flash 高档先验收」：先跑 24 条验收集，全对或只错一两条再判 p0 的 449 条，验收不过就停。
+
+对比 v3：
+- judge.py、judge.PROMPT：与 v3 相同
+- eval/judge_acceptance.jsonl、eval/build_acceptance.py、test_judge.py：与 v3 相同
+- eval/run_judge.py：JUDGES 加 gemini-flash-high 一项，其余不变
+- 新增 eval/judge_runs.py（批量判作答记录，复用 run_judge.call）、eval/to_judge.py（拼参考材料）
+
+340bb3db908b465cbfc019fb3454091c2d5b795c4d9f128f5599f79c8e64a328  judge.py
+1bb747354102322cd09c46ff48bc860e08d0959ef90ce6ef08780f7e08a8020f  eval/judge_acceptance.jsonl
+232f9b8e7bda455eedbf1279adc0f4150421cad8a850fd9a4dda9f167b2bdfa8  eval/build_acceptance.py
+4fdd651e6737840e00cb9d61604cbcb4d28acb468b54ebe17cc962b6e765c134  eval/run_judge.py
+54a0b7c844323b0127af4c8b75a1e277d30c9a9b45524758859aae52d84a6b29  test_judge.py
+30a0c062cf9ee997e85d6e9c0ab0f663f5e0328065e82a78cf487e9ade1b16a1  eval/judge_runs.py
+5e97931a89d9435eb6c13ab8e8de35bf099fdd9265224dd9f12e347ef6207a49  eval/to_judge.py

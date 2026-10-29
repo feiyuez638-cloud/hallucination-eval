@@ -1,0 +1,1 @@
+V7 规则特征检测离线单测（2026-10-22，不调模型，eval/rule_eval.py sha 8acc8bc4…，规则先写定再跑，不回头改）：触发 SimpleQA 7/300、Knowledge 15/60、Misleading 4/60、Misleading-hard 8/30；V4 回放拦住幻觉 14、误拒答对 7（全部来自「拼诗」规则：引号长引文在 Knowledge 和 SimpleQA 里多是正常题）。门槛一（SimpleQA ≤ 9/300）过，门槛二（答对零损失）不过，按约定停止，V7 不进小样，基线仍为 V4。区分力明显好于 V6（V6 拦 19 误拒 67）。

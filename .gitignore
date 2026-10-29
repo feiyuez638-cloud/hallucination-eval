@@ -1,0 +1,7 @@
+__pycache__/
+.venv/
+data/kb/
+data/models/
+logs/
+*.local
+.env

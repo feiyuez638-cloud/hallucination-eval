@@ -1,0 +1,16 @@
+# 冻结记录 v2 2026-10-01（离线修复后；v1 见 FROZEN.txt，原样保留）
+
+对比 v1：
+- judge.py：与 v1 相同
+- eval/judge_acceptance.jsonl：与 v1 相同
+- eval/build_acceptance.py：与 v1 相同
+- eval/run_judge.py：已变更
+- test_judge.py：v1 未记录
+- judge.PROMPT（提示词模板字符串）：与 v1 相同
+
+340bb3db908b465cbfc019fb3454091c2d5b795c4d9f128f5599f79c8e64a328  judge.py
+1bb747354102322cd09c46ff48bc860e08d0959ef90ce6ef08780f7e08a8020f  eval/judge_acceptance.jsonl
+232f9b8e7bda455eedbf1279adc0f4150421cad8a850fd9a4dda9f167b2bdfa8  eval/build_acceptance.py
+3c46baeb77522c805be2456d097d41eade181caaf7c5609d7f07cbbfd22aaac4  eval/run_judge.py
+54a0b7c844323b0127af4c8b75a1e277d30c9a9b45524758859aae52d84a6b29  test_judge.py
+1253180dea71789201a08f95e4db08ffe12861e3434d7f233ae0872169020035  judge.PROMPT（提示词模板字符串）

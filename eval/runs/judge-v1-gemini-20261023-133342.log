@@ -1,0 +1,263 @@
+已判 0，本次待判 450，裁判 gemini-3.8-flash-high，并发 3
+  · gemini-3.8-flash-high     7,960 tok  (in 7,388 / out 572)   14.24s  hallucination-judge
+  · gemini-3.8-flash-high     8,102 tok  (in 7,372 / out 730)   16.62s  hallucination-judge
+  · gemini-3.8-flash-high     7,886 tok  (in 7,198 / out 688)   14.59s  hallucination-judge
+  · gemini-3.8-flash-high     7,787 tok  (in 7,176 / out 611)   14.09s  hallucination-judge
+  · gemini-3.8-flash-high    10,153 tok  (in 7,319 / out 2,834)   33.62s  hallucination-judge
+  · gemini-3.8-flash-high     7,914 tok  (in 7,210 / out 704)   14.21s  hallucination-judge
+  · gemini-3.8-flash-high     7,952 tok  (in 7,320 / out 632)   13.80s  hallucination-judge
+  · gemini-3.8-flash-high     8,824 tok  (in 7,654 / out 1,170)   18.85s  hallucination-judge
+  · gemini-3.8-flash-high     8,476 tok  (in 7,588 / out 888)   14.94s  hallucination-judge
+  · gemini-3.8-flash-high     8,337 tok  (in 7,613 / out 724)   14.86s  hallucination-judge
+  · gemini-3.8-flash-high     8,004 tok  (in 7,325 / out 679)   14.05s  hallucination-judge
+  · gemini-3.8-flash-high     8,018 tok  (in 7,436 / out 582)   14.03s  hallucination-judge
+  · gemini-3.8-flash-high     8,208 tok  (in 7,422 / out 786)   15.19s  hallucination-judge
+  · gemini-3.8-flash-high     8,095 tok  (in 7,261 / out 834)   16.05s  hallucination-judge
+  · gemini-3.8-flash-high     7,753 tok  (in 7,095 / out 658)   13.64s  hallucination-judge
+  · gemini-3.8-flash-high     8,321 tok  (in 7,734 / out 587)   15.08s  hallucination-judge
+  · gemini-3.8-flash-high     8,185 tok  (in 7,514 / out 671)   12.98s  hallucination-judge
+  · gemini-3.8-flash-high     8,141 tok  (in 7,153 / out 988)   15.58s  hallucination-judge
+  · gemini-3.8-flash-high     7,974 tok  (in 7,281 / out 693)   13.41s  hallucination-judge
+  · gemini-3.8-flash-high     8,008 tok  (in 7,267 / out 741)   13.59s  hallucination-judge
+20/450  sqa-2317  13.59s  
+  · gemini-3.8-flash-high     7,894 tok  (in 7,198 / out 696)   14.66s  hallucination-judge
+  · gemini-3.8-flash-high     7,734 tok  (in 7,101 / out 633)   15.02s  hallucination-judge
+  · gemini-3.8-flash-high    10,770 tok  (in 7,315 / out 3,455)   34.71s  hallucination-judge
+  · gemini-3.8-flash-high     7,832 tok  (in 7,174 / out 658)   15.34s  hallucination-judge
+  · gemini-3.8-flash-high     8,058 tok  (in 7,142 / out 916)   17.67s  hallucination-judge
+  · gemini-3.8-flash-high     7,704 tok  (in 7,102 / out 602)   14.06s  hallucination-judge
+  · gemini-3.8-flash-high     8,324 tok  (in 7,510 / out 814)   15.03s  hallucination-judge
+  · gemini-3.8-flash-high     8,032 tok  (in 7,300 / out 732)   15.40s  hallucination-judge
+  · gemini-3.8-flash-high     7,837 tok  (in 7,225 / out 612)   13.81s  hallucination-judge
+  · gemini-3.8-flash-high     8,839 tok  (in 7,134 / out 1,705)   20.84s  hallucination-judge
+  · gemini-3.8-flash-high     9,769 tok  (in 7,404 / out 2,365)   25.73s  hallucination-judge
+  · gemini-3.8-flash-high     7,770 tok  (in 7,186 / out 584)   15.00s  hallucination-judge
+  · gemini-3.8-flash-high     9,441 tok  (in 7,422 / out 2,019)   27.49s  hallucination-judge
+  · gemini-3.8-flash-high     8,792 tok  (in 7,783 / out 1,009)   19.96s  hallucination-judge
+  · gemini-3.8-flash-high     7,910 tok  (in 7,375 / out 535)   16.27s  hallucination-judge
+  · gemini-3.8-flash-high     7,911 tok  (in 7,360 / out 551)   15.32s  hallucination-judge
+  · gemini-3.8-flash-high     8,063 tok  (in 7,431 / out 632)   15.44s  hallucination-judge
+  · gemini-3.8-flash-high     7,604 tok  (in 7,076 / out 528)   14.51s  hallucination-judge
+  · gemini-3.8-flash-high     7,746 tok  (in 7,206 / out 540)   14.94s  hallucination-judge
+  · gemini-3.8-flash-high     7,755 tok  (in 7,126 / out 629)   14.14s  hallucination-judge
+40/450  sqa-0211  14.14s  
+  · gemini-3.8-flash-high     7,647 tok  (in 7,060 / out 587)   16.08s  hallucination-judge
+  · gemini-3.8-flash-high     7,966 tok  (in 7,346 / out 620)   16.03s  hallucination-judge
+  · gemini-3.8-flash-high     7,790 tok  (in 7,122 / out 668)   14.51s  hallucination-judge
+  · gemini-3.8-flash-high     7,872 tok  (in 7,194 / out 678)   14.97s  hallucination-judge
+  · gemini-3.8-flash-high     7,921 tok  (in 7,275 / out 646)   15.16s  hallucination-judge
+  · gemini-3.8-flash-high     7,967 tok  (in 7,264 / out 703)   16.85s  hallucination-judge
+  · gemini-3.8-flash-high     7,877 tok  (in 7,201 / out 676)   14.92s  hallucination-judge
+  · gemini-3.8-flash-high    10,887 tok  (in 7,193 / out 3,694)   35.81s  hallucination-judge
+  · gemini-3.8-flash-high     7,770 tok  (in 7,234 / out 536)   15.17s  hallucination-judge
+  · gemini-3.8-flash-high     7,715 tok  (in 7,106 / out 609)   14.54s  hallucination-judge
+  · gemini-3.8-flash-high     8,381 tok  (in 7,123 / out 1,258)   18.62s  hallucination-judge
+  · gemini-3.8-flash-high     8,132 tok  (in 7,391 / out 741)   14.95s  hallucination-judge
+  · gemini-3.8-flash-high     7,989 tok  (in 7,189 / out 800)   17.57s  hallucination-judge
+  · gemini-3.8-flash-high     8,659 tok  (in 7,152 / out 1,507)   19.65s  hallucination-judge
+  · gemini-3.8-flash-high     7,897 tok  (in 7,334 / out 563)   13.13s  hallucination-judge
+  · gemini-3.8-flash-high     9,739 tok  (in 7,187 / out 2,552)   25.44s  hallucination-judge
+  · gemini-3.8-flash-high     8,349 tok  (in 7,311 / out 1,038)   16.57s  hallucination-judge
+  · gemini-3.8-flash-high     8,502 tok  (in 7,457 / out 1,045)   19.91s  hallucination-judge
+  · gemini-3.8-flash-high    10,114 tok  (in 7,226 / out 2,888)   30.74s  hallucination-judge
+  · gemini-3.8-flash-high     7,822 tok  (in 7,129 / out 693)   14.59s  hallucination-judge
+60/450  sqa-2510  14.59s  
+  · gemini-3.8-flash-high     8,073 tok  (in 7,457 / out 616)   14.05s  hallucination-judge
+  · gemini-3.8-flash-high     7,739 tok  (in 7,110 / out 629)   13.64s  hallucination-judge
+  · gemini-3.8-flash-high     7,804 tok  (in 7,203 / out 601)   12.91s  hallucination-judge
+  · gemini-3.8-flash-high     8,084 tok  (in 7,351 / out 733)   15.00s  hallucination-judge
+  · gemini-3.8-flash-high     8,170 tok  (in 7,517 / out 653)   13.09s  hallucination-judge
+  · gemini-3.8-flash-high    18,214 tok  (in 7,649 / out 10,565)   88.91s  hallucination-judge
+  · gemini-3.8-flash-high     7,796 tok  (in 7,214 / out 582)   15.60s  hallucination-judge
+  · gemini-3.8-flash-high     7,843 tok  (in 7,222 / out 621)   16.03s  hallucination-judge
+  · gemini-3.8-flash-high     7,771 tok  (in 7,273 / out 498)   14.20s  hallucination-judge
+  · gemini-3.8-flash-high    11,923 tok  (in 7,183 / out 4,740)   45.51s  hallucination-judge
+  · gemini-3.8-flash-high     8,434 tok  (in 7,456 / out 978)   18.15s  hallucination-judge
+  · gemini-3.8-flash-high     9,411 tok  (in 7,200 / out 2,211)   26.40s  hallucination-judge
+  · gemini-3.8-flash-high     7,785 tok  (in 7,165 / out 620)   15.17s  hallucination-judge
+  · gemini-3.8-flash-high     7,981 tok  (in 7,202 / out 779)   15.40s  hallucination-judge
+  · gemini-3.8-flash-high     7,832 tok  (in 7,194 / out 638)   16.05s  hallucination-judge
+  · gemini-3.8-flash-high    10,449 tok  (in 7,463 / out 2,986)   33.13s  hallucination-judge
+  · gemini-3.8-flash-high     7,912 tok  (in 7,255 / out 657)   15.10s  hallucination-judge
+  · gemini-3.8-flash-high     7,966 tok  (in 7,218 / out 748)   14.56s  hallucination-judge
+  · gemini-3.8-flash-high     7,755 tok  (in 7,151 / out 604)   15.21s  hallucination-judge
+  · gemini-3.8-flash-high    17,030 tok  (in 7,173 / out 9,857)   74.31s  hallucination-judge
+80/450  sqa-0643  74.31s  
+  · gemini-3.8-flash-high     8,748 tok  (in 7,123 / out 1,625)   21.31s  hallucination-judge
+  · gemini-3.8-flash-high     8,412 tok  (in 7,190 / out 1,222)   19.88s  hallucination-judge
+  · gemini-3.8-flash-high     7,738 tok  (in 7,238 / out 500)   14.38s  hallucination-judge
+  · gemini-3.8-flash-high     8,118 tok  (in 7,439 / out 679)   14.10s  hallucination-judge
+  · gemini-3.8-flash-high     7,663 tok  (in 7,132 / out 531)   14.11s  hallucination-judge
+  · gemini-3.8-flash-high     7,694 tok  (in 7,186 / out 508)   16.85s  hallucination-judge
+  · gemini-3.8-flash-high     9,335 tok  (in 7,416 / out 1,919)   28.51s  hallucination-judge
+  · gemini-3.8-flash-high     8,116 tok  (in 7,177 / out 939)   15.33s  hallucination-judge
+  · gemini-3.8-flash-high     7,976 tok  (in 7,279 / out 697)   14.83s  hallucination-judge
+  · gemini-3.8-flash-high     7,755 tok  (in 7,110 / out 645)   14.84s  hallucination-judge
+  · gemini-3.8-flash-high    11,092 tok  (in 7,234 / out 3,858)   37.87s  hallucination-judge
+  · gemini-3.8-flash-high     4,648 tok  (in 2,642 / out 2,006)   24.30s  hallucination-judge
+  · gemini-3.8-flash-high    17,782 tok  (in 7,230 / out 10,552)   89.25s  hallucination-judge
+  · gemini-3.8-flash-high     8,637 tok  (in 7,345 / out 1,292)   17.56s  hallucination-judge
+  · gemini-3.8-flash-high     8,188 tok  (in 7,503 / out 685)   15.16s  hallucination-judge
+  · gemini-3.8-flash-high     7,937 tok  (in 7,419 / out 518)   16.73s  hallucination-judge
+  · gemini-3.8-flash-high    10,279 tok  (in 7,255 / out 3,024)   33.00s  hallucination-judge
+  · gemini-3.8-flash-high     9,041 tok  (in 7,427 / out 1,614)   20.78s  hallucination-judge
+  · gemini-3.8-flash-high     7,980 tok  (in 7,227 / out 753)   14.77s  hallucination-judge
+  · gemini-3.8-flash-high    11,757 tok  (in 7,153 / out 4,604)   44.34s  hallucination-judge
+100/450  sqa-0395  44.34s  
+  · gemini-3.8-flash-high     8,165 tok  (in 7,207 / out 958)   17.25s  hallucination-judge
+  · gemini-3.8-flash-high     9,011 tok  (in 7,519 / out 1,492)   20.10s  hallucination-judge
+  · gemini-3.8-flash-high     8,789 tok  (in 7,215 / out 1,574)   30.14s  hallucination-judge
+  · gemini-3.8-flash-high     8,399 tok  (in 7,131 / out 1,268)   50.71s  hallucination-judge
+  · gemini-3.8-flash-high     9,245 tok  (in 7,327 / out 1,918)   62.59s  hallucination-judge
+  · gemini-3.8-flash-high     2,815 tok  (in 2,172 / out 643)   31.44s  hallucination-judge
+  · gemini-3.8-flash-high         0 tok  (in 0 / out 0)  129.93s  hallucination-judge
+  · gemini-3.8-flash-high     7,795 tok  (in 7,188 / out 607)   14.39s  hallucination-judge
+  · gemini-3.8-flash-high     7,797 tok  (in 7,133 / out 664)   14.24s  hallucination-judge
+  · gemini-3.8-flash-high     7,606 tok  (in 7,121 / out 485)   23.65s  hallucination-judge
+  · gemini-3.8-flash-high    17,945 tok  (in 7,484 / out 10,461)  105.20s  hallucination-judge
+  · gemini-3.8-flash-high     8,210 tok  (in 7,452 / out 758)   20.49s  hallucination-judge
+  · gemini-3.8-flash-high     9,369 tok  (in 7,526 / out 1,843)   40.37s  hallucination-judge
+  · gemini-3.8-flash-high     8,673 tok  (in 7,236 / out 1,437)   22.07s  hallucination-judge
+  · gemini-3.8-flash-high     7,968 tok  (in 7,251 / out 717)   13.94s  hallucination-judge
+  · gemini-3.8-flash-high     8,678 tok  (in 7,379 / out 1,299)   19.34s  hallucination-judge
+  · gemini-3.8-flash-high    10,049 tok  (in 7,675 / out 2,374)   25.12s  hallucination-judge
+  · gemini-3.8-flash-high     8,287 tok  (in 7,282 / out 1,005)   16.94s  hallucination-judge
+  · gemini-3.8-flash-high     7,762 tok  (in 7,116 / out 646)   14.08s  hallucination-judge
+  · gemini-3.8-flash-high     7,749 tok  (in 7,163 / out 586)   14.73s  hallucination-judge
+120/450  sqa-2657  14.73s  
+  · gemini-3.8-flash-high     7,534 tok  (in 7,041 / out 493)   12.31s  hallucination-judge
+  · gemini-3.8-flash-high     9,983 tok  (in 7,244 / out 2,739)   29.37s  hallucination-judge
+  · gemini-3.8-flash-high     8,423 tok  (in 7,421 / out 1,002)   15.14s  hallucination-judge
+  · gemini-3.8-flash-high     8,187 tok  (in 7,129 / out 1,058)   22.75s  hallucination-judge
+  · gemini-3.8-flash-high     7,916 tok  (in 7,253 / out 663)   13.95s  hallucination-judge
+  · gemini-3.8-flash-high     8,571 tok  (in 7,145 / out 1,426)   19.93s  hallucination-judge
+  · gemini-3.8-flash-high     9,660 tok  (in 7,223 / out 2,437)   27.22s  hallucination-judge
+  · gemini-3.8-flash-high     8,336 tok  (in 7,306 / out 1,030)   17.08s  hallucination-judge
+  · gemini-3.8-flash-high     8,124 tok  (in 7,403 / out 721)   15.93s  hallucination-judge
+  · gemini-3.8-flash-high     7,642 tok  (in 7,064 / out 578)   14.93s  hallucination-judge
+  · gemini-3.8-flash-high     8,401 tok  (in 7,514 / out 887)   15.91s  hallucination-judge
+  · gemini-3.8-flash-high     8,896 tok  (in 7,385 / out 1,511)   20.94s  hallucination-judge
+  · gemini-3.8-flash-high     8,203 tok  (in 7,349 / out 854)   17.42s  hallucination-judge
+  · gemini-3.8-flash-high     8,130 tok  (in 7,332 / out 798)   15.02s  hallucination-judge
+  · gemini-3.8-flash-high     7,730 tok  (in 7,158 / out 572)   14.23s  hallucination-judge
+  · gemini-3.8-flash-high     7,973 tok  (in 7,244 / out 729)   27.41s  hallucination-judge
+  · gemini-3.8-flash-high     9,074 tok  (in 7,487 / out 1,587)   34.54s  hallucination-judge
+  · gemini-3.8-flash-high     9,542 tok  (in 7,281 / out 2,261)   38.96s  hallucination-judge
+  · gemini-3.8-flash-high     7,844 tok  (in 7,164 / out 680)   33.06s  hallucination-judge
+  · gemini-3.8-flash-high     7,912 tok  (in 7,297 / out 615)   26.91s  hallucination-judge
+140/450  sqa-0896  26.91s  
+  · gemini-3.8-flash-high     8,060 tok  (in 7,237 / out 823)   16.03s  hallucination-judge
+  · gemini-3.8-flash-high     9,438 tok  (in 7,333 / out 2,105)   33.58s  hallucination-judge
+  · gemini-3.8-flash-high    10,176 tok  (in 7,263 / out 2,913)   29.68s  hallucination-judge
+  · gemini-3.8-flash-high     7,950 tok  (in 7,277 / out 673)   14.70s  hallucination-judge
+  · gemini-3.8-flash-high     8,312 tok  (in 7,503 / out 809)   17.47s  hallucination-judge
+  · gemini-3.8-flash-high     7,971 tok  (in 7,236 / out 735)   13.58s  hallucination-judge
+  · gemini-3.8-flash-high     8,475 tok  (in 7,192 / out 1,283)   17.67s  hallucination-judge
+  · gemini-3.8-flash-high     8,710 tok  (in 7,587 / out 1,123)   19.54s  hallucination-judge
+  · gemini-3.8-flash-high     7,736 tok  (in 7,191 / out 545)   14.54s  hallucination-judge
+  · gemini-3.8-flash-high     7,919 tok  (in 7,205 / out 714)   15.05s  hallucination-judge
+  · gemini-3.8-flash-high     9,771 tok  (in 7,232 / out 2,539)   27.87s  hallucination-judge
+  · gemini-3.8-flash-high     7,852 tok  (in 7,165 / out 687)   13.85s  hallucination-judge
+  · gemini-3.8-flash-high     8,023 tok  (in 7,198 / out 825)   14.71s  hallucination-judge
+  · gemini-3.8-flash-high     7,801 tok  (in 7,227 / out 574)   13.03s  hallucination-judge
+  · gemini-3.8-flash-high     8,522 tok  (in 7,119 / out 1,403)   19.21s  hallucination-judge
+  · gemini-3.8-flash-high     8,200 tok  (in 7,322 / out 878)   16.98s  hallucination-judge
+  · gemini-3.8-flash-high     7,724 tok  (in 7,139 / out 585)   13.36s  hallucination-judge
+  · gemini-3.8-flash-high     7,821 tok  (in 7,151 / out 670)   14.13s  hallucination-judge
+  · gemini-3.8-flash-high     9,560 tok  (in 7,255 / out 2,305)   26.81s  hallucination-judge
+  · gemini-3.8-flash-high     7,855 tok  (in 7,393 / out 462)   13.85s  hallucination-judge
+160/450  sqa-1347  13.85s  
+  · gemini-3.8-flash-high     7,841 tok  (in 7,162 / out 679)   14.60s  hallucination-judge
+  · gemini-3.8-flash-high     8,199 tok  (in 7,410 / out 789)   14.43s  hallucination-judge
+  · gemini-3.8-flash-high     7,748 tok  (in 7,147 / out 601)   14.39s  hallucination-judge
+  · gemini-3.8-flash-high     8,048 tok  (in 7,156 / out 892)   15.65s  hallucination-judge
+  · gemini-3.8-flash-high     7,961 tok  (in 7,201 / out 760)   21.75s  hallucination-judge
+  · gemini-3.8-flash-high     8,617 tok  (in 8,104 / out 513)   17.48s  hallucination-judge
+  · gemini-3.8-flash-high    10,814 tok  (in 7,153 / out 3,661)   38.39s  hallucination-judge
+  · gemini-3.8-flash-high     7,718 tok  (in 7,096 / out 622)   13.42s  hallucination-judge
+  · gemini-3.8-flash-high     7,693 tok  (in 7,188 / out 505)   21.91s  hallucination-judge
+  · gemini-3.8-flash-high     7,834 tok  (in 7,143 / out 691)   14.42s  hallucination-judge
+  · gemini-3.8-flash-high     7,737 tok  (in 7,125 / out 612)   13.59s  hallucination-judge
+  · gemini-3.8-flash-high     7,976 tok  (in 7,287 / out 689)   15.01s  hallucination-judge
+  · gemini-3.8-flash-high     7,754 tok  (in 7,136 / out 618)   13.54s  hallucination-judge
+  · gemini-3.8-flash-high     8,771 tok  (in 7,154 / out 1,617)   20.94s  hallucination-judge
+  · gemini-3.8-flash-high     8,837 tok  (in 7,359 / out 1,478)   19.80s  hallucination-judge
+  · gemini-3.8-flash-high    14,739 tok  (in 7,441 / out 7,298)   59.64s  hallucination-judge
+  · gemini-3.8-flash-high     7,761 tok  (in 7,124 / out 637)   14.04s  hallucination-judge
+  · gemini-3.8-flash-high     7,927 tok  (in 7,281 / out 646)   13.92s  hallucination-judge
+  · gemini-3.8-flash-high     7,713 tok  (in 7,136 / out 577)   13.43s  hallucination-judge
+  · gemini-3.8-flash-high     8,313 tok  (in 7,633 / out 680)   13.73s  hallucination-judge
+180/450  sqa-2742  13.73s  
+  · gemini-3.8-flash-high     8,525 tok  (in 7,930 / out 595)   15.42s  hallucination-judge
+  · gemini-3.8-flash-high     7,693 tok  (in 7,157 / out 536)   13.82s  hallucination-judge
+  · gemini-3.8-flash-high     7,833 tok  (in 7,145 / out 688)   14.42s  hallucination-judge
+  · gemini-3.8-flash-high     8,027 tok  (in 7,380 / out 647)   13.91s  hallucination-judge
+  · gemini-3.8-flash-high     7,921 tok  (in 7,179 / out 742)   14.38s  hallucination-judge
+  · gemini-3.8-flash-high     8,270 tok  (in 7,241 / out 1,029)   18.10s  hallucination-judge
+  · gemini-3.8-flash-high     9,882 tok  (in 7,172 / out 2,710)   32.79s  hallucination-judge
+  · gemini-3.8-flash-high     8,146 tok  (in 7,155 / out 991)   18.23s  hallucination-judge
+  · gemini-3.8-flash-high    10,177 tok  (in 7,220 / out 2,957)   35.47s  hallucination-judge
+  · gemini-3.8-flash-high     7,805 tok  (in 7,210 / out 595)   19.38s  hallucination-judge
+  · gemini-3.8-flash-high     8,220 tok  (in 7,534 / out 686)   16.93s  hallucination-judge
+  · gemini-3.8-flash-high     8,367 tok  (in 7,698 / out 669)   17.60s  hallucination-judge
+  · gemini-3.8-flash-high     7,781 tok  (in 7,221 / out 560)   18.85s  hallucination-judge
+  · gemini-3.8-flash-high     8,292 tok  (in 7,588 / out 704)   17.18s  hallucination-judge
+  · gemini-3.8-flash-high     9,789 tok  (in 7,112 / out 2,677)   35.42s  hallucination-judge
+  · gemini-3.8-flash-high     8,055 tok  (in 7,388 / out 667)   23.09s  hallucination-judge
+  · gemini-3.8-flash-high     7,898 tok  (in 7,311 / out 587)   17.91s  hallucination-judge
+  · gemini-3.8-flash-high     8,158 tok  (in 7,338 / out 820)   18.60s  hallucination-judge
+  · gemini-3.8-flash-high     8,339 tok  (in 7,575 / out 764)   17.38s  hallucination-judge
+  · gemini-3.8-flash-high     7,667 tok  (in 7,089 / out 578)   13.68s  hallucination-judge
+200/450  sqa-1510  13.68s  
+  · gemini-3.8-flash-high     7,909 tok  (in 7,197 / out 712)   23.81s  hallucination-judge
+  · gemini-3.8-flash-high     9,232 tok  (in 7,108 / out 2,124)   24.37s  hallucination-judge
+  · gemini-3.8-flash-high    11,251 tok  (in 7,341 / out 3,910)   37.92s  hallucination-judge
+  · gemini-3.8-flash-high     9,528 tok  (in 7,389 / out 2,139)   26.47s  hallucination-judge
+  · gemini-3.8-flash-high     8,194 tok  (in 7,262 / out 932)   17.92s  hallucination-judge
+  · gemini-3.8-flash-high     7,974 tok  (in 7,162 / out 812)   17.11s  hallucination-judge
+  · gemini-3.8-flash-high     7,791 tok  (in 7,303 / out 488)   14.91s  hallucination-judge
+  · gemini-3.8-flash-high     7,810 tok  (in 7,145 / out 665)   14.02s  hallucination-judge
+  · gemini-3.8-flash-high    10,022 tok  (in 7,288 / out 2,734)   31.32s  hallucination-judge
+  · gemini-3.8-flash-high     7,862 tok  (in 7,236 / out 626)   15.19s  hallucination-judge
+  · gemini-3.8-flash-high     9,313 tok  (in 7,167 / out 2,146)   28.09s  hallucination-judge
+  · gemini-3.8-flash-high    12,442 tok  (in 7,358 / out 5,084)   45.32s  hallucination-judge
+  · gemini-3.8-flash-high     9,211 tok  (in 7,186 / out 2,025)   25.75s  hallucination-judge
+  · gemini-3.8-flash-high     7,991 tok  (in 7,267 / out 724)   19.52s  hallucination-judge
+  · gemini-3.8-flash-high     2,789 tok  (in 2,051 / out 738)   15.57s  hallucination-judge
+  · gemini-3.8-flash-high    10,007 tok  (in 7,110 / out 2,897)   31.11s  hallucination-judge
+  · gemini-3.8-flash-high    11,623 tok  (in 7,373 / out 4,250)   46.48s  hallucination-judge
+  · gemini-3.8-flash-high     7,625 tok  (in 7,088 / out 537)   14.17s  hallucination-judge
+  · gemini-3.8-flash-high     9,302 tok  (in 7,190 / out 2,112)   25.25s  hallucination-judge
+  · gemini-3.8-flash-high     8,844 tok  (in 7,174 / out 1,670)   23.29s  hallucination-judge
+220/450  sqa-1540  23.29s  
+  · gemini-3.8-flash-high     8,108 tok  (in 7,247 / out 861)   16.71s  hallucination-judge
+  · gemini-3.8-flash-high     8,078 tok  (in 7,255 / out 823)   15.53s  hallucination-judge
+  · gemini-3.8-flash-high    10,137 tok  (in 7,481 / out 2,656)   29.58s  hallucination-judge
+  · gemini-3.8-flash-high     8,666 tok  (in 7,280 / out 1,386)   17.74s  hallucination-judge
+  · gemini-3.8-flash-high     8,061 tok  (in 7,358 / out 703)   17.59s  hallucination-judge
+  · gemini-3.8-flash-high     8,410 tok  (in 7,375 / out 1,035)   16.77s  hallucination-judge
+  · gemini-3.8-flash-high     7,929 tok  (in 7,355 / out 574)   12.87s  hallucination-judge
+  · gemini-3.8-flash-high         0 tok  (in 0 / out 0)   41.55s  hallucination-judge 失败
+228/450  sqa-1788  41.56s  GeminiError('agy ERROR：{\'conversation_id\': \'\', \'status\': \'ERROR\', \'response\': \'\', \'error\': \'Eligibility check failed: Post "https://daily-cloudco
+  · gemini-3.8-flash-high         0 tok  (in 0 / out 0)   28.74s  hallucination-judge 失败
+229/450  sqa-1545  28.74s  GeminiError('agy ERROR：{\'conversation_id\': \'\', \'status\': \'ERROR\', \'response\': \'\', \'error\': \'Eligibility check failed: Post "https://daily-cloudco
+连续 2 次调用失败，停止。
+  · gemini-3.8-flash-high         0 tok  (in 0 / out 0)  131.36s  hallucination-judge 失败
+230/450  sqa-1825  131.36s  GeminiError('agy ERROR：{\'conversation_id\': \'fac5b6bc-6171-43f5-b672-052571e50340\', \'status\': \'ERROR\', \'response\': \'\', \'error\': \'API error (attemp
+连续 2 次调用失败，停止。
+  · gemini-3.8-flash-high         0 tok  (in 0 / out 0)  131.21s  hallucination-judge 失败
+231/450  sqa-1856  131.22s  GeminiError('agy ERROR：{\'conversation_id\': \'6b64c090-612e-42b7-be4d-35596f636da9\', \'status\': \'ERROR\', \'response\': \'\', \'error\': \'API error (attemp
+连续 2 次调用失败，停止。
+记录: E:\AI比赛\china-ai-hallucination\eval\runs\judged-answers-20261022-220103-b0-v1-qwen3-8b-gemini-flash-high.jsonl
+【LLM 裁判：本地代理指标，非官方成绩】
+作答 450  作答失败 0  已判 226
+全部: n=226  幻觉 160  拒答 9  HR(拒答算有效) 70.8%  HR(拒答剔除) 70.5%
+chinese_simpleqa: n=226  幻觉 160  拒答 9  HR(拒答算有效) 70.8%  HR(拒答剔除) 70.5%
+chinese_simpleqa/中华文化: n=50  幻觉 41  拒答 3  HR(拒答算有效) 82.0%  HR(拒答剔除) 83.0%
+chinese_simpleqa/人文与社会科学: n=50  幻觉 33  拒答 2  HR(拒答算有效) 66.0%  HR(拒答剔除) 66.7%
+chinese_simpleqa/工程、技术与应用科学: n=49  幻觉 31  拒答 2  HR(拒答算有效) 63.3%  HR(拒答剔除) 61.7%
+chinese_simpleqa/生活、艺术与文化: n=50  幻觉 40  拒答 0  HR(拒答算有效) 80.0%  HR(拒答剔除) 80.0%
+chinese_simpleqa/社会: n=27  幻觉 15  拒答 2  HR(拒答算有效) 55.6%  HR(拒答剔除) 52.0%
+两向口径：幻觉率 160/226 = 70.8%  过度拒答率 2/226 = 0.9%（分母为可答题）
+判分中途停止，后面不再继续
+[14:03:09] 全部结束

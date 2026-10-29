@@ -1,0 +1,20 @@
+{
+ "args": {
+  "inp": "data/dev/dev_v1.jsonl",
+  "tag": "b0-v1-qwen3-8b",
+  "base": "http://127.0.0.1:8000/v1",
+  "limit": null
+ },
+ "n": 450,
+ "started": "2026-10-22T22:01:03",
+ "info": {
+  "strategy": "b0",
+  "backend_url": "http://127.0.0.1:11434/v1",
+  "backend_model": "qwen3:8b",
+  "timeout_s": 50,
+  "no_think": true,
+  "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+  "parameters": "repeat_penalty                 1\nstop                           \"<|im_start|>\"\nstop                           \"<|im_end|>\"\ntemperature                    0.6\ntop_k                          20\ntop_p                          0.95",
+  "version": "0.40.6"
+ }
+}

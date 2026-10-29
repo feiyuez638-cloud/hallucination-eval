@@ -1,0 +1,19 @@
+# 冻结记录 V1 提示约束 2026-10-20（练习模型 qwen3:4b-instruct；对照 p0，见 FROZEN-p0.txt）
+
+越越 2026-10-20 原话：「开始做提示约束 V1：答短、只答有把握的、不确定就说不知道、不轻易否认前提、限制回答长度，其他不变，跑完同一套 450 题再用 agnes 判」
+
+相对 p0 只改一处：serve/proxy.py STRATEGY=v1
+- 加系统提示 V1_SYSTEM（原文见 proxy.py，运行时 /x/info 也会记进 meta.json）
+- max_tokens 上限 200（p0 不设上限）
+不变：后端模型与 digest、Modelfile 默认采样参数（temperature 0.7 / top_k 20 / top_p 0.8）、num_ctx、后端超时 50 秒、
+     开发集 dev_v1、作答脚本 run_answers.py、裁判 agnes-2.5-flash + 判定提示词（FROZEN-v5）、汇总 report_lenient.py。
+proxy.py 改动只新增 v1 函数、常量与 /x/info 字段，b0 路径不变（自检：b0(body) is body）。
+作答前先发 1 条预热请求（不计入结果），避开 p0 那次 46 秒冷启动；这只影响首题时延。
+
+94d39c336c928c85e6c9dae77183f04d09aa5e46781d0349c7b5d249ac3a378b  serve/proxy.py
+c44e9858dffd8e6e634abd5cc46bb85946c6f7d9352a1dc52548436f8b0c4103  eval/run_answers.py
+3cc819ce0214f3c67e21a59060f2431273c428ed96910459dd877c03cd73f799  data/dev/dev_v1.jsonl
+
+运行：answers-20261020-200400-v1-prompt-qwen3-4b.jsonl（450/450 成功，0 截断，P50 0.1s）；agnes 判 449 条有结果（hqa-252 无结果），hqa-322 首判超时后补判。
+汇总：py eval/compare_runs.py <p0 作答> <V1 作答>
+66d9b164c18000ade3374808160e124be883484831726093e9f8017e6f25937a  eval/compare_runs.py

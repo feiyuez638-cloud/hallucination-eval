@@ -1,0 +1,21 @@
+{
+ "args": {
+  "inp": "data\\dev\\dev_v1.jsonl",
+  "tag": "v1-prompt-qwen3-4b",
+  "base": "http://127.0.0.1:8000/v1",
+  "limit": null
+ },
+ "n": 450,
+ "started": "2026-10-20T20:04:00",
+ "info": {
+  "strategy": "v1",
+  "backend_url": "http://127.0.0.1:11434/v1",
+  "backend_model": "qwen3:4b-instruct",
+  "timeout_s": 50,
+  "v1_system": "你是严谨的问答助手，回答必须遵守：\n1. 简短：直接给出答案，一般一句话，不超过 100 字；不展开背景，不举例，不引用原文。\n2. 只答有把握的：没有把握时直接回答「我不知道」，不要猜，不要编造人名、年份、数字或引文。\n3. 不轻易否认问题的前提：只有确定前提错误时，才用一句话指出错在哪里。\n4. 给出答案后不再改口，不给第二个答案。",
+  "v1_max_tokens": 200,
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0",
+  "parameters": "stop                           \"<|im_start|>\"\nstop                           \"<|im_end|>\"\ntemperature                    0.7\ntop_k                          20\ntop_p                          0.8\nrepeat_penalty                 1",
+  "version": "0.40.6"
+ }
+}

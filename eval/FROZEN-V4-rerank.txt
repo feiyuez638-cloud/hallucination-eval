@@ -1,0 +1,87 @@
+# 冻结记录 V4 重排 2026-10-21（练习模型 qwen3:4b-instruct；对照 V3，见 FROZEN-V3-retrieval.txt）
+
+越越 2026-10-21 原话：「同意下载 GPU 方案：bge-reranker-v2-m3（2.14 GiB）、torch 2.14.1 CUDA 12.6 版（2.42 GiB）和 transformers 等小依赖；先验重排命中率，小样试答，全量前再问我」
+官方细则未发，是否允许检索未知：和 V3 一样只用于练习，官方不允许检索就整个弃用。
+所有数字都是本地代理指标，非官方成绩。
+
+## 下载与环境
+- 重排模型 BAAI/bge-reranker-v2-m3（Apache-2.0），commit 953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e，
+  只下 6 个文件到 data/models/bge-reranker-v2-m3（rag/fetch_reranker.py，2.14 GiB，日志「全部校验通过」）。
+  model.safetensors sha256 d9e3e081faff1eefb84019509b2f5558fd74c1a05a2c7db22f74174fcedb5286
+- 项目 .venv 新装：torch 2.14.1+cu126（download.pytorch.org/whl/cu126，下载 27 分钟）、transformers 5.20.2、
+  tokenizers 0.23.3、safetensors 0.8.0、sentencepiece 0.2.2、huggingface-hub 2.2.0（清华镜像）。
+- 显卡 RTX 4060 Laptop 8 GB，其他程序已占约 4.1 GB；V4 跑起来共用 7.6 GB，qwen3:4b 仍 100% 在显卡上。
+- 运行时加 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1，只读本地目录，不执行远程代码。
+
+## 重排命中率（rag/eval_retrieval.py --rerank N；SimpleQA 300 题，标准答案是否出现在前 k 段）
+| | @1 | @5 | @10 | @20 | 重排时延 P50/P95 |
+|---|---|---|---|---|---|
+| BM25（V3） | 54.0% | 68.3% | 71.3% | 73.7% | — |
+| BM25 前 20 → 重排 | 63.0% | 71.3% | 73.3% | 73.7% | 159 / 197 ms |
+| BM25 前 50 → 重排 | 64.0% | 72.7% | 74.3% | 75.7% | 405 / 503 ms |
+- 送重排的段里含答案的上限：N=20 73.7%，N=50 76.3%。N=20 时前 5 段已到上限的 97%，瓶颈是 BM25 召回。
+- 前 5 段对比 BM25：N=20 救回 11、丢掉 2（净 +9）；N=50 救回 15、丢掉 2（净 +13）。
+- 出处不含维基的 42 题：@5 42.9% → N=50 57.1%。
+- 选 N=50：多 0.25 秒/题，换前 5 段命中多 4 题。
+- 逐题：eval/runs/retrieval-wiki-bm25-rerank20-20261021-163221.jsonl、retrieval-wiki-bm25-rerank50-20261021-163610.jsonl
+
+## 策略 V4（STRATEGY=v4）
+- V3 + 只改一处：BM25 先取前 50 段（V4_N），bge-reranker-v2-m3 给「问题-（标题：段落）」打分（fp16、max_length 512），
+  留前 5 段，按重排顺序放进参考资料。系统提示、max_tokens 200、拼接格式、知识库都和 V3 相同（SYSTEMS["v4"] = V3_SYSTEM）。
+- proxy.py 把 V3 拼资料的代码抽成 _with_passages()，V3 行为不变；x_retrieved 在 V4 多一列重排分。
+- /x/info 多 v4_rerank：model、bm25_n 50、keep 5、device cuda、max_length 512。
+
+## 小样试答（同 V3 的 10 题，种子 21；未判分，人工对照）
+- 记录 eval/runs/answers-20261021-163730-v4-smoke10-qwen3-4b.jsonl，10/10 成功，时延约 0.8–1.7 秒（V3 约 0.4–1.1 秒）。
+- 8 题答案和 V3 一样（SimpleQA 2 对 4 拒答，HaluQA 3 拒答）。
+- hqa-405（误导题「垂死病中惊坐起，笑问客从何处来」）：V3 答贺知章《回乡偶书》（幻觉），V4 答元稹《闻乐天授江州司马》，与标准答案一致。
+- sqa-2374：V3 前 5 段里有答案段但答了「我不知道」；V4 重排把答案段挤出前 5，仍是「我不知道」——属于上面「丢掉 2」的一题，结果没变。
+- 拒答 7/10，与 V3 相同。
+- 全量 450 题和判分：按越越要求先问；越越原话「V4 原样跑全量 450 题，再用 agnes 免费档判分，判完和 V3 并排对比」，见下面「全量运行」。
+
+## 冻结文件 sha256（2026-10-21 16:4x）
+- serve/proxy.py              de63e7eaff0ca8e7442618ce8d5f095d5156074b2ee0e6f8cbd53478412e540f（V3 记录里的 808812a6… 已被本次修改取代）
+- eval/run_answers.py         738c5f13ddeb953183bb716f8efee5f51fb6f3e11eaa03dc96ec854da42a86fe（未改）
+- rag/rerank.py               00354d9a063e015f935f1c893228bb97577154ec0f092ecba911c5088a397a99（新）
+- rag/eval_retrieval.py       f3239832134084f0e193872d7611637c25f3c70c8db5917cdef22de786a4b8f7（加 --rerank；不加时行为同 V3 版 d6ee1b5d…）
+- rag/fetch_reranker.py       7ae32b43be64de06f56c295bce44e90b155e21ca7c4db784b10877db3957f9f6（新）
+- rag/search.py               967b75d6354dd694f8099c7c978db6bacec4898a4e000ecc340fcaaf4b62dd9c（未改）
+- rag/kb_text.py              c151f3298fbc69a63be4385f3174e77dce2c68a2d043b3b98867e20d0dd2bbe4（未改）
+- data/kb/wiki-bm25/meta.json 93b8a8999eb363b5821656465cf41e4b19fbfbbdb77c5989744859203b23b04b（未改）
+- data/dev/dev_v1.jsonl       3cc819ce0214f3c67e21a59060f2431273c428ed96910459dd877c03cd73f799（未改）
+- eval/compare_runs.py 66d9b164…、eval/report_lenient.py 5557fadf…、eval/paced_agnes.py 1641c0cc…（未改）
+
+## 启动（只在会话内跑，用完就停）
+  OLLAMA_MODELS="E:\\AI比赛\\_tools\\ollama-models" "/e/AI比赛/_tools/ollama/ollama.exe" serve
+  HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 STRATEGY=v4 .venv/Scripts/python.exe -X utf8 -m uvicorn serve.proxy:app --port 8000
+  预热用 Python 发（Git Bash 的 curl 发中文会变 GBK，代理解析报 UnicodeDecodeError）。
+
+## 全量运行（2026-10-21）
+- 越越原话：「V4 原样跑全量 450 题，再用 agnes 免费档判分，判完和 V3 并排对比」。
+- 作答：16:58 开始，1 题预热不计；450/450 成功，0 截断，P50 1.18 秒、P95 1.79 秒（V3 0.74 / 1.44 秒）。
+  /x/info：strategy v4、bm25_n 50、keep 5、cuda、digest 0edcdef34593，proxy.py 仍为上面冻结的 de63e7ea…。
+  V4 实际送进去的前 5 段与重排命中率评测的前 5 段 450/450 一致。
+  记录 eval/runs/answers-20261021-165805-v4-rerank-qwen3-4b.jsonl（sha256 06e1d834c9703314…）+ .meta.json
+- 判分：agnes-2.5-flash 免费档，`py eval/paced_agnes.py <answers> --wait 0 --gap 8`，17:07–19:28；验收 23/24 一致后开判。
+  sqa-2613 超时、hqa-249 SSL 断开各 1 次（不连续，没有 429），重跑补判成功。
+  sqa-1197、hqa-184 裁判输出被长度截断、无法解析（裁判侧问题，p0/V1/V2 也各有 1–2 题），有判定 448/450。
+  记录 eval/runs/judged-answers-20261021-165805-v4-rerank-qwen3-4b-agnes.jsonl（sha256 721fac2fec68bf87…）
+- 并排（`py eval/compare_runs.py <p0> <V1> <V2> <V3> <V4>`；本地代理指标，非官方成绩）：
+  | | V3（450） | V4（448） |
+  |---|---|---|
+  | HR（拒答算有效） | 18.4% | 18.5% |
+  | HR（拒答剔除） | 22.8% | 21.9% |
+  | 拒答 | 28% | 24% |
+  | 答对 | 250（56%） | 267（60%） |
+  | SimpleQA HR / 答对 | 10.7% / 209 | 10.0% / 221 |
+  | HaluQA HR / 答对 | 34.0% / 41 | 35.6% / 46 |
+  | Knowledge HR / 答对 | 33.3% / 25 | 27.1% / 31 |
+  | Misleading HR / 答对 | 31.7% / 10 | 36.7% / 8 |
+  | Misleading-hard HR / 答对 | 40.0% / 6 | 50.0% / 7 |
+- 只看两边都有判定的 448 题：幻觉 83 → 83（不变），答对 248 → 267（+19），拒答相应减少。
+  SimpleQA 幻觉 32 → 30；HaluQA 幻觉 51 → 53，其中 V3 拒答 → V4 幻觉 15 题，误导题两类幻觉率都升。
+- 前 5 段命中的 SimpleQA：V3 205 题答对 175（85%）→ V4 217 题答对 189（87%）；没命中的 82 题答对 32、拒答 31、幻觉 19。
+  重排救回的 15 题里：幻觉→答对 3、拒答→答对 2，拒答→幻觉 2，其余不变。
+- 结论：重排让模型更敢答——答对多 17～19 题、拒答少 4 个百分点，但幻觉数没降；
+  知识题变好，误导题变差（资料更像「能答」，模型顺着错误前提答）。
+  如果官方按「拒答算有效」计分，V3 与 V4 打平；如果答对/拒答也计分，V4 更好。下一步要针对误导题，而不是继续堆检索。

@@ -1,0 +1,22 @@
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights:   0%|          | 1/393 [00:00<00:55,  7.03it/s]Loading weights:   2%|▏         | 9/393 [00:00<00:16, 23.56it/s]Loading weights:  12%|█▏        | 49/393 [00:00<00:02, 126.90it/s]Loading weights:  17%|█▋        | 68/393 [00:00<00:02, 143.55it/s]Loading weights:  23%|██▎       | 90/393 [00:00<00:01, 162.87it/s]Loading weights:  28%|██▊       | 112/393 [00:00<00:01, 169.72it/s]Loading weights:  34%|███▎      | 132/393 [00:00<00:01, 173.37it/s]Loading weights:  39%|███▉      | 153/393 [00:01<00:01, 179.86it/s]Loading weights:  45%|████▍     | 175/393 [00:01<00:01, 183.19it/s]Loading weights:  50%|████▉     | 195/393 [00:01<00:01, 179.14it/s]Loading weights:  56%|█████▌    | 219/393 [00:01<00:00, 190.95it/s]Loading weights:  61%|██████    | 239/393 [00:01<00:00, 174.54it/s]Loading weights:  67%|██████▋   | 264/393 [00:01<00:00, 192.97it/s]Loading weights:  72%|███████▏  | 284/393 [00:01<00:00, 192.53it/s]Loading weights:  77%|███████▋  | 304/393 [00:01<00:00, 185.74it/s]Loading weights:  83%|████████▎ | 325/393 [00:01<00:00, 186.78it/s]Loading weights:  88%|████████▊ | 345/393 [00:02<00:00, 186.84it/s]Loading weights:  93%|█████████▎| 367/393 [00:02<00:00, 189.21it/s]Loading weights:  98%|█████████▊| 387/393 [00:02<00:00, 181.85it/s]Loading weights: 100%|██████████| 393/393 [00:02<00:00, 169.33it/s]
+INFO:     Started server process [58560]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:53590 - "GET /v1/models HTTP/1.1" 200 OK
+[18:28:50] 运行 eval/run_answers.py C:/Users/HONERA~1/AppData/Local/Temp/claude/D--Work-space-claude--/f913e18c-c13e-4ffe-9bf4-e329064757c4/scratchpad/v2_fix.jsonl --tag v4-v2fix-qwen3-8b
+INFO:     127.0.0.1:49672 - "GET /x/info HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49672 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49672 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49672 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49672 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49672 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49672 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49672 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49672 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49672 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+记录: E:\AI比赛\china-ai-hallucination\eval\runs\answers-20261023-182851-v4-v2fix-qwen3-8b.jsonl
+[18:31:19] 退出码 0
+[18:31:19] 作答文件 v4 v2 E:\AI比赛\china-ai-hallucination\eval\runs\answers-20261023-182851-v4-v2fix-qwen3-8b.jsonl
+[18:31:19] Ollama 已停
+[18:31:19] 全部结束

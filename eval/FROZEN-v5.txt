@@ -1,0 +1,32 @@
+# 冻结记录 v5 2026-10-20（裁判改用 agnes-2.5-flash 免费档；v1–v4 原样保留）
+
+用途：gemini-3.8-flash-high 会员道在本机代理出口（AS36352 HostPapa，美国洛杉矶 / 伊利诺伊，Clash 自动轮换）上
+反复报 `FAILED_PRECONDITION: User location is not supported`，验收停在 2/24。
+越越 17:20 定：「改用 agnes-2.5-flash 免费档当裁判，先把验收集剩下的条目补跑完，过了再判 449 题」。
+agnes 10-01 已跑 9/9 一致后 429 限流，本次 `run_judge.py resume agnes` 只补剩下 15 条。
+过关口径沿用越越 10-20 定的：24 条全对或只错一两条，再判 p0 的 449 条；不过就停。
+
+对比 v4：代码与数据零改动，只换命令行裁判名（agnes = agnes.FLASH = "agnes-2.5-flash"）。
+
+340bb3db908b465cbfc019fb3454091c2d5b795c4d9f128f5599f79c8e64a328  judge.py
+1bb747354102322cd09c46ff48bc860e08d0959ef90ce6ef08780f7e08a8020f  eval/judge_acceptance.jsonl
+232f9b8e7bda455eedbf1279adc0f4150421cad8a850fd9a4dda9f167b2bdfa8  eval/build_acceptance.py
+4fdd651e6737840e00cb9d61604cbcb4d28acb468b54ebe17cc962b6e765c134  eval/run_judge.py
+54a0b7c844323b0127af4c8b75a1e277d30c9a9b45524758859aae52d84a6b29  test_judge.py
+30a0c062cf9ee997e85d6e9c0ab0f663f5e0328065e82a78cf487e9ade1b16a1  eval/judge_runs.py
+5e97931a89d9435eb6c13ab8e8de35bf099fdd9265224dd9f12e347ef6207a49  eval/to_judge.py
+
+追加 2026-10-20 17:20：首轮补跑 10 条全一致后撞免费档 429（验收累计 19/24 全一致，剩 E3 E4 F2 F3 F4）。
+越越定「等 3 分钟后用 agnes 慢速续跑剩下 5 条，每条间隔 8 秒；还是 429 就停下告诉我；验收过了就按同样节奏判 449 题」。
+新增 eval/paced_agnes.py：只加等待 / 间隔 / 429 即停，判定仍走 run_judge.call；上面 7 个文件不动。
+90bb988dca43a3fe2c5213358125cff788f379cd45012b461cec0be04670d377  eval/paced_agnes.py
+
+追加 17:25：慢速补跑 E3 E4 F3 F4 一致；F2 调用成功但裁判输出 JSON 非法（reason 里有没转义的英文双引号，正文是 true/true，与预期一致），严格解析判无结果。
+验收 = 23/24 一致 + 1 条无结果，按越越「全对或只错一两条」（无结果按错算）通过。
+脚本原过关条件写成「24 条全有效」比越越口径严，改为「不一致 + 无结果 ≤ 2」，并改为调用成功过的条目不再调（不重抽到过关）；判定逻辑未动。
+7e38065f952533a72afb2fc8b95e083c125c54debea7c305b3a65d06622b2e01  eval/paced_agnes.py
+
+追加 18:5x：判到 328/449 连续 2 次 SSLEOFError（网络断连）自动停，越越说「重试」。
+续判改为「调用成功过的不再调」（原为「解析成功的不再调」，会把解析失败的重抽），解析失败统一交给 report_lenient.py 从原始正文补解析两个布尔值；判定逻辑未动。
+1641c0cc4078f4f8c46f6f4f093454cec4bac068890b508f78f69ada3e84e19c  eval/paced_agnes.py
+5557fadf4e94371d1a6a7ef0aaeb66e149d48ed169cb320a6e6c180e39c6532f  eval/report_lenient.py

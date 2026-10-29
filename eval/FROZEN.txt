@@ -1,0 +1,7 @@
+# 冻结记录 2026-10-01（小批量裁判验证前）
+
+340bb3db908b465cbfc019fb3454091c2d5b795c4d9f128f5599f79c8e64a328  judge.py
+1bb747354102322cd09c46ff48bc860e08d0959ef90ce6ef08780f7e08a8020f  eval/judge_acceptance.jsonl
+232f9b8e7bda455eedbf1279adc0f4150421cad8a850fd9a4dda9f167b2bdfa8  eval/build_acceptance.py
+4372f8128ab3f6bca8b47a077ac6320bd1202ba7ed094e91d6daccf57e0f7f83  eval/run_judge.py
+1253180dea71789201a08f95e4db08ffe12861e3434d7f233ae0872169020035  judge.PROMPT（提示词模板字符串）

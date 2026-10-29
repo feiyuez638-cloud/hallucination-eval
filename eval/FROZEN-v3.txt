@@ -1,0 +1,18 @@
+# 冻结记录 v3 2026-10-01（加 Gemini 会员道裁判；v1、v2 原样保留）
+
+用途：用户 2026-10-01 指定用 gemini-3.1-pro-high（agy 会员道）独立跑一轮 24 条，结果与 agnes 分开统计。
+
+对比 v2：
+- judge.py：与 v2 相同
+- eval/judge_acceptance.jsonl：与 v2 相同
+- eval/build_acceptance.py：与 v2 相同
+- eval/run_judge.py：已变更
+- test_judge.py：与 v2 相同
+- judge.PROMPT（提示词模板字符串）：与 v2 相同
+
+340bb3db908b465cbfc019fb3454091c2d5b795c4d9f128f5599f79c8e64a328  judge.py
+1bb747354102322cd09c46ff48bc860e08d0959ef90ce6ef08780f7e08a8020f  eval/judge_acceptance.jsonl
+232f9b8e7bda455eedbf1279adc0f4150421cad8a850fd9a4dda9f167b2bdfa8  eval/build_acceptance.py
+5196a3d594ace89f93dc3b7e6cdc192c9baf272382e1d26412965129f3ea4061  eval/run_judge.py
+54a0b7c844323b0127af4c8b75a1e277d30c9a9b45524758859aae52d84a6b29  test_judge.py
+1253180dea71789201a08f95e4db08ffe12861e3434d7f233ae0872169020035  judge.PROMPT（提示词模板字符串）

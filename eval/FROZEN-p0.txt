@@ -1,0 +1,22 @@
+# 冻结记录 p0 2026-10-20（练习基线；指定模型未公布，不是 BASELINE_PLAN 的 B0）
+
+用途：用本机 qwen3:4b-instruct 练手，验证「接口 → 作答落盘 → 评分」整条链路；后续练习变体都与它比较。
+指定模型公布后另建 B0，不沿用本基线的数字。
+
+配置：
+- 后端：Ollama 0.40.6 免安装版（E:/AI比赛/_tools/ollama，模型目录 E:/AI比赛/_tools/ollama-models），只在会话内运行，未注册服务或开机自启
+- 模型：qwen3:4b-instruct，digest 0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0
+- 解码：请求不传参数，用 Modelfile 默认 temperature 0.7 / top_k 20 / top_p 0.8 / repeat_penalty 1；上下文 4096（Ollama 按 8GB 显存定的默认值）
+- 策略：serve/proxy.py STRATEGY=b0，原样转发；无系统提示，只发题目一条 user 消息
+- 开发集：data/dev/dev_v1.jsonl 450 题 = Chinese-SimpleQA 300（六个一级类各 50）+ HalluQA 150（Knowledge 60 / Misleading 60 / Misleading-hard 30），种子 20261020
+- 首次运行：eval/runs/answers-20261020-131247-p0-qwen3-4b.jsonl（不覆盖；估波动另存重复运行）
+
+现场观察：冷启动首问 46 秒（模型加载），离 50 秒超时只差 4 秒；正式服务要在启动时预热。热状态约 1～8 秒/题。
+
+3a4e5363678148ad771b6f0dd412edc96f8be53ba6a51db65ccc837e603143c5  serve/proxy.py
+c44e9858dffd8e6e634abd5cc46bb85946c6f7d9352a1dc52548436f8b0c4103  eval/run_answers.py
+d6012e9ac071270fb45b972f2e360cf6ce6caa33a53fa622801c0f7f78686bf1  eval/make_dev.py
+3cc819ce0214f3c67e21a59060f2431273c428ed96910459dd877c03cd73f799  data/dev/dev_v1.jsonl
+6e0f52e6283186947192084000dab960b14ab7d890290fd6286cb0737cdb36a2  data/dev/holdout_v1.jsonl
+c626ca34be9bdd2203a45a70af9fed177d48d9f12ba10ebe9bf10f0c6b1eb484  data/external/chinese_simpleqa/chinese_simpleqa.jsonl
+c21fff0bb3cdc4a2a885930e9291ca26af1e70174ee9e7b785c300023d55ea66  data/external/halluqa/HalluQA.json

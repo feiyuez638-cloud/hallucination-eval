@@ -1,0 +1,1208 @@
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights:   2%|▏         | 9/393 [00:00<00:07, 48.68it/s]Loading weights:  11%|█▏        | 45/393 [00:00<00:01, 180.84it/s]Loading weights:  18%|█▊        | 69/393 [00:00<00:01, 201.73it/s]Loading weights:  26%|██▌       | 101/393 [00:00<00:01, 228.63it/s]Loading weights:  32%|███▏      | 126/393 [00:00<00:01, 232.06it/s]Loading weights:  40%|███▉      | 156/393 [00:00<00:00, 238.70it/s]Loading weights:  49%|████▊     | 191/393 [00:00<00:00, 270.95it/s]Loading weights:  56%|█████▌    | 219/393 [00:00<00:00, 256.51it/s]Loading weights:  63%|██████▎   | 246/393 [00:01<00:00, 242.12it/s]Loading weights:  69%|██████▉   | 273/393 [00:01<00:00, 241.92it/s]Loading weights:  76%|███████▌  | 298/393 [00:01<00:00, 240.84it/s]Loading weights:  82%|████████▏ | 323/393 [00:01<00:00, 238.94it/s]Loading weights:  89%|████████▊ | 348/393 [00:01<00:00, 227.54it/s]Loading weights:  94%|█████████▍| 371/393 [00:01<00:00, 223.53it/s]Loading weights: 100%|██████████| 393/393 [00:01<00:00, 225.87it/s]
+INFO:     Started server process [35808]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:59231 - "GET /v1/models HTTP/1.1" 200 OK
+[21:37:21] 运行 eval/run_answers.py data/dev/dev_v1.jsonl --tag v8-v1-qwen3-8b
+INFO:     127.0.0.1:59233 - "GET /x/info HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+25/450  4.97s  
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+50/450  5.21s  
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+75/450  5.6s  
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+100/450  6.41s  
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+125/450  3.52s  
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+150/450  5.7s  
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+175/450  5.53s  
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+200/450  4.68s  
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+225/450  5.94s  
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+250/450  5.98s  
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+275/450  5.35s  
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+300/450  6.24s  
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+325/450  5.32s  
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+350/450  6.21s  
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+375/450  5.43s  
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+400/450  5.01s  
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+425/450  5.86s  
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59233 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+450/450  5.58s  
+记录: E:\AI比赛\china-ai-hallucination\eval\runs\answers-20261023-213722-v8-v1-qwen3-8b.jsonl
+[22:17:42] 退出码 0
+[22:17:42] 作答文件 v1 E:\AI比赛\china-ai-hallucination\eval\runs\answers-20261023-213722-v8-v1-qwen3-8b.jsonl
+[22:17:42] 运行 eval/run_answers.py data/dev/dev_v2_new.jsonl --tag v8-v2-qwen3-8b
+INFO:     127.0.0.1:58020 - "GET /x/info HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+25/202  5.41s  
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+50/202  6.31s  
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+75/202  4.54s  
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+100/202  4.51s  
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+125/202  5.17s  
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+150/202  5.71s  
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+175/202  14.54s  
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+200/202  14.27s  
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+记录: E:\AI比赛\china-ai-hallucination\eval\runs\answers-20261023-221743-v8-v2-qwen3-8b.jsonl
+[22:40:06] 退出码 0
+[22:40:06] 作答文件 v2 E:\AI比赛\china-ai-hallucination\eval\runs\answers-20261023-221743-v8-v2-qwen3-8b.jsonl
+[22:40:07] Ollama 已停
+[22:40:07] 运行 eval/score_v2.py E:\AI比赛\china-ai-hallucination\eval\runs\answers-20261023-221743-v8-v2-qwen3-8b.jsonl
+【规则评分：本地代理指标，非官方成绩】
+全部: 已答 202  失败 0  正确 183  幻觉 18（8.9%）  过度拒答 1（0.8%，分母可答题 126）
+choice: 已答 24  失败 0  正确 20  幻觉 4（16.7%）  过度拒答 0（0.0%，分母可答题 24）
+counterfactual: 已答 30  失败 0  正确 28  幻觉 2（6.7%）  过度拒答 0（0.0%，分母可答题 30）
+easy: 已答 40  失败 0  正确 39  幻觉 1（2.5%）  过度拒答 0（0.0%，分母可答题 40）
+fictional: 已答 32  失败 0  正确 31  幻觉 1（3.1%）  过度拒答 0（—，分母可答题 0）
+future: 已答 32  失败 0  正确 27  幻觉 5（15.6%）  过度拒答 0（—，分母可答题 0）
+longctx: 已答 36  失败 0  正确 33  幻觉 3（8.3%）  过度拒答 0（0.0%，分母可答题 24）
+timely: 已答 8  失败 0  正确 5  幻觉 2（25.0%）  过度拒答 1（12.5%，分母可答题 8）
+choice/不定项选择: 已答 24  失败 0  正确 20  幻觉 4（16.7%）  过度拒答 0（0.0%，分母可答题 24）
+counterfactual/反事实设定: 已答 30  失败 0  正确 28  幻觉 2（6.7%）  过度拒答 0（0.0%，分母可答题 30）
+easy/常识: 已答 40  失败 0  正确 39  幻觉 1（2.5%）  过度拒答 0（0.0%，分母可答题 40）
+fictional/虚构实体: 已答 32  失败 0  正确 31  幻觉 1（3.1%）  过度拒答 0（—，分母可答题 0）
+future/未来事件: 已答 32  失败 0  正确 27  幻觉 5（15.6%）  过度拒答 0（—，分母可答题 0）
+longctx/中途更新: 已答 12  失败 0  正确 12  幻觉 0（0.0%）  过度拒答 0（0.0%，分母可答题 12）
+longctx/设定内: 已答 12  失败 0  正确 12  幻觉 0（0.0%）  过度拒答 0（0.0%，分母可答题 12）
+longctx/设定外: 已答 12  失败 0  正确 9  幻觉 3（25.0%）  过度拒答 0（—，分母可答题 0）
+timely/时效: 已答 8  失败 0  正确 5  幻觉 2（25.0%）  过度拒答 1（12.5%，分母可答题 8）
+[22:40:07] 退出码 0
+[22:40:07] 运行 eval/judge_runs.py E:\AI比赛\china-ai-hallucination\eval\runs\answers-20261023-213722-v8-v1-qwen3-8b.jsonl --judge gemini-flash-high --workers 3
+已判 0，本次待判 450，裁判 gemini-3.8-flash-high，并发 3
+  · gemini-3.8-flash-high     7,537 tok  (in 7,155 / out 382)   19.70s  hallucination-judge
+  · gemini-3.8-flash-high     7,637 tok  (in 7,061 / out 576)   20.73s  hallucination-judge
+  · gemini-3.8-flash-high     7,646 tok  (in 7,088 / out 558)   22.10s  hallucination-judge
+  · gemini-3.8-flash-high     7,707 tok  (in 7,108 / out 599)   20.27s  hallucination-judge
+  · gemini-3.8-flash-high     8,422 tok  (in 7,184 / out 1,238)   25.40s  hallucination-judge
+  · gemini-3.8-flash-high     7,588 tok  (in 7,039 / out 549)   16.65s  hallucination-judge
+  · gemini-3.8-flash-high         0 tok  (in 0 / out 0)   40.59s  hallucination-judge 失败
+7/450  sqa-0278  40.6s  GeminiError('agy ERROR：{\'conversation_id\': \'c7fd8791-b2c1-49eb-a3ac-dc514061714c\', \'status\': \'ERROR\', \'response\': \'{"hallucinated": false, "refused":
+  · gemini-3.8-flash-high     7,965 tok  (in 7,067 / out 898)   21.49s  hallucination-judge
+  · gemini-3.8-flash-high     8,499 tok  (in 7,049 / out 1,450)   23.29s  hallucination-judge
+  · gemini-3.8-flash-high     7,787 tok  (in 7,099 / out 688)   18.52s  hallucination-judge
+  · gemini-3.8-flash-high     7,673 tok  (in 7,090 / out 583)   14.22s  hallucination-judge
+  · gemini-3.8-flash-high     7,604 tok  (in 7,037 / out 567)   14.97s  hallucination-judge
+  · gemini-3.8-flash-high    10,755 tok  (in 7,119 / out 3,636)   42.24s  hallucination-judge
+  · gemini-3.8-flash-high     7,688 tok  (in 7,061 / out 627)   14.61s  hallucination-judge
+  · gemini-3.8-flash-high     7,636 tok  (in 7,031 / out 605)   16.96s  hallucination-judge
+  · gemini-3.8-flash-high     7,812 tok  (in 7,137 / out 675)   19.33s  hallucination-judge
+  · gemini-3.8-flash-high     7,875 tok  (in 7,084 / out 791)   17.16s  hallucination-judge
+  · gemini-3.8-flash-high     7,650 tok  (in 7,072 / out 578)   17.42s  hallucination-judge
+  · gemini-3.8-flash-high     7,747 tok  (in 7,118 / out 629)   17.03s  hallucination-judge
+  · gemini-3.8-flash-high     7,684 tok  (in 7,204 / out 480)   16.21s  hallucination-judge
+20/450  sqa-0120  16.21s  
+  · gemini-3.8-flash-high     7,744 tok  (in 7,081 / out 663)   17.40s  hallucination-judge
+  · gemini-3.8-flash-high    10,073 tok  (in 7,099 / out 2,974)   35.98s  hallucination-judge
+  · gemini-3.8-flash-high     7,617 tok  (in 7,105 / out 512)   15.91s  hallucination-judge
+  · gemini-3.8-flash-high     7,585 tok  (in 7,109 / out 476)   14.25s  hallucination-judge
+  · gemini-3.8-flash-high     7,709 tok  (in 7,077 / out 632)   15.52s  hallucination-judge
+  · gemini-3.8-flash-high    11,700 tok  (in 7,054 / out 4,646)   43.92s  hallucination-judge
+  · gemini-3.8-flash-high     7,676 tok  (in 7,068 / out 608)   17.58s  hallucination-judge
+  · gemini-3.8-flash-high     7,675 tok  (in 7,106 / out 569)   13.28s  hallucination-judge
+  · gemini-3.8-flash-high     7,652 tok  (in 7,064 / out 588)   16.47s  hallucination-judge
+  · gemini-3.8-flash-high     7,563 tok  (in 7,083 / out 480)   15.13s  hallucination-judge
+  · gemini-3.8-flash-high     7,539 tok  (in 7,053 / out 486)   20.08s  hallucination-judge
+  · gemini-3.8-flash-high     7,795 tok  (in 7,110 / out 685)   15.45s  hallucination-judge
+  · gemini-3.8-flash-high     7,666 tok  (in 7,078 / out 588)   15.93s  hallucination-judge
+  · gemini-3.8-flash-high     8,086 tok  (in 7,104 / out 982)   19.78s  hallucination-judge
+  · gemini-3.8-flash-high     7,605 tok  (in 7,050 / out 555)   15.18s  hallucination-judge
+  · gemini-3.8-flash-high     8,238 tok  (in 7,202 / out 1,036)   19.47s  hallucination-judge
+  · gemini-3.8-flash-high     7,628 tok  (in 7,083 / out 545)   14.82s  hallucination-judge
+  · gemini-3.8-flash-high     7,660 tok  (in 7,064 / out 596)   18.60s  hallucination-judge
+  · gemini-3.8-flash-high     7,657 tok  (in 7,063 / out 594)   15.61s  hallucination-judge
+  · gemini-3.8-flash-high     7,747 tok  (in 7,079 / out 668)   17.88s  hallucination-judge
+40/450  sqa-0211  17.88s  
+  · gemini-3.8-flash-high     7,550 tok  (in 7,043 / out 507)   16.46s  hallucination-judge
+  · gemini-3.8-flash-high     7,714 tok  (in 7,117 / out 597)   18.09s  hallucination-judge
+  · gemini-3.8-flash-high     7,705 tok  (in 7,035 / out 670)   16.26s  hallucination-judge
+  · gemini-3.8-flash-high     7,579 tok  (in 7,037 / out 542)   16.26s  hallucination-judge
+  · gemini-3.8-flash-high     9,321 tok  (in 7,089 / out 2,232)   28.52s  hallucination-judge
+  · gemini-3.8-flash-high     8,372 tok  (in 7,242 / out 1,130)   17.41s  hallucination-judge
+  · gemini-3.8-flash-high     7,740 tok  (in 7,066 / out 674)   17.57s  hallucination-judge
+  · gemini-3.8-flash-high     9,639 tok  (in 7,102 / out 2,537)   31.93s  hallucination-judge
+  · gemini-3.8-flash-high     7,710 tok  (in 7,087 / out 623)   16.47s  hallucination-judge
+  · gemini-3.8-flash-high     7,735 tok  (in 7,097 / out 638)   16.20s  hallucination-judge
+  · gemini-3.8-flash-high     8,342 tok  (in 7,059 / out 1,283)   20.24s  hallucination-judge
+  · gemini-3.8-flash-high     7,614 tok  (in 7,075 / out 539)   15.45s  hallucination-judge
+  · gemini-3.8-flash-high     8,310 tok  (in 7,058 / out 1,252)   20.87s  hallucination-judge
+  · gemini-3.8-flash-high     8,683 tok  (in 7,048 / out 1,635)   24.27s  hallucination-judge
+  · gemini-3.8-flash-high     8,083 tok  (in 7,110 / out 973)   17.94s  hallucination-judge
+  · gemini-3.8-flash-high    17,019 tok  (in 7,212 / out 9,807)   88.49s  hallucination-judge
+  · gemini-3.8-flash-high     7,831 tok  (in 7,197 / out 634)   18.30s  hallucination-judge
+  · gemini-3.8-flash-high     7,705 tok  (in 7,090 / out 615)   16.22s  hallucination-judge
+  · gemini-3.8-flash-high     7,648 tok  (in 7,059 / out 589)   15.11s  hallucination-judge
+  · gemini-3.8-flash-high     3,188 tok  (in 2,039 / out 1,149)   22.06s  hallucination-judge
+60/450  sqa-0339  22.06s  
+  · gemini-3.8-flash-high     7,589 tok  (in 7,074 / out 515)   14.72s  hallucination-judge
+  · gemini-3.8-flash-high     7,772 tok  (in 7,068 / out 704)   17.58s  hallucination-judge
+  · gemini-3.8-flash-high     7,625 tok  (in 7,059 / out 566)   15.60s  hallucination-judge
+  · gemini-3.8-flash-high     7,597 tok  (in 7,061 / out 536)   14.82s  hallucination-judge
+  · gemini-3.8-flash-high     7,876 tok  (in 7,121 / out 755)   17.57s  hallucination-judge
+  · gemini-3.8-flash-high     7,806 tok  (in 7,222 / out 584)   15.35s  hallucination-judge
+  · gemini-3.8-flash-high     8,465 tok  (in 7,062 / out 1,403)   20.42s  hallucination-judge
+  · gemini-3.8-flash-high     7,887 tok  (in 7,175 / out 712)   15.91s  hallucination-judge
+  · gemini-3.8-flash-high     7,492 tok  (in 7,087 / out 405)   15.85s  hallucination-judge
+  · gemini-3.8-flash-high     7,603 tok  (in 7,105 / out 498)   14.51s  hallucination-judge
+  · gemini-3.8-flash-high     7,665 tok  (in 7,098 / out 567)   14.05s  hallucination-judge
+  · gemini-3.8-flash-high     7,613 tok  (in 7,062 / out 551)   15.08s  hallucination-judge
+  · gemini-3.8-flash-high     8,320 tok  (in 7,174 / out 1,146)   18.86s  hallucination-judge
+  · gemini-3.8-flash-high    17,008 tok  (in 7,098 / out 9,910)   91.55s  hallucination-judge
+  · gemini-3.8-flash-high    20,450 tok  (in 7,172 / out 13,278)   96.13s  hallucination-judge
+  · gemini-3.8-flash-high     7,750 tok  (in 7,091 / out 659)   16.27s  hallucination-judge
+  · gemini-3.8-flash-high     3,556 tok  (in 2,990 / out 566)   17.15s  hallucination-judge
+  · gemini-3.8-flash-high    10,665 tok  (in 7,034 / out 3,631)   61.03s  hallucination-judge
+  · gemini-3.8-flash-high     2,454 tok  (in 2,123 / out 331)   14.17s  hallucination-judge
+  · gemini-3.8-flash-high     7,534 tok  (in 7,084 / out 450)   14.72s  hallucination-judge
+80/450  sqa-0394  14.72s  
+  · gemini-3.8-flash-high     7,676 tok  (in 7,085 / out 591)   16.59s  hallucination-judge
+  · gemini-3.8-flash-high     7,619 tok  (in 7,039 / out 580)   18.20s  hallucination-judge
+  · gemini-3.8-flash-high     7,973 tok  (in 7,048 / out 925)   20.29s  hallucination-judge
+  · gemini-3.8-flash-high     7,618 tok  (in 7,021 / out 597)   18.72s  hallucination-judge
+  · gemini-3.8-flash-high     7,753 tok  (in 7,062 / out 691)   15.92s  hallucination-judge
+  · gemini-3.8-flash-high     7,623 tok  (in 7,120 / out 503)   16.90s  hallucination-judge
+  · gemini-3.8-flash-high    10,291 tok  (in 7,056 / out 3,235)   37.62s  hallucination-judge
+  · gemini-3.8-flash-high     8,486 tok  (in 7,109 / out 1,377)   21.31s  hallucination-judge
+  · gemini-3.8-flash-high     2,845 tok  (in 2,145 / out 700)   16.59s  hallucination-judge
+  · gemini-3.8-flash-high     7,676 tok  (in 7,061 / out 615)   17.61s  hallucination-judge
+  · gemini-3.8-flash-high     7,674 tok  (in 7,065 / out 609)   16.26s  hallucination-judge
+  · gemini-3.8-flash-high     7,624 tok  (in 7,054 / out 570)   15.02s  hallucination-judge
+  · gemini-3.8-flash-high     7,866 tok  (in 7,183 / out 683)   16.73s  hallucination-judge
+  · gemini-3.8-flash-high     7,589 tok  (in 7,040 / out 549)   18.12s  hallucination-judge
+  · gemini-3.8-flash-high     7,559 tok  (in 7,060 / out 499)   17.37s  hallucination-judge
+  · gemini-3.8-flash-high     8,818 tok  (in 7,095 / out 1,723)   25.31s  hallucination-judge
+  · gemini-3.8-flash-high     7,715 tok  (in 7,096 / out 619)   15.61s  hallucination-judge
+  · gemini-3.8-flash-high     7,771 tok  (in 7,162 / out 609)   15.36s  hallucination-judge
+  · gemini-3.8-flash-high     7,830 tok  (in 7,160 / out 670)   18.24s  hallucination-judge
+  · gemini-3.8-flash-high     7,967 tok  (in 7,052 / out 915)   19.27s  hallucination-judge
+100/450  sqa-1038  19.27s  
+  · gemini-3.8-flash-high     7,575 tok  (in 7,040 / out 535)   17.39s  hallucination-judge
+  · gemini-3.8-flash-high    10,156 tok  (in 7,059 / out 3,097)   37.79s  hallucination-judge
+  · gemini-3.8-flash-high     7,622 tok  (in 7,058 / out 564)   15.45s  hallucination-judge
+  · gemini-3.8-flash-high         0 tok  (in 0 / out 0)  128.88s  hallucination-judge
+  · gemini-3.8-flash-high     7,687 tok  (in 7,071 / out 616)   15.67s  hallucination-judge
+  · gemini-3.8-flash-high     8,145 tok  (in 7,086 / out 1,059)   18.69s  hallucination-judge
+  · gemini-3.8-flash-high     7,538 tok  (in 7,066 / out 472)   15.09s  hallucination-judge
+  · gemini-3.8-flash-high     7,560 tok  (in 7,007 / out 553)   17.13s  hallucination-judge
+  · gemini-3.8-flash-high     7,671 tok  (in 7,056 / out 615)   17.23s  hallucination-judge
+  · gemini-3.8-flash-high         0 tok  (in 0 / out 0)  129.45s  hallucination-judge
+  · gemini-3.8-flash-high     7,677 tok  (in 7,095 / out 582)   15.45s  hallucination-judge
+  · gemini-3.8-flash-high     7,678 tok  (in 7,187 / out 491)   15.15s  hallucination-judge
+  · gemini-3.8-flash-high     7,592 tok  (in 7,073 / out 519)   17.83s  hallucination-judge
+  · gemini-3.8-flash-high    11,681 tok  (in 7,045 / out 4,636)   51.08s  hallucination-judge
+  · gemini-3.8-flash-high     7,672 tok  (in 7,087 / out 585)   15.82s  hallucination-judge
+  · gemini-3.8-flash-high     9,338 tok  (in 7,115 / out 2,223)   29.82s  hallucination-judge
+  · gemini-3.8-flash-high     7,593 tok  (in 7,085 / out 508)   17.14s  hallucination-judge
+  · gemini-3.8-flash-high     7,605 tok  (in 7,055 / out 550)   17.65s  hallucination-judge
+  · gemini-3.8-flash-high     7,626 tok  (in 7,030 / out 596)   16.70s  hallucination-judge
+  · gemini-3.8-flash-high     7,662 tok  (in 7,045 / out 617)   17.57s  hallucination-judge
+120/450  sqa-2563  17.57s  
+  · gemini-3.8-flash-high    11,562 tok  (in 7,102 / out 4,460)   49.04s  hallucination-judge
+  · gemini-3.8-flash-high     3,489 tok  (in 2,987 / out 502)   15.77s  hallucination-judge
+  · gemini-3.8-flash-high     7,660 tok  (in 7,060 / out 600)   14.93s  hallucination-judge
+  · gemini-3.8-flash-high     7,846 tok  (in 7,095 / out 751)   16.56s  hallucination-judge
+  · gemini-3.8-flash-high     7,693 tok  (in 7,089 / out 604)   16.31s  hallucination-judge
+  · gemini-3.8-flash-high     7,420 tok  (in 7,057 / out 363)   13.80s  hallucination-judge
+  · gemini-3.8-flash-high     8,361 tok  (in 7,129 / out 1,232)   21.72s  hallucination-judge
+  · gemini-3.8-flash-high     7,828 tok  (in 7,114 / out 714)   15.80s  hallucination-judge
+  · gemini-3.8-flash-high     8,688 tok  (in 7,102 / out 1,586)   23.80s  hallucination-judge
+  · gemini-3.8-flash-high     7,743 tok  (in 7,040 / out 703)   15.01s  hallucination-judge
+  · gemini-3.8-flash-high     7,821 tok  (in 7,066 / out 755)   17.66s  hallucination-judge
+  · gemini-3.8-flash-high     7,632 tok  (in 7,059 / out 573)   15.94s  hallucination-judge
+  · gemini-3.8-flash-high     7,495 tok  (in 7,028 / out 467)   14.82s  hallucination-judge
+  · gemini-3.8-flash-high     7,671 tok  (in 7,088 / out 583)   14.99s  hallucination-judge
+  · gemini-3.8-flash-high    10,527 tok  (in 7,059 / out 3,468)   41.14s  hallucination-judge
+  · gemini-3.8-flash-high     7,694 tok  (in 7,194 / out 500)   14.52s  hallucination-judge
+  · gemini-3.8-flash-high     7,542 tok  (in 7,057 / out 485)   16.06s  hallucination-judge
+  · gemini-3.8-flash-high     7,675 tok  (in 7,084 / out 591)   18.87s  hallucination-judge
+  · gemini-3.8-flash-high     7,615 tok  (in 7,123 / out 492)   16.65s  hallucination-judge
+  · gemini-3.8-flash-high    11,322 tok  (in 7,043 / out 4,279)   50.33s  hallucination-judge
+140/450  sqa-2584  50.33s  
+  · gemini-3.8-flash-high     7,558 tok  (in 7,113 / out 445)   17.43s  hallucination-judge
+  · gemini-3.8-flash-high     7,638 tok  (in 7,118 / out 520)   16.02s  hallucination-judge
+  · gemini-3.8-flash-high     2,819 tok  (in 2,138 / out 681)   16.93s  hallucination-judge
+  · gemini-3.8-flash-high     7,958 tok  (in 7,202 / out 756)   17.68s  hallucination-judge
+  · gemini-3.8-flash-high     8,251 tok  (in 7,096 / out 1,155)   20.86s  hallucination-judge
+  · gemini-3.8-flash-high     8,744 tok  (in 7,098 / out 1,646)   26.59s  hallucination-judge
+  · gemini-3.8-flash-high     7,657 tok  (in 7,053 / out 604)   15.74s  hallucination-judge
+  · gemini-3.8-flash-high         0 tok  (in 0 / out 0)  128.67s  hallucination-judge
+  · gemini-3.8-flash-high    10,210 tok  (in 7,077 / out 3,133)   37.04s  hallucination-judge
+  · gemini-3.8-flash-high     7,729 tok  (in 7,086 / out 643)   16.51s  hallucination-judge
+  · gemini-3.8-flash-high     7,748 tok  (in 7,084 / out 664)   15.91s  hallucination-judge
+  · gemini-3.8-flash-high     7,821 tok  (in 7,100 / out 721)   15.46s  hallucination-judge
+  · gemini-3.8-flash-high     7,796 tok  (in 7,146 / out 650)   17.85s  hallucination-judge
+  · gemini-3.8-flash-high     7,495 tok  (in 7,020 / out 475)   19.27s  hallucination-judge
+  · gemini-3.8-flash-high     2,682 tok  (in 2,046 / out 636)   16.64s  hallucination-judge
+  · gemini-3.8-flash-high     9,219 tok  (in 7,089 / out 2,130)   31.62s  hallucination-judge
+  · gemini-3.8-flash-high     7,768 tok  (in 7,105 / out 663)   17.70s  hallucination-judge
+  · gemini-3.8-flash-high     8,103 tok  (in 7,037 / out 1,066)   21.10s  hallucination-judge
+  · gemini-3.8-flash-high     7,741 tok  (in 7,053 / out 688)   16.37s  hallucination-judge
+  · gemini-3.8-flash-high     7,962 tok  (in 7,210 / out 752)   18.39s  hallucination-judge
+160/450  sqa-1347  18.39s  
+  · gemini-3.8-flash-high     7,681 tok  (in 7,108 / out 573)   16.62s  hallucination-judge
+  · gemini-3.8-flash-high     7,844 tok  (in 7,082 / out 762)   18.44s  hallucination-judge
+  · gemini-3.8-flash-high     7,765 tok  (in 7,133 / out 632)   17.73s  hallucination-judge
+  · gemini-3.8-flash-high     7,725 tok  (in 7,078 / out 647)   20.99s  hallucination-judge
+  · gemini-3.8-flash-high     7,662 tok  (in 7,144 / out 518)   18.19s  hallucination-judge
+  · gemini-3.8-flash-high     7,549 tok  (in 7,036 / out 513)   17.78s  hallucination-judge
+  · gemini-3.8-flash-high     7,636 tok  (in 7,067 / out 569)   22.22s  hallucination-judge
+  · gemini-3.8-flash-high     7,643 tok  (in 7,078 / out 565)   16.03s  hallucination-judge
+  · gemini-3.8-flash-high     7,655 tok  (in 7,029 / out 626)   17.22s  hallucination-judge
+  · gemini-3.8-flash-high     7,830 tok  (in 7,087 / out 743)   18.25s  hallucination-judge
+  · gemini-3.8-flash-high    13,249 tok  (in 7,101 / out 6,148)   60.40s  hallucination-judge
+  · gemini-3.8-flash-high     7,659 tok  (in 7,052 / out 607)   15.86s  hallucination-judge
+  · gemini-3.8-flash-high     7,846 tok  (in 7,165 / out 681)   17.40s  hallucination-judge
+  · gemini-3.8-flash-high     7,730 tok  (in 7,080 / out 650)   23.38s  hallucination-judge
+  · gemini-3.8-flash-high     7,956 tok  (in 7,189 / out 767)   27.54s  hallucination-judge
+  · gemini-3.8-flash-high     7,640 tok  (in 7,050 / out 590)   15.61s  hallucination-judge
+  · gemini-3.8-flash-high     7,564 tok  (in 7,069 / out 495)   15.64s  hallucination-judge
+  · gemini-3.8-flash-high    10,761 tok  (in 7,060 / out 3,701)   41.78s  hallucination-judge
+  · gemini-3.8-flash-high    14,397 tok  (in 7,128 / out 7,269)   71.47s  hallucination-judge
+  · gemini-3.8-flash-high     7,913 tok  (in 7,090 / out 823)   17.23s  hallucination-judge
+180/450  sqa-2677  17.23s  
+  · gemini-3.8-flash-high     7,723 tok  (in 7,129 / out 594)   18.31s  hallucination-judge
+  · gemini-3.8-flash-high     9,382 tok  (in 7,113 / out 2,269)   31.82s  hallucination-judge
+  · gemini-3.8-flash-high     2,660 tok  (in 2,053 / out 607)   22.88s  hallucination-judge
+  · gemini-3.8-flash-high     7,644 tok  (in 7,073 / out 571)   18.87s  hallucination-judge
+  · gemini-3.8-flash-high     7,631 tok  (in 7,052 / out 579)   24.36s  hallucination-judge
+  · gemini-3.8-flash-high     7,621 tok  (in 7,089 / out 532)   19.04s  hallucination-judge
+  · gemini-3.8-flash-high     7,806 tok  (in 7,120 / out 686)   18.18s  hallucination-judge
+  · gemini-3.8-flash-high     7,678 tok  (in 7,087 / out 591)   16.59s  hallucination-judge
+  · gemini-3.8-flash-high     7,767 tok  (in 7,129 / out 638)   18.75s  hallucination-judge
+  · gemini-3.8-flash-high     7,699 tok  (in 7,097 / out 602)   16.94s  hallucination-judge
+  · gemini-3.8-flash-high     7,534 tok  (in 7,049 / out 485)   17.45s  hallucination-judge
+  · gemini-3.8-flash-high    14,739 tok  (in 7,111 / out 7,628)   73.11s  hallucination-judge
+  · gemini-3.8-flash-high     9,648 tok  (in 7,062 / out 2,586)   33.61s  hallucination-judge
+  · gemini-3.8-flash-high     7,749 tok  (in 7,103 / out 646)   16.72s  hallucination-judge
+  · gemini-3.8-flash-high         0 tok  (in 0 / out 0)  129.76s  hallucination-judge
+  · gemini-3.8-flash-high    10,106 tok  (in 7,176 / out 2,930)   38.53s  hallucination-judge
+  · gemini-3.8-flash-high    10,460 tok  (in 7,069 / out 3,391)   36.95s  hallucination-judge
+  · gemini-3.8-flash-high     7,680 tok  (in 7,092 / out 588)   15.15s  hallucination-judge
+  · gemini-3.8-flash-high     7,565 tok  (in 7,059 / out 506)   13.76s  hallucination-judge
+  · gemini-3.8-flash-high     7,700 tok  (in 7,071 / out 629)   17.38s  hallucination-judge
+200/450  sqa-1196  17.38s  
+  · gemini-3.8-flash-high     7,719 tok  (in 7,144 / out 575)   18.51s  hallucination-judge
+  · gemini-3.8-flash-high     7,845 tok  (in 7,050 / out 795)   16.20s  hallucination-judge
+  · gemini-3.8-flash-high     8,021 tok  (in 7,191 / out 830)   18.15s  hallucination-judge
+  · gemini-3.8-flash-high     7,617 tok  (in 7,110 / out 507)   18.23s  hallucination-judge
+  · gemini-3.8-flash-high     7,721 tok  (in 7,122 / out 599)   17.10s  hallucination-judge
+  · gemini-3.8-flash-high     7,739 tok  (in 7,092 / out 647)   17.85s  hallucination-judge
+  · gemini-3.8-flash-high     7,823 tok  (in 7,175 / out 648)   16.58s  hallucination-judge
+  · gemini-3.8-flash-high     7,698 tok  (in 7,063 / out 635)   15.76s  hallucination-judge
+  · gemini-3.8-flash-high     7,715 tok  (in 7,105 / out 610)   18.04s  hallucination-judge
+  · gemini-3.8-flash-high     7,716 tok  (in 7,068 / out 648)   18.01s  hallucination-judge
+  · gemini-3.8-flash-high     7,874 tok  (in 7,080 / out 794)   19.07s  hallucination-judge
+  · gemini-3.8-flash-high     7,647 tok  (in 7,075 / out 572)   18.44s  hallucination-judge
+  · gemini-3.8-flash-high     7,819 tok  (in 7,132 / out 687)   17.43s  hallucination-judge
+  · gemini-3.8-flash-high     7,759 tok  (in 7,099 / out 660)   16.61s  hallucination-judge
+  · gemini-3.8-flash-high     7,528 tok  (in 7,060 / out 468)   28.86s  hallucination-judge
+  · gemini-3.8-flash-high     7,582 tok  (in 7,020 / out 562)   17.75s  hallucination-judge
+  · gemini-3.8-flash-high     7,707 tok  (in 7,117 / out 590)   15.81s  hallucination-judge
+  · gemini-3.8-flash-high     7,729 tok  (in 7,128 / out 601)   16.37s  hallucination-judge
+  · gemini-3.8-flash-high     7,414 tok  (in 7,048 / out 366)   12.78s  hallucination-judge
+  · gemini-3.8-flash-high     7,617 tok  (in 7,075 / out 542)   18.03s  hallucination-judge
+220/450  sqa-1540  18.03s  
+  · gemini-3.8-flash-high     3,554 tok  (in 3,032 / out 522)   18.87s  hallucination-judge
+  · gemini-3.8-flash-high     7,704 tok  (in 7,064 / out 640)   16.78s  hallucination-judge
+  · gemini-3.8-flash-high     8,539 tok  (in 7,114 / out 1,425)   20.90s  hallucination-judge
+  · gemini-3.8-flash-high     7,670 tok  (in 7,064 / out 606)   15.59s  hallucination-judge
+  · gemini-3.8-flash-high     7,671 tok  (in 7,068 / out 603)   14.89s  hallucination-judge
+  · gemini-3.8-flash-high     7,658 tok  (in 7,081 / out 577)   16.77s  hallucination-judge
+  · gemini-3.8-flash-high     7,766 tok  (in 7,267 / out 499)   15.95s  hallucination-judge
+  · gemini-3.8-flash-high     7,767 tok  (in 7,138 / out 629)   16.12s  hallucination-judge
+  · gemini-3.8-flash-high     2,748 tok  (in 2,089 / out 659)   14.47s  hallucination-judge
+  · gemini-3.8-flash-high     7,696 tok  (in 7,183 / out 513)   14.94s  hallucination-judge
+  · gemini-3.8-flash-high     7,615 tok  (in 7,077 / out 538)   17.37s  hallucination-judge
+  · gemini-3.8-flash-high     7,814 tok  (in 7,257 / out 557)   14.41s  hallucination-judge
+  · gemini-3.8-flash-high     7,829 tok  (in 7,143 / out 686)   18.17s  hallucination-judge
+  · gemini-3.8-flash-high     7,637 tok  (in 7,089 / out 548)   15.51s  hallucination-judge
+  · gemini-3.8-flash-high     7,642 tok  (in 7,074 / out 568)   16.46s  hallucination-judge
+  · gemini-3.8-flash-high     8,155 tok  (in 7,126 / out 1,029)   19.46s  hallucination-judge
+  · gemini-3.8-flash-high     7,640 tok  (in 7,173 / out 467)   13.89s  hallucination-judge
+  · gemini-3.8-flash-high     9,515 tok  (in 7,121 / out 2,394)   27.73s  hallucination-judge
+  · gemini-3.8-flash-high     2,746 tok  (in 2,116 / out 630)   19.26s  hallucination-judge
+  · gemini-3.8-flash-high     7,688 tok  (in 7,107 / out 581)   19.76s  hallucination-judge
+240/450  sqa-1534  19.76s  
+  · gemini-3.8-flash-high     7,902 tok  (in 7,123 / out 779)   18.03s  hallucination-judge
+  · gemini-3.8-flash-high     7,761 tok  (in 7,129 / out 632)   16.24s  hallucination-judge
+  · gemini-3.8-flash-high     7,679 tok  (in 7,086 / out 593)   16.27s  hallucination-judge
+  · gemini-3.8-flash-high     7,815 tok  (in 7,067 / out 748)   17.66s  hallucination-judge
+  · gemini-3.8-flash-high     7,666 tok  (in 7,072 / out 594)   18.20s  hallucination-judge
+  · gemini-3.8-flash-high     7,703 tok  (in 7,176 / out 527)   18.09s  hallucination-judge
+  · gemini-3.8-flash-high         0 tok  (in 0 / out 0)  128.69s  hallucination-judge
+  · gemini-3.8-flash-high     7,566 tok  (in 7,042 / out 524)   16.90s  hallucination-judge
+  · gemini-3.8-flash-high     7,657 tok  (in 7,079 / out 578)   17.08s  hallucination-judge
+  · gemini-3.8-flash-high     7,621 tok  (in 7,112 / out 509)   18.97s  hallucination-judge
+  · gemini-3.8-flash-high     7,619 tok  (in 7,064 / out 555)   20.73s  hallucination-judge
+  · gemini-3.8-flash-high     7,642 tok  (in 7,127 / out 515)   17.23s  hallucination-judge
+  · gemini-3.8-flash-high     2,745 tok  (in 2,071 / out 674)   20.68s  hallucination-judge
+  · gemini-3.8-flash-high     7,714 tok  (in 7,089 / out 625)   18.19s  hallucination-judge
+  · gemini-3.8-flash-high     7,805 tok  (in 7,100 / out 705)   17.29s  hallucination-judge
+  · gemini-3.8-flash-high     7,978 tok  (in 7,091 / out 887)   21.85s  hallucination-judge
+  · gemini-3.8-flash-high     7,597 tok  (in 7,043 / out 554)   18.38s  hallucination-judge
+  · gemini-3.8-flash-high     7,646 tok  (in 7,042 / out 604)   15.93s  hallucination-judge
+  · gemini-3.8-flash-high     7,576 tok  (in 7,098 / out 478)   17.80s  hallucination-judge
+  · gemini-3.8-flash-high     9,217 tok  (in 7,069 / out 2,148)   30.71s  hallucination-judge
+260/450  sqa-2142  30.71s  
+  · gemini-3.8-flash-high     7,701 tok  (in 7,101 / out 600)   17.07s  hallucination-judge
+  · gemini-3.8-flash-high     7,743 tok  (in 7,079 / out 664)   17.83s  hallucination-judge
+  · gemini-3.8-flash-high     3,042 tok  (in 2,048 / out 994)   20.83s  hallucination-judge
+  · gemini-3.8-flash-high     7,940 tok  (in 7,050 / out 890)   19.91s  hallucination-judge
+  · gemini-3.8-flash-high     7,472 tok  (in 7,071 / out 401)   15.80s  hallucination-judge
+  · gemini-3.8-flash-high     7,809 tok  (in 7,084 / out 725)   16.50s  hallucination-judge
+  · gemini-3.8-flash-high     7,823 tok  (in 7,063 / out 760)   19.13s  hallucination-judge
+  · gemini-3.8-flash-high     7,672 tok  (in 7,055 / out 617)   20.50s  hallucination-judge
+  · gemini-3.8-flash-high     7,717 tok  (in 7,078 / out 639)   19.92s  hallucination-judge
+  · gemini-3.8-flash-high     8,435 tok  (in 7,221 / out 1,214)   22.17s  hallucination-judge
+  · gemini-3.8-flash-high     7,695 tok  (in 7,126 / out 569)   17.84s  hallucination-judge
+  · gemini-3.8-flash-high     7,571 tok  (in 7,029 / out 542)   27.73s  hallucination-judge
+  · gemini-3.8-flash-high     7,715 tok  (in 7,055 / out 660)   19.51s  hallucination-judge
+  · gemini-3.8-flash-high     8,203 tok  (in 7,081 / out 1,122)   20.66s  hallucination-judge
+  · gemini-3.8-flash-high     7,478 tok  (in 7,057 / out 421)   13.88s  hallucination-judge
+  · gemini-3.8-flash-high     8,047 tok  (in 7,129 / out 918)   18.06s  hallucination-judge
+  · gemini-3.8-flash-high     7,712 tok  (in 7,070 / out 642)   17.83s  hallucination-judge
+  · gemini-3.8-flash-high     7,818 tok  (in 7,151 / out 667)   16.93s  hallucination-judge
+  · gemini-3.8-flash-high     9,071 tok  (in 7,107 / out 1,964)   27.36s  hallucination-judge
+  · gemini-3.8-flash-high     7,611 tok  (in 7,065 / out 546)   18.74s  hallucination-judge
+280/450  sqa-2218  18.74s  
+  · gemini-3.8-flash-high     7,522 tok  (in 7,095 / out 427)   13.51s  hallucination-judge
+  · gemini-3.8-flash-high     7,794 tok  (in 7,047 / out 747)   17.41s  hallucination-judge
+  · gemini-3.8-flash-high     7,678 tok  (in 7,096 / out 582)   15.89s  hallucination-judge
+  · gemini-3.8-flash-high     7,808 tok  (in 7,046 / out 762)   19.10s  hallucination-judge
+  · gemini-3.8-flash-high     8,053 tok  (in 7,050 / out 1,003)   19.05s  hallucination-judge
+  · gemini-3.8-flash-high     7,744 tok  (in 7,108 / out 636)   18.49s  hallucination-judge
+  · gemini-3.8-flash-high     7,972 tok  (in 7,211 / out 761)   17.20s  hallucination-judge
+  · gemini-3.8-flash-high     7,636 tok  (in 7,107 / out 529)   15.64s  hallucination-judge
+  · gemini-3.8-flash-high     7,562 tok  (in 7,036 / out 526)   16.02s  hallucination-judge
+  · gemini-3.8-flash-high     7,688 tok  (in 7,082 / out 606)   16.48s  hallucination-judge
+  · gemini-3.8-flash-high     7,556 tok  (in 7,105 / out 451)   17.54s  hallucination-judge
+  · gemini-3.8-flash-high     7,693 tok  (in 7,083 / out 610)   14.97s  hallucination-judge
+  · gemini-3.8-flash-high     7,711 tok  (in 7,068 / out 643)   15.88s  hallucination-judge
+  · gemini-3.8-flash-high     9,187 tok  (in 7,085 / out 2,102)   27.70s  hallucination-judge
+  · gemini-3.8-flash-high     7,791 tok  (in 7,108 / out 683)   16.65s  hallucination-judge
+  · gemini-3.8-flash-high     8,112 tok  (in 7,107 / out 1,005)   19.63s  hallucination-judge
+  · gemini-3.8-flash-high     7,610 tok  (in 7,034 / out 576)   16.66s  hallucination-judge
+  · gemini-3.8-flash-high     7,562 tok  (in 7,034 / out 528)   16.01s  hallucination-judge
+  · gemini-3.8-flash-high     7,702 tok  (in 7,073 / out 629)   17.61s  hallucination-judge
+  · gemini-3.8-flash-high     7,890 tok  (in 7,182 / out 708)   17.12s  hallucination-judge
+300/450  hqa-211  17.13s  
+  · gemini-3.8-flash-high    12,137 tok  (in 7,201 / out 4,936)   51.17s  hallucination-judge
+  · gemini-3.8-flash-high    10,533 tok  (in 7,174 / out 3,359)   45.63s  hallucination-judge
+  · gemini-3.8-flash-high     7,849 tok  (in 7,097 / out 752)   22.10s  hallucination-judge
+  · gemini-3.8-flash-high     7,744 tok  (in 7,173 / out 571)   15.70s  hallucination-judge
+  · gemini-3.8-flash-high     8,765 tok  (in 7,150 / out 1,615)   22.07s  hallucination-judge
+  · gemini-3.8-flash-high    10,104 tok  (in 7,246 / out 2,858)   33.55s  hallucination-judge
+  · gemini-3.8-flash-high     7,774 tok  (in 7,128 / out 646)   16.05s  hallucination-judge
+  · gemini-3.8-flash-high     7,634 tok  (in 7,066 / out 568)   16.46s  hallucination-judge
+  · gemini-3.8-flash-high     7,853 tok  (in 7,326 / out 527)   16.90s  hallucination-judge
+  · gemini-3.8-flash-high     7,714 tok  (in 7,130 / out 584)   15.89s  hallucination-judge
+  · gemini-3.8-flash-high    12,030 tok  (in 7,180 / out 4,850)   49.35s  hallucination-judge
+  · gemini-3.8-flash-high     2,716 tok  (in 2,246 / out 470)   13.83s  hallucination-judge
+  · gemini-3.8-flash-high     7,691 tok  (in 7,084 / out 607)   14.24s  hallucination-judge
+  · gemini-3.8-flash-high     7,722 tok  (in 7,078 / out 644)   15.86s  hallucination-judge
+  · gemini-3.8-flash-high     8,615 tok  (in 7,134 / out 1,481)   23.76s  hallucination-judge
+  · gemini-3.8-flash-high     7,859 tok  (in 7,233 / out 626)   16.91s  hallucination-judge
+  · gemini-3.8-flash-high     2,761 tok  (in 2,181 / out 580)   15.11s  hallucination-judge
+  · gemini-3.8-flash-high     7,618 tok  (in 7,036 / out 582)   15.54s  hallucination-judge
+  · gemini-3.8-flash-high     7,961 tok  (in 7,094 / out 867)   17.55s  hallucination-judge
+  · gemini-3.8-flash-high     7,579 tok  (in 7,039 / out 540)   15.17s  hallucination-judge
+320/450  hqa-349  15.17s  
+  · gemini-3.8-flash-high     7,854 tok  (in 7,122 / out 732)   17.17s  hallucination-judge
+  · gemini-3.8-flash-high     8,016 tok  (in 7,144 / out 872)   19.39s  hallucination-judge
+  · gemini-3.8-flash-high     7,801 tok  (in 7,208 / out 593)   14.90s  hallucination-judge
+  · gemini-3.8-flash-high     7,949 tok  (in 7,213 / out 736)   17.99s  hallucination-judge
+  · gemini-3.8-flash-high     2,714 tok  (in 2,140 / out 574)   15.55s  hallucination-judge
+  · gemini-3.8-flash-high     9,275 tok  (in 8,509 / out 766)   16.46s  hallucination-judge
+  · gemini-3.8-flash-high     8,080 tok  (in 7,164 / out 916)   19.27s  hallucination-judge
+  · gemini-3.8-flash-high    11,553 tok  (in 7,076 / out 4,477)   46.54s  hallucination-judge
+  · gemini-3.8-flash-high     7,977 tok  (in 7,219 / out 758)   15.45s  hallucination-judge
+  · gemini-3.8-flash-high     8,004 tok  (in 7,159 / out 845)   17.12s  hallucination-judge
+  · gemini-3.8-flash-high     7,750 tok  (in 7,178 / out 572)   16.52s  hallucination-judge
+  · gemini-3.8-flash-high     8,510 tok  (in 7,226 / out 1,284)   21.13s  hallucination-judge
+  · gemini-3.8-flash-high     7,583 tok  (in 7,036 / out 547)   16.67s  hallucination-judge
+  · gemini-3.8-flash-high     7,902 tok  (in 7,171 / out 731)   18.10s  hallucination-judge
+  · gemini-3.8-flash-high     7,842 tok  (in 7,055 / out 787)   17.88s  hallucination-judge
+  · gemini-3.8-flash-high     7,803 tok  (in 7,193 / out 610)   17.05s  hallucination-judge
+  · gemini-3.8-flash-high     7,648 tok  (in 7,163 / out 485)   14.70s  hallucination-judge
+  · gemini-3.8-flash-high     8,272 tok  (in 7,197 / out 1,075)   20.53s  hallucination-judge
+  · gemini-3.8-flash-high     8,040 tok  (in 7,323 / out 717)   16.78s  hallucination-judge
+  · gemini-3.8-flash-high     7,851 tok  (in 7,304 / out 547)   18.69s  hallucination-judge
+340/450  hqa-318  18.69s  
+  · gemini-3.8-flash-high     7,844 tok  (in 7,149 / out 695)   18.06s  hallucination-judge
+  · gemini-3.8-flash-high     7,851 tok  (in 7,177 / out 674)   16.98s  hallucination-judge
+  · gemini-3.8-flash-high     9,299 tok  (in 8,530 / out 769)   16.89s  hallucination-judge
+  · gemini-3.8-flash-high     3,149 tok  (in 2,130 / out 1,019)   18.53s  hallucination-judge
+  · gemini-3.8-flash-high     7,709 tok  (in 7,118 / out 591)   15.07s  hallucination-judge
+  · gemini-3.8-flash-high     7,765 tok  (in 7,080 / out 685)   16.74s  hallucination-judge
+  · gemini-3.8-flash-high     7,681 tok  (in 7,134 / out 547)   15.56s  hallucination-judge
+  · gemini-3.8-flash-high     3,743 tok  (in 3,083 / out 660)   14.51s  hallucination-judge
+  · gemini-3.8-flash-high     7,884 tok  (in 7,106 / out 778)   16.17s  hallucination-judge
+  · gemini-3.8-flash-high         0 tok  (in 0 / out 0)  129.18s  hallucination-judge
+  · gemini-3.8-flash-high    14,009 tok  (in 7,063 / out 6,946)   63.12s  hallucination-judge
+  · gemini-3.8-flash-high     7,783 tok  (in 7,151 / out 632)   14.60s  hallucination-judge
+  · gemini-3.8-flash-high     9,149 tok  (in 7,248 / out 1,901)   25.35s  hallucination-judge
+  · gemini-3.8-flash-high     8,141 tok  (in 7,221 / out 920)   19.07s  hallucination-judge
+  · gemini-3.8-flash-high     7,814 tok  (in 7,236 / out 578)   14.99s  hallucination-judge
+  · gemini-3.8-flash-high     7,897 tok  (in 7,250 / out 647)   18.33s  hallucination-judge
+  · gemini-3.8-flash-high     7,634 tok  (in 7,096 / out 538)   16.32s  hallucination-judge
+  · gemini-3.8-flash-high     7,901 tok  (in 7,091 / out 810)   16.54s  hallucination-judge
+  · gemini-3.8-flash-high     7,821 tok  (in 7,182 / out 639)   13.91s  hallucination-judge
+  · gemini-3.8-flash-high     9,956 tok  (in 7,114 / out 2,842)   31.39s  hallucination-judge
+360/450  hqa-281  31.39s  
+  · gemini-3.8-flash-high     3,308 tok  (in 2,596 / out 712)   17.87s  hallucination-judge
+  · gemini-3.8-flash-high     7,590 tok  (in 7,032 / out 558)   16.89s  hallucination-judge
+  · gemini-3.8-flash-high     7,941 tok  (in 7,073 / out 868)   18.86s  hallucination-judge
+  · gemini-3.8-flash-high     7,725 tok  (in 7,085 / out 640)   16.22s  hallucination-judge
+  · gemini-3.8-flash-high     8,414 tok  (in 7,043 / out 1,371)   22.83s  hallucination-judge
+  · gemini-3.8-flash-high     7,586 tok  (in 7,051 / out 535)   17.34s  hallucination-judge
+  · gemini-3.8-flash-high    10,535 tok  (in 7,101 / out 3,434)   41.40s  hallucination-judge
+  · gemini-3.8-flash-high     8,994 tok  (in 7,141 / out 1,853)   26.66s  hallucination-judge
+  · gemini-3.8-flash-high     7,845 tok  (in 7,120 / out 725)   17.41s  hallucination-judge
+  · gemini-3.8-flash-high     7,725 tok  (in 7,097 / out 628)   15.97s  hallucination-judge
+  · gemini-3.8-flash-high     7,873 tok  (in 7,124 / out 749)   18.92s  hallucination-judge
+  · gemini-3.8-flash-high     8,170 tok  (in 7,079 / out 1,091)   21.59s  hallucination-judge
+  · gemini-3.8-flash-high     7,949 tok  (in 7,113 / out 836)   19.85s  hallucination-judge
+  · gemini-3.8-flash-high     7,940 tok  (in 7,070 / out 870)   17.15s  hallucination-judge
+  · gemini-3.8-flash-high     7,881 tok  (in 7,098 / out 783)   20.00s  hallucination-judge
+  · gemini-3.8-flash-high     8,765 tok  (in 7,122 / out 1,643)   25.85s  hallucination-judge
+  · gemini-3.8-flash-high     9,102 tok  (in 7,070 / out 2,032)   28.76s  hallucination-judge
+  · gemini-3.8-flash-high     9,785 tok  (in 7,085 / out 2,700)   33.17s  hallucination-judge
+  · gemini-3.8-flash-high     8,167 tok  (in 7,070 / out 1,097)   22.28s  hallucination-judge
+  · gemini-3.8-flash-high     7,986 tok  (in 7,095 / out 891)   19.48s  hallucination-judge
+380/450  hqa-147  19.48s  
+  · gemini-3.8-flash-high     7,813 tok  (in 7,076 / out 737)   19.17s  hallucination-judge
+  · gemini-3.8-flash-high     7,982 tok  (in 7,148 / out 834)   21.59s  hallucination-judge
+  · gemini-3.8-flash-high     7,825 tok  (in 7,061 / out 764)   20.69s  hallucination-judge
+  · gemini-3.8-flash-high     7,792 tok  (in 7,149 / out 643)   19.78s  hallucination-judge
+  · gemini-3.8-flash-high     7,812 tok  (in 7,130 / out 682)   16.61s  hallucination-judge
+  · gemini-3.8-flash-high     8,063 tok  (in 7,137 / out 926)   19.17s  hallucination-judge
+  · gemini-3.8-flash-high    11,346 tok  (in 7,056 / out 4,290)   40.50s  hallucination-judge
+  · gemini-3.8-flash-high     7,712 tok  (in 7,070 / out 642)   18.54s  hallucination-judge
+  · gemini-3.8-flash-high     7,722 tok  (in 7,039 / out 683)   17.65s  hallucination-judge
+  · gemini-3.8-flash-high    15,855 tok  (in 7,055 / out 8,800)   80.56s  hallucination-judge
+  · gemini-3.8-flash-high    11,599 tok  (in 7,060 / out 4,539)   47.37s  hallucination-judge
+  · gemini-3.8-flash-high     7,850 tok  (in 7,112 / out 738)   15.05s  hallucination-judge
+  · gemini-3.8-flash-high     7,805 tok  (in 7,064 / out 741)   17.42s  hallucination-judge
+  · gemini-3.8-flash-high     9,788 tok  (in 7,260 / out 2,528)   33.06s  hallucination-judge
+  · gemini-3.8-flash-high     8,138 tok  (in 7,073 / out 1,065)   18.80s  hallucination-judge
+  · gemini-3.8-flash-high    21,717 tok  (in 7,063 / out 14,654)  126.59s  hallucination-judge
+  · gemini-3.8-flash-high     7,767 tok  (in 7,053 / out 714)   17.05s  hallucination-judge
+  · gemini-3.8-flash-high    14,071 tok  (in 7,139 / out 6,932)   69.16s  hallucination-judge
+  · gemini-3.8-flash-high         0 tok  (in 0 / out 0)  127.50s  hallucination-judge
+  · gemini-3.8-flash-high     7,775 tok  (in 7,042 / out 733)   17.36s  hallucination-judge
+400/450  hqa-130  17.36s  
+  · gemini-3.8-flash-high     7,790 tok  (in 7,049 / out 741)   16.23s  hallucination-judge
+  · gemini-3.8-flash-high     8,689 tok  (in 7,063 / out 1,626)   24.23s  hallucination-judge
+  · gemini-3.8-flash-high     8,625 tok  (in 7,149 / out 1,476)   23.42s  hallucination-judge
+  · gemini-3.8-flash-high    15,102 tok  (in 7,111 / out 7,991)   73.82s  hallucination-judge
+  · gemini-3.8-flash-high     7,639 tok  (in 7,067 / out 572)   14.48s  hallucination-judge
+  · gemini-3.8-flash-high     7,770 tok  (in 7,045 / out 725)   15.70s  hallucination-judge
+  · gemini-3.8-flash-high    18,101 tok  (in 7,069 / out 11,032)   96.84s  hallucination-judge
+  · gemini-3.8-flash-high     7,846 tok  (in 7,053 / out 793)   16.71s  hallucination-judge
+  · gemini-3.8-flash-high     8,458 tok  (in 7,080 / out 1,378)   24.13s  hallucination-judge
+  · gemini-3.8-flash-high    14,030 tok  (in 7,095 / out 6,935)   75.61s  hallucination-judge
+  · gemini-3.8-flash-high     7,707 tok  (in 7,056 / out 651)   16.84s  hallucination-judge
+  · gemini-3.8-flash-high    14,287 tok  (in 7,055 / out 7,232)   67.33s  hallucination-judge
+  · gemini-3.8-flash-high         0 tok  (in 0 / out 0)  127.26s  hallucination-judge
+  · gemini-3.8-flash-high     7,883 tok  (in 7,057 / out 826)   18.57s  hallucination-judge
+  · gemini-3.8-flash-high     7,710 tok  (in 7,072 / out 638)   16.03s  hallucination-judge
+  · gemini-3.8-flash-high     7,688 tok  (in 7,079 / out 609)   17.08s  hallucination-judge
+  · gemini-3.8-flash-high     7,765 tok  (in 7,042 / out 723)   15.72s  hallucination-judge
+  · gemini-3.8-flash-high     9,485 tok  (in 7,112 / out 2,373)   28.67s  hallucination-judge
+  · gemini-3.8-flash-high         0 tok  (in 0 / out 0)  128.28s  hallucination-judge
+  · gemini-3.8-flash-high     8,525 tok  (in 7,366 / out 1,159)   20.33s  hallucination-judge
+420/450  hqa-386  20.33s  
+  · gemini-3.8-flash-high    17,220 tok  (in 7,130 / out 10,090)   92.42s  hallucination-judge
+  · gemini-3.8-flash-high     9,273 tok  (in 7,189 / out 2,084)   29.46s  hallucination-judge
+  · gemini-3.8-flash-high     7,966 tok  (in 7,187 / out 779)   16.05s  hallucination-judge
+  · gemini-3.8-flash-high     7,819 tok  (in 7,126 / out 693)   17.58s  hallucination-judge
+  · gemini-3.8-flash-high     8,041 tok  (in 7,190 / out 851)   18.81s  hallucination-judge
+  · gemini-3.8-flash-high     8,561 tok  (in 7,146 / out 1,415)   21.70s  hallucination-judge
+  · gemini-3.8-flash-high     9,152 tok  (in 7,144 / out 2,008)   24.25s  hallucination-judge
+  · gemini-3.8-flash-high    10,553 tok  (in 7,268 / out 3,285)   35.42s  hallucination-judge
+  · gemini-3.8-flash-high     7,666 tok  (in 7,049 / out 617)   16.99s  hallucination-judge
+  · gemini-3.8-flash-high     7,914 tok  (in 7,152 / out 762)   18.57s  hallucination-judge
+  · gemini-3.8-flash-high     7,837 tok  (in 7,081 / out 756)   19.19s  hallucination-judge
+  · gemini-3.8-flash-high     7,796 tok  (in 7,193 / out 603)   16.63s  hallucination-judge
+  · gemini-3.8-flash-high     7,830 tok  (in 7,114 / out 716)   15.75s  hallucination-judge
+  · gemini-3.8-flash-high     8,164 tok  (in 7,351 / out 813)   15.95s  hallucination-judge
+  · gemini-3.8-flash-high     8,090 tok  (in 7,248 / out 842)   18.98s  hallucination-judge
+  · gemini-3.8-flash-high     7,798 tok  (in 7,081 / out 717)   17.47s  hallucination-judge
+  · gemini-3.8-flash-high     8,773 tok  (in 7,091 / out 1,682)   25.49s  hallucination-judge
+  · gemini-3.8-flash-high     7,997 tok  (in 7,286 / out 711)   16.76s  hallucination-judge
+  · gemini-3.8-flash-high     8,108 tok  (in 7,383 / out 725)   16.70s  hallucination-judge
+  · gemini-3.8-flash-high     7,958 tok  (in 7,234 / out 724)   16.54s  hallucination-judge
+440/450  hqa-407  16.54s  
+  · gemini-3.8-flash-high     7,893 tok  (in 7,127 / out 766)   15.36s  hallucination-judge
+  · gemini-3.8-flash-high     8,303 tok  (in 7,103 / out 1,200)   19.43s  hallucination-judge
+  · gemini-3.8-flash-high     7,781 tok  (in 7,113 / out 668)   15.79s  hallucination-judge
+  · gemini-3.8-flash-high     7,870 tok  (in 7,159 / out 711)   17.12s  hallucination-judge
+  · gemini-3.8-flash-high         0 tok  (in 0 / out 0)  127.77s  hallucination-judge
+  · gemini-3.8-flash-high     9,669 tok  (in 7,226 / out 2,443)   27.68s  hallucination-judge
+  · gemini-3.8-flash-high     7,856 tok  (in 7,136 / out 720)   18.34s  hallucination-judge
+  · gemini-3.8-flash-high     7,880 tok  (in 7,200 / out 680)   19.07s  hallucination-judge
+  · gemini-3.8-flash-high     7,792 tok  (in 7,139 / out 653)   16.51s  hallucination-judge
+  · gemini-3.8-flash-high    11,512 tok  (in 7,321 / out 4,191)   44.81s  hallucination-judge
+记录: E:\AI比赛\china-ai-hallucination\eval\runs\judged-answers-20261023-213722-v8-v1-qwen3-8b-gemini-flash-high.jsonl
+【LLM 裁判：本地代理指标，非官方成绩】
+作答 450  作答失败 0  已判 439
+全部: n=439  幻觉 119  拒答 35  HR(拒答算有效) 27.1%  HR(拒答剔除) 28.2%
+chinese_simpleqa: n=294  幻觉 48  拒答 24  HR(拒答算有效) 16.3%  HR(拒答剔除) 16.3%
+halluqa: n=145  幻觉 71  拒答 11  HR(拒答算有效) 49.0%  HR(拒答剔除) 52.2%
+chinese_simpleqa/中华文化: n=49  幻觉 10  拒答 5  HR(拒答算有效) 20.4%  HR(拒答剔除) 22.7%
+chinese_simpleqa/人文与社会科学: n=49  幻觉 9  拒答 2  HR(拒答算有效) 18.4%  HR(拒答剔除) 19.1%
+chinese_simpleqa/工程、技术与应用科学: n=48  幻觉 9  拒答 7  HR(拒答算有效) 18.8%  HR(拒答剔除) 19.5%
+chinese_simpleqa/生活、艺术与文化: n=49  幻觉 6  拒答 3  HR(拒答算有效) 12.2%  HR(拒答剔除) 13.0%
+chinese_simpleqa/社会: n=49  幻觉 7  拒答 1  HR(拒答算有效) 14.3%  HR(拒答剔除) 14.6%
+chinese_simpleqa/自然与自然科学: n=50  幻觉 7  拒答 6  HR(拒答算有效) 14.0%  HR(拒答剔除) 9.1%
+halluqa/Knowledge: n=59  幻觉 26  拒答 1  HR(拒答算有效) 44.1%  HR(拒答剔除) 43.1%
+halluqa/Misleading: n=57  幻觉 24  拒答 9  HR(拒答算有效) 42.1%  HR(拒答剔除) 50.0%
+halluqa/Misleading-hard: n=29  幻觉 21  拒答 1  HR(拒答算有效) 72.4%  HR(拒答剔除) 75.0%
+两向口径：幻觉率 119/439 = 27.1%  过度拒答率 20/353 = 5.7%（分母为可答题）
+[23:41:01] 退出码 0
+[23:41:01] 全部结束

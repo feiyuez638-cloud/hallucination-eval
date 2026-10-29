@@ -1,0 +1,38 @@
+{
+ "args": {
+  "inp": "data/dev/dev_v1.jsonl",
+  "tag": "v4-v1-qwen3-8b",
+  "base": "http://127.0.0.1:8000/v1",
+  "limit": null
+ },
+ "n": 450,
+ "started": "2026-10-22T22:59:40",
+ "info": {
+  "strategy": "v4",
+  "backend_url": "http://127.0.0.1:11434/v1",
+  "backend_model": "qwen3:8b",
+  "timeout_s": 50,
+  "no_think": true,
+  "v4_system": "你是严谨的问答助手，回答必须遵守：\n1. 简短：直接给出答案，一般一句话，不超过 100 字；不展开背景，不举例，不引用原文。\n2. 只在对问题完全没有印象时才回答「我不知道」；有印象就直接给出答案，不要额外编造人名、年份、数字或引文。\n3. 不轻易否认问题的前提：只有确定前提错误时，才用一句话指出错在哪里。\n4. 给出答案后不再改口，不给第二个答案。\n5. 问题前面附有检索到的参考资料，可能相关也可能无关：资料里有答案时以资料为准；资料里没有时按第 2 条处理。",
+  "v4_max_tokens": 200,
+  "v3_retrieval": {
+   "kb": "wiki-bm25",
+   "k": 5,
+   "passages": 3591580,
+   "built": "2026-10-21 13:36:50",
+   "source": "HF wikimedia/wikipedia 20231101.zh",
+   "k1": 1.2,
+   "b": 0.75
+  },
+  "v4_rerank": {
+   "model": "BAAI/bge-reranker-v2-m3",
+   "bm25_n": 50,
+   "keep": 5,
+   "device": "cuda",
+   "max_length": 512
+  },
+  "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+  "parameters": "repeat_penalty                 1\nstop                           \"<|im_start|>\"\nstop                           \"<|im_end|>\"\ntemperature                    0.6\ntop_k                          20\ntop_p                          0.95",
+  "version": "0.40.6"
+ }
+}
