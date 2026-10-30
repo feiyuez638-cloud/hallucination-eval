@@ -39,13 +39,48 @@ python scripts/make_figures.py
 
 第一条打印报告里的全部表格数字（只用标准库），第二条重画 `report/figures/` 下的 4 张图。两者只读 `eval/runs/` 里已有的作答与裁判判定，**不调用任何模型或付费 API，不需要 GPU**。
 
+## 用 SQL 复现
+
+把开发集、作答和裁判逐条判定导入 SQLite（只用标准库），再用纯 SQL 重算报告表 1～3 的核心数字，包括各版本两种口径的 HR、答对、拒答率、分题型结果、V6/V7 离线回放和 V3→V4 配对转移表，并与 Python 结果逐项比对：
+
+```bash
+python scripts/build_sqlite.py
+```
+
+```bash
+python scripts/check_sql.py --print
+```
+
+第一条生成 `sql/hallucination.sqlite`，包含 `questions`、`runs`、`answers`、`judgments`、`gate_v6` 五张表，字段含版本、题型和标签；这个文件不进仓库，可以用任何 SQLite 客户端打开查询。第二条会自己在临时目录重建一份库，执行 [`sql/metrics.sql`](sql/metrics.sql) 并打印每段查询的结果，并与 `reproduce_metrics.py --json` 的输出逐项比对，当前结果是 521 项全部一致。`metrics.sql` 末尾另有 8 条分析型查询，每条都在注释里写明它回答什么问题，用到了窗口函数（LAG / RANK / NTILE / ROW_NUMBER）、CTE 和自连接。几个例子：
+
+- 每个题型里幻觉率最低的版本，是不是答对最多的版本？
+- 回答越长，越容易被判幻觉吗？
+- 相邻版本的配对差异里，有多少题回答一字未改、只是裁判换了判法？
+
+装了 sqlite3 命令行工具的话，也可以直接执行：`sqlite3 sql/hallucination.sqlite < sql/metrics.sql`。
+
+## 裁判一致性
+
+同一份裁判输入被不同裁判、或同一裁判判过多次的重叠样本，全部取自已有记录，不需要新增调用：
+
+- agnes × gemini-flash 跨裁判，188 条：`hallucinated` 的 κ = 0.78 [0.59, 0.91]，`refused` 的 κ = 0.97。
+- agnes 自己再判一次，423 对：κ = 0.68。gemini-flash 再判一次，417 对：κ = 0.99。
+
+不一致样本的原因归类，以及下一步的人工复核 rubric 和抽样方案，见 [docs/裁判一致性分析.md](docs/裁判一致性分析.md)。
+
+```bash
+python scripts/judge_agreement.py
+```
+
 重新跑模型推理（作答、检索、裁判）需要本地 Ollama、维基知识库（约 4.5 GB，`rag/fetch_wiki.py` + `rag/build_kb.py` 构建）、重排模型和裁判 API，这些都不在仓库里。
 
 ## 目录结构
 
 ```
 report/                 评测报告与插图
-scripts/                reproduce_metrics.py（重算全部数字）、make_figures.py（画图）
+scripts/                reproduce_metrics.py（重算全部数字）、make_figures.py（画图）、
+                        judge_agreement.py（裁判一致性）、build_sqlite.py / check_sql.py（建库、SQL 与 Python 比对）
+sql/metrics.sql         用 SQL 重算表 1～3 + 8 条分析型查询
 data/external/          公开数据集原文：Chinese SimpleQA、HalluQA
 data/dev/               开发集 dev_v1（450 题）、留出集 holdout_v1（3000 题，未使用）、各小样
 eval/runs/              每版作答记录、裁判逐条判定（含原始响应）、检索命中记录
@@ -57,6 +92,7 @@ rag/                    维基 BM25 建库、检索、bge 重排
 serve/proxy.py          OpenAI 格式代理，各版本策略（STRATEGY=v1…）都在这里
 docs/实验日志.md         原始逐版实验日志（原样保留）
 docs/外审意见.md         对报告与脚本的审稿意见及修改记录
+docs/裁判一致性分析.md    跨裁判 / 同裁判重测的一致率与 κ、不一致样本归因、人工复核 rubric 与抽样方案
 ```
 
 ## 指标口径
