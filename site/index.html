@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="中文大模型幻觉评测作品展示：用 LLM 裁判逐版评测 Qwen3-4B / 8B 的提示约束、维基检索、重排与拦截，所有数字可一键重算。">
+<title>中文大模型幻觉评测 · 作品展示</title>
+<script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+<style>
+:root{
+  --bg:#f7f6f2; --surface:#ffffff; --surface-2:#f0efea; --text:#1b1d21; --muted:#545a66; --line:#dcdad3;
+  --accent:#1f5fbf; --accent-soft:#e3ecfa; --good:#17724a; --good-soft:#dff1e8; --bad:#a8461c; --bad-soft:#fbe7dc;
+  --warn:#7a5a00; --warn-soft:#f8efd2; --focus:#1f5fbf; --fig:#fcfcfa;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#121417; --surface:#1b1e23; --surface-2:#23272e; --text:#e9eaed; --muted:#a6adb9; --line:#333842;
+    --accent:#8db7ff; --accent-soft:#1e2c44; --good:#6fd3a2; --good-soft:#173328; --bad:#ffa47a; --bad-soft:#3a2219;
+    --warn:#f1cf6b; --warn-soft:#352c12; --focus:#8db7ff; --fig:#fcfcfa;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121417; --surface:#1b1e23; --surface-2:#23272e; --text:#e9eaed; --muted:#a6adb9; --line:#333842;
+  --accent:#8db7ff; --accent-soft:#1e2c44; --good:#6fd3a2; --good-soft:#173328; --bad:#ffa47a; --bad-soft:#3a2219;
+  --warn:#f1cf6b; --warn-soft:#352c12; --focus:#8db7ff; --fig:#fcfcfa;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);
+  font:16px/1.65 system-ui,-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",sans-serif;
+  font-variant-numeric:tabular-nums}
+a{color:var(--accent);text-underline-offset:2px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:4px}
+code{font:0.9em/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--surface-2);padding:.1em .35em;border-radius:4px;overflow-wrap:anywhere}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--surface);color:var(--text);padding:8px 12px;z-index:10}
+.skip:focus{left:16px;top:8px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:14px;font-size:.875rem;color:var(--muted)}
+.top nav{display:flex;flex-wrap:wrap;gap:4px 14px}
+.toggle{flex:none;font:inherit;color:var(--text);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px 12px;cursor:pointer}
+.toggle[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent)}
+
+/* 首屏 */
+.hero{padding:14px 0 8px}
+.hero h1{font-size:clamp(1.45rem,4.6vw,2.2rem);line-height:1.25;margin:.2em 0 .15em;letter-spacing:.01em}
+.hero .sub{margin:0 0 12px;color:var(--muted);font-size:clamp(.95rem,2.6vw,1.1rem)}
+.flow{list-style:none;margin:0;padding:0;display:grid;gap:10px;grid-template-columns:1fr}
+@media (min-width:760px){.flow{grid-template-columns:1fr 1fr 1.25fr}}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+.step h2{font-size:.8rem;font-weight:700;letter-spacing:.08em;color:var(--accent);margin:0 0 2px}
+.step p{margin:0;font-size:.94rem;line-height:1.55}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;margin:4px 0 0}
+.stats div{min-width:0}
+.stats dt{font-size:.8rem;color:var(--muted);line-height:1.35}
+.stats dd{margin:0;font-size:1.2rem;font-weight:700;line-height:1.3}
+.stats .wide{grid-column:1/-1}
+.stats small{font-size:.78rem;font-weight:400;color:var(--muted)}
+.caveat{margin:10px 0 0;font-size:.84rem;color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0}
+.btn{display:inline-block;text-decoration:none;font-weight:600;font-size:.92rem;padding:7px 14px;border-radius:8px;border:1px solid var(--accent);color:var(--accent);background:var(--surface)}
+.btn.primary{background:var(--accent);color:var(--bg)}
+
+/* 正文 */
+main section{padding:30px 0 6px;border-top:1px solid var(--line);margin-top:22px}
+main h2{font-size:1.35rem;margin:0 0 4px}
+.lede{margin:0 0 16px;color:var(--muted)}
+.tl{list-style:none;margin:0;padding:0;position:relative}
+.tl::before{content:"";position:absolute;left:21px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl li{position:relative;display:grid;grid-template-columns:44px 1fr;gap:12px;padding:0 0 16px}
+.ver{position:relative;z-index:1;width:44px;height:30px;border-radius:8px;display:grid;place-items:center;font-weight:700;font-size:.86rem;background:var(--surface);border:1px solid var(--line)}
+.tl .base .ver{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.tl h3{font-size:1rem;margin:2px 0 2px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px}
+.tl p{margin:0}
+.tag{font-size:.74rem;font-weight:600;padding:1px 8px;border-radius:999px;white-space:nowrap}
+.tag.good{background:var(--good-soft);color:var(--good)}
+.tag.bad{background:var(--bad-soft);color:var(--bad)}
+.tag.warn{background:var(--warn-soft);color:var(--warn)}
+.tag.base{background:var(--accent-soft);color:var(--accent)}
+.tag.plain{background:var(--surface-2);color:var(--muted)}
+.tl .sep{padding:4px 0 10px 56px;color:var(--muted);font-size:.86rem;font-weight:600}
+.k{font-weight:700}
+.figs{display:grid;gap:18px;grid-template-columns:1fr}
+@media (min-width:860px){.figs{grid-template-columns:1fr 1fr}.figs .full{grid-column:1/-1}}
+figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px}
+figure img{display:block;width:100%;height:auto;background:var(--fig);border-radius:6px}
+figcaption{font-size:.88rem;color:var(--muted);margin-top:8px}
+.cards{display:grid;gap:14px;grid-template-columns:1fr}
+@media (min-width:760px){.cards{grid-template-columns:1fr 1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.card h3{margin:0 0 6px;font-size:1.02rem}
+.card p,.card ul{margin:0 0 6px}
+.card ul{padding-left:1.2em}
+.limits{margin:0;padding-left:1.3em}
+.limits li{margin:0 0 8px}
+.links{display:grid;gap:10px;grid-template-columns:1fr;list-style:none;margin:0 0 14px;padding:0}
+@media (min-width:640px){.links{grid-template-columns:1fr 1fr}}
+.links a{display:block;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px;text-decoration:none}
+.links a span{display:block;color:var(--muted);font-size:.84rem}
+.links a strong{color:var(--accent)}
+pre{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;overflow-x:auto;margin:0 0 8px}
+pre code{background:none;padding:0;overflow-wrap:normal}
+.note{font-size:.86rem;color:var(--muted)}
+footer{border-top:1px solid var(--line);margin-top:28px;padding:16px 0 32px;font-size:.84rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+@media print{.toggle,.skip,.cta{display:none}body{background:#fff;color:#000}main section{break-inside:avoid}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+<header class="wrap">
+  <div class="top">
+    <nav aria-label="页内导航">
+      <a href="#timeline">时间线</a><a href="#figures">图</a><a href="#methods">方法</a><a href="#limits">局限</a><a href="#links">报告与代码</a>
+    </nav>
+    <button type="button" class="toggle" id="theme" aria-pressed="false">深色模式</button>
+  </div>
+  <div class="hero">
+    <h1>中文大模型幻觉评测</h1>
+    <p class="sub">Qwen3-4B / 8B 的提示约束、维基检索与拦截实验：一个人完成评测集、指标、裁判、统计检验与复现</p>
+    <ol class="flow">
+      <li class="step">
+        <h2>做了什么</h2>
+        <p>从 Chinese SimpleQA 与 HalluQA 分层抽 <span class="k" data-k="dev.n">450</span> 题中文开发集，从原样作答（p0）出发，逐版加提示约束、维基检索、重排、前提核查、门控与规则拦截（V1～V7，Qwen3-4B），再迁移到 Qwen3-8B（V8）。</p>
+      </li>
+      <li class="step">
+        <h2>怎么评</h2>
+        <p>LLM 裁判只依据标准答案给「幻觉 / 拒答」两个标签；每版同时报两种幻觉率（HR）口径和答对数，相邻版本做配对 McNemar 检验并做多重比较校正。</p>
+      </li>
+      <li class="step">
+        <h2>结果（Qwen3-4B，p0 → 基线 V4）</h2>
+        <dl class="stats">
+          <div><dt>幻觉率（拒答算有效）</dt><dd><span data-k="p0.hr">72.5%</span> → <span data-k="V4.hr">18.5%</span></dd></div>
+          <div><dt>答对题数</dt><dd><span data-k="p0.ok">121</span> → <span data-k="V4.ok">267</span></dd></div>
+          <div class="wide"><dt>最大的一步：加维基检索（V2 → V3，配对）</dt><dd>幻觉 <span data-k="pair.V2->V3.hal_a">206</span> → <span data-k="pair.V2->V3.hal_b">83</span>，答对 <span data-k="pair.V2->V3.ok_a">138</span> → <span data-k="pair.V2->V3.ok_b">249</span> <small>（均 <span data-k="pair.V2->V3.p_hal">p&lt;0.001</span>）</small></dd></div>
+        </dl>
+      </li>
+    </ol>
+    <p class="caveat">所有数字都是本地 LLM 裁判给出的代理指标（单裁判、单次采样、开发集），不是官方成绩；由 <code>scripts/reproduce_metrics.py</code> 从已有判定一键重算。</p>
+    <div class="cta">
+      <a class="btn primary" href="../report/大模型幻觉评测报告.md">读完整报告</a>
+      <a class="btn" href="../report/Hallucination-Evaluation-Report.md" hreflang="en">English report</a>
+      <a class="btn" href="#links">代码与复现</a>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <section id="timeline" aria-labelledby="h-timeline">
+    <h2 id="h-timeline">实验时间线</h2>
+    <p class="lede">每版只改一处、事先写下假设和判据。HR 未注明时为「拒答算有效」口径；V6、V7 用 V4 的判定离线回放。</p>
+    <ol class="tl">
+      <li><span class="ver">p0</span><div>
+        <h3>原样作答 <span class="tag plain">起点</span></h3>
+        <p>HR <span class="k" data-k="p0.hr">72.5%</span>，答对 <span class="k" data-k="p0.ok">121</span>；几乎不拒答（拒答率 <span data-k="p0.ref_rate">2.7%</span>），长回答里在正确核心旁夹带编造的年份、人名。</p></div></li>
+      <li><span class="ver">V1</span><div>
+        <h3>系统提示约束 + 限长 <span class="tag warn">拒答换幻觉</span></h3>
+        <p>HR 降到 <span class="k" data-k="V1.hr">19.4%</span>，但拒答率 <span class="k" data-k="V1.ref_rate">65.7%</span>，答对反降到 <span class="k" data-k="V1.ok">72</span>。只看「拒答算有效」口径会把它误读成大进步。</p></div></li>
+      <li><span class="ver">V2</span><div>
+        <h3>放宽拒答条件 <span class="tag warn">拒答换幻觉</span></h3>
+        <p>答对回到 <span class="k" data-k="V2.ok">138</span>，幻觉也涨回 <span class="k" data-k="V2.hal">206</span>（HR <span data-k="V2.hr">45.9%</span>）：只改提示词，只能在拒答和幻觉之间二选一。</p></div></li>
+      <li><span class="ver">V3</span><div>
+        <h3>+ 维基 BM25 检索 <span class="tag good">有效</span></h3>
+        <p>相邻版本里唯一让幻觉减少、答对增加且都显著的一步：配对幻觉 <span class="k" data-k="pair.V2->V3.hal_a">206</span> → <span class="k" data-k="pair.V2->V3.hal_b">83</span>（<span data-k="pair.V2->V3.p_hal">p&lt;0.001</span>），答对 <span class="k" data-k="pair.V2->V3.ok_a">138</span> → <span class="k" data-k="pair.V2->V3.ok_b">249</span>（<span data-k="pair.V2->V3.p_ok">p&lt;0.001</span>）。</p></div></li>
+      <li class="base"><span class="ver">V4</span><div>
+        <h3>+ bge 重排 <span class="tag base">选为基线</span></h3>
+        <p>幻觉持平（只 V3 幻觉 <span data-k="pair.V3->V4.only_a_hal">38</span> / 只 V4 幻觉 <span data-k="pair.V3->V4.only_b_hal">38</span>），答对 <span data-k="pair.V3->V4.ok_a">248</span> → <span class="k" data-k="pair.V3->V4.ok_b">267</span>（<span data-k="pair.V3->V4.p_ok">p=0.018</span>，Holm 校正后 <span data-k="pair.V3->V4.holm_ok">p=0.092</span>，只算倾向）。HR <span class="k" data-k="V4.hr">18.5%</span>，拒答剔除口径 <span class="k" data-k="V4.hr_ex">21.9%</span>。</p></div></li>
+      <li><span class="ver">V5</span><div>
+        <h3>「先查问题有没有错」提示 <span class="tag bad">未过判据</span></h3>
+        <p>配对幻觉 <span data-k="pair.V4->V5.hal_a">82</span> → <span class="k" data-k="pair.V4->V5.hal_b">151</span>，SimpleQA 的 HR <span data-k="V4.SimpleQA.hr">10.0%</span> → <span class="k" data-k="V5.SimpleQA.hr">26.8%</span>：泛化的挑错指令传染到了正常题。</p></div></li>
+      <li><span class="ver">V6</span><div>
+        <h3>模型自判门控（离线回放） <span class="tag bad">未过判据</span></h3>
+        <p>拦住 <span class="k" data-k="V6.blocked">19</span> 个幻觉，却误拒 <span class="k" data-k="V6.false_refuse">67</span> 道答对题；SimpleQA 触发 <span data-k="V6.sqa_trig">73</span>/<span data-k="dev.SimpleQA">300</span>，触发与否和会不会幻觉基本无关。</p></div></li>
+      <li><span class="ver">V7</span><div>
+        <h3>关键词规则拦截（离线回放） <span class="tag bad">未过判据</span></h3>
+        <p>拦住 <span class="k" data-k="V7.blocked">14</span> 个、误拒 <span class="k" data-k="V7.false_refuse">7</span> 个，区分力明显好于 V6，但「拼诗」「星座」类规则会误伤正常题。</p></div></li>
+      <li class="sep" aria-hidden="true">换模型、换裁判（下面只在 Qwen3-8B 内部比较）</li>
+      <li><span class="ver">V8</span><div>
+        <h3>迁移到 Qwen3-8B + 两条窄题型提示 <span class="tag warn">样本内有效</span></h3>
+        <p>原样 <span data-k="b0-8B.hr">67.9%</span> → V4 同配置 <span data-k="V4-8B.hr">29.5%</span> → V8 <span class="k" data-k="V8-8B.hr">27.1%</span>；配对幻觉 <span data-k="pair.V4-8B->V8-8B.hal_a">129</span> → <span data-k="pair.V4-8B->V8-8B.hal_b">117</span>（<span data-k="pair.V4-8B->V8-8B.p_hal">p=0.036</span>，Holm 校正后 <span data-k="pair.V4-8B->V8-8B.holm_hal">p=0.143</span>）。改善集中在误导题（配对 <span data-k="gpair.V4-8B->V8-8B.Misleading.only_a">10</span> 题修好、<span data-k="gpair.V4-8B->V8-8B.Misleading.only_b">0</span> 题变坏，<span data-k="gpair.V4-8B->V8-8B.Misleading.p">p=0.002</span>），但提示是照同一开发集的错例写的，要在留出集上确认。</p></div></li>
+    </ol>
+  </section>
+
+  <section id="figures" aria-labelledby="h-figures">
+    <h2 id="h-figures">图</h2>
+    <p class="lede">图由 <code>scripts/make_figures.py</code> 从同一份重算结果生成，点图可看原图。</p>
+    <div class="figs">
+      <figure class="full">
+        <a href="../report/figures/fig1_versions.png" title="查看原图"><img src="../report/figures/fig1_versions.png" width="1760" height="672" alt="两幅柱状图。左：Qwen3-4B 各版本两种口径的幻觉率，V1 和 V3、V4 最低；右：各版本答对、只拒答、幻觉的题数构成，V1 的低幻觉率主要来自大量拒答，V4 答对最多。"></a>
+        <figcaption>Qwen3-4B 各版本：两种口径的 HR（左），答对 / 只拒答 / 幻觉构成（右）。V1 的 HR 只有 <span data-k="V1.hr">19.4%</span>，但答对只有 <span data-k="V1.ok">72</span> 题。</figcaption>
+      </figure>
+      <figure>
+        <a href="../report/figures/fig2_by_type.png" title="查看原图"><img src="../report/figures/fig2_by_type.png" width="1280" height="704" alt="折线图：四个题型在各版本的幻觉率。检索之后 SimpleQA 明显下降，HalluQA 的三类题始终更高，V5 让所有题型都回升。" loading="lazy"></a>
+        <figcaption>分题型 HR：检索压住了 SimpleQA（V4 为 <span data-k="V4.SimpleQA.hr">10.0%</span>），误导题仍是短板（V4 Misleading-hard 为 <span data-k="V4.Misleading-hard.hr">50.0%</span>）。</figcaption>
+      </figure>
+      <figure>
+        <a href="../report/figures/fig3_gate_replay.png" title="查看原图"><img src="../report/figures/fig3_gate_replay.png" width="1120" height="576" alt="横向柱状图：V6 门控与 V7 规则各自拦住的幻觉数和误拒的答对题数。V6 误拒远多于拦住的幻觉，V7 两者都较少。" loading="lazy"></a>
+        <figcaption>拒答式拦截的收益与代价：V6 拦 <span data-k="V6.blocked">19</span> 误拒 <span data-k="V6.false_refuse">67</span>，V7 拦 <span data-k="V7.blocked">14</span> 误拒 <span data-k="V7.false_refuse">7</span>。</figcaption>
+      </figure>
+      <figure class="full">
+        <a href="../report/figures/fig4_wiki_split.png" title="查看原图"><img src="../report/figures/fig4_wiki_split.png" width="1120" height="608" alt="分组柱状图：SimpleQA 按题目出处是否含维基分组，V2、V3、V4 三个版本的答对率。两组都随检索上升，但出处含维基的题升得更多。" loading="lazy"></a>
+        <figcaption>检索收益偏乐观：知识库是维基，V2 → V4 的 SimpleQA 答对率，出处含维基的题 <span data-k="wiki.V2.wiki.ok_rate">38.1%</span> → <span data-k="wiki.V4.wiki.ok_rate">79.0%</span>，不含维基的题 <span data-k="wiki.V2.nonwiki.ok_rate">14.3%</span> → <span data-k="wiki.V4.nonwiki.ok_rate">42.9%</span>。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="methods" aria-labelledby="h-methods">
+    <h2 id="h-methods">方法亮点</h2>
+    <p class="lede">重点不在把某个数字做低，而在让每个数字经得起追问。</p>
+    <div class="cards">
+      <article class="card">
+        <h3>两种 HR 口径 + 答对数</h3>
+        <p>「拒答算有效」口径下<span data-r="全拒答可得 0%">全拒答可得 0%</span>，会奖励过度拒答；「拒答剔除」口径只看模型敢答的题，但有选择效应。所以三个数一起报：V1 的 HR 是 <span data-k="V1.hr">19.4%</span>，拒答剔除口径却是 <span data-k="V1.hr_ex">53.2%</span>，答对从 <span data-k="p0.ok">121</span> 掉到 <span data-k="V1.ok">72</span>。</p>
+      </article>
+      <article class="card">
+        <h3>配对检验与多重比较</h3>
+        <p>相邻版本只用两边都有判定的题，做精确 McNemar 检验；全文 <span data-k="holm.m">14</span> 个检验做 Holm 校正后，V3→V4 的答对增加（<span data-k="pair.V3->V4.p_ok">p=0.018</span> → <span data-k="pair.V3->V4.holm_ok">p=0.092</span>）和 V8 的幻觉减少（<span data-k="pair.V4-8B->V8-8B.p_hal">p=0.036</span> → <span data-k="pair.V4-8B->V8-8B.holm_hal">p=0.143</span>）不再显著，报告里如实降级为「倾向」。</p>
+      </article>
+      <article class="card">
+        <h3>裁判验收与一致性</h3>
+        <ul>
+          <li>上线前用 <span data-k="acc.n">24</span> 条人工标注的验收集（<span data-r="六类各 4 条">六类各 4</span> 条）验收，有结果的全对；但一致率的 <span data-r="95% Wilson 区间下界">95%</span> Wilson 下界只有 <span data-k="acc.lb">86.2%</span>，报告里不夸大。</li>
+          <li>从已有记录里找「一字不差的同一份输入被判过多次」的样本，零新增调用：跨裁判 <span data-k="ja.cross.n">188</span> 条，幻觉标签 κ = <span data-k="ja.cross.hal.k">0.78</span>（<span data-k="ja.cross.hal.ci">0.59–0.91</span>）；agnes 重测 <span data-k="ja.agnes.n">423</span> 对 κ = <span data-k="ja.agnes.hal.k">0.68</span>，gemini-flash 重测 <span data-k="ja.flash.n">417</span> 对 κ = <span data-k="ja.flash.hal.k">0.99</span>。</li>
+          <li>裁判噪声已混进配对结论：V3→V4 幻觉不一致的 <span data-k="pair.V3->V4.disc_hal">76</span> 题里，<span data-r="有 13 题回答一字未改">13</span> 题回答一字未改，只是裁判换了判法。</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>SQL 复现</h3>
+        <p>把开发集、作答和裁判逐条判定导入 SQLite（五张表），用纯 SQL 重算报告三张主表、离线回放和配对转移表，与 Python 输出逐项比对：<span data-k="sql.n">521</span> 项，一致 <span class="k" data-k="sql.ok">521</span> 项。另有 <span data-r="末尾另有 8 条分析型查询">8</span> 条分析型查询，用到窗口函数、CTE 和自连接。</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="limits" aria-labelledby="h-limits">
+    <h2 id="h-limits">局限</h2>
+    <ol class="limits">
+      <li><strong>只是代理指标。</strong>单个 LLM 裁判、每题只采样一次、只在开发集上；<span data-r="其余 3000 题放进留出集">3000</span> 题留出集一直没用。</li>
+      <li><strong>检索收益偏乐观。</strong>知识库是中文维基，SimpleQA <span data-k="dev.SimpleQA">300</span> 题里 <span data-k="wiki.sqa_n">258</span> 题的出处就含维基；出处不含维基的题，检索前 <span data-r="检索前 5 段命中率只有 42.9%">5</span> 段命中率只有 <span data-k="ret.bm25.nonwiki5">42.9%</span>（含维基的 <span data-k="ret.bm25.wiki5">72.5%</span>）。</li>
+      <li><strong>裁判有双向噪声。</strong>SimpleQA 上用规则交叉核对和人工抽查过，估计每版几到十几条误判；HalluQA（误导题）上没有独立核对，误导题结论噪声更大。</li>
+      <li><strong>4B 与 8B 用了不同裁判</strong>，两组数字不能横比。</li>
+      <li><strong>设计参考了开发集错例。</strong>V5、V7、V8 的提示或规则是看过同一开发集的错例后写的，V8 的改善属于样本内结果。</li>
+    </ol>
+  </section>
+
+  <section id="links" aria-labelledby="h-links">
+    <h2 id="h-links">报告与代码</h2>
+    <ul class="links">
+      <li><a href="../report/大模型幻觉评测报告.md"><strong>完整报告（中文）</strong><span>指标定义、逐版说明、错误归因、局限与下一步</span></a></li>
+      <li><a href="../report/Hallucination-Evaluation-Report.md" hreflang="en"><strong>Full report (English)</strong><span>英文版，数字与中文版一致</span></a></li>
+      <li><a href="../README.md"><strong>README</strong><span>仓库首页、目录结构、复现方法</span></a></li>
+      <li><a href="../scripts/reproduce_metrics.py"><strong>reproduce_metrics.py</strong><span>一条命令重算报告全部数字，只用标准库</span></a></li>
+      <li><a href="../sql/metrics.sql"><strong>metrics.sql</strong><span>SQL 重算与分析型查询</span></a></li>
+      <li><a href="../docs/裁判一致性分析.md"><strong>裁判一致性分析</strong><span>κ、不一致样本归因、人工复核方案</span></a></li>
+      <li><a href="../docs/外审意见.md"><strong>外审意见</strong><span>对报告与脚本的审稿意见和修改记录</span></a></li>
+      <li><a href="../docs/一页纸摘要.md"><strong>一页纸摘要</strong><span>可打印，附在简历后</span></a></li>
+    </ul>
+    <p>在仓库根目录运行（不调用任何模型或付费 API，不需要 GPU）：</p>
+<pre><code>python scripts/reproduce_metrics.py
+python scripts/check_sql.py
+python scripts/judge_agreement.py
+python scripts/check_site_numbers.py</code></pre>
+    <p class="note">本页为纯静态单文件，本地双击即可打开；链接到的 Markdown 在本地打开时显示为原文。</p>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p>页面上每个数字都标注了来源，由 <code>scripts/check_site_numbers.py</code> 与 <code>reproduce_metrics.py</code>、<code>judge_agreement.py</code>、<code>check_sql.py</code> 的输出或报告原文逐项核对。</p>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById("theme"), mq=window.matchMedia("(prefers-color-scheme: dark)");
+  function dark(){return root.dataset.theme ? root.dataset.theme==="dark" : mq.matches}
+  function sync(){btn.setAttribute("aria-pressed", dark() ? "true" : "false")}
+  btn.addEventListener("click", function(){
+    root.dataset.theme = dark() ? "light" : "dark";
+    try{localStorage.setItem("theme", root.dataset.theme)}catch(e){}
+    sync();
+  });
+  if(mq.addEventListener) mq.addEventListener("change", sync);
+  sync();
+})();
+</script>
+</body>
+</html>

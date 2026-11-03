@@ -1,8 +1,12 @@
 # 中文大模型幻觉评测：Qwen3-4B / 8B 的提示约束、检索与拦截
 
+**中文** | [English](README.en.md)
+
+> 🖥️ **作品展示页：[`site/index.html`](site/index.html)**：纯静态单文件、无需构建，克隆仓库后本地双击即可在浏览器打开；页面上每个数字都由 `python scripts/check_site_numbers.py` 与脚本输出逐项核对。打印用的一页纸摘要见 [docs/一页纸摘要.md](docs/一页纸摘要.md)。
+
 在 450 题中文开发集（Chinese SimpleQA + HalluQA）上，用 LLM 裁判逐版评测 Qwen3-4B / 8B 的幻觉率：从原样作答的 p0 出发，逐版对比提示约束、维基检索、重排、前提核查、门控和规则拦截（V1～V7），并分析哪些改动有效、为什么。
 
-📄 **完整报告：[report/大模型幻觉评测报告.md](report/大模型幻觉评测报告.md)**
+📄 **完整报告：[report/大模型幻觉评测报告.md](report/大模型幻觉评测报告.md)** · [English version](report/Hallucination-Evaluation-Report.md)
 
 ## 关键结果
 
@@ -38,6 +42,12 @@ python scripts/make_figures.py
 ```
 
 第一条打印报告里的全部表格数字（只用标准库），第二条重画 `report/figures/` 下的 4 张图。两者只读 `eval/runs/` 里已有的作答与裁判判定，**不调用任何模型或付费 API，不需要 GPU**。
+
+```bash
+python scripts/check_site_numbers.py
+```
+
+这条把展示页上的每个数字与 `reproduce_metrics.py`、`judge_agreement.py`、`check_sql.py` 的输出逐项核对，并检查页面上没有未标注来源的数字、本地链接都存在；英文报告、英文 README 和一页纸摘要里的每个数字也都必须在中文报告 / README 里出现过。
 
 ## 用 SQL 复现
 
@@ -77,9 +87,11 @@ python scripts/judge_agreement.py
 ## 目录结构
 
 ```
-report/                 评测报告与插图
+site/index.html         作品展示页（纯静态单文件，本地双击打开）
+report/                 评测报告（中文原版 + 英文版）与插图
 scripts/                reproduce_metrics.py（重算全部数字）、make_figures.py（画图）、
-                        judge_agreement.py（裁判一致性）、build_sqlite.py / check_sql.py（建库、SQL 与 Python 比对）
+                        judge_agreement.py（裁判一致性）、build_sqlite.py / check_sql.py（建库、SQL 与 Python 比对）、
+                        check_site_numbers.py（展示页与译文数字核对）
 sql/metrics.sql         用 SQL 重算表 1～3 + 8 条分析型查询
 data/external/          公开数据集原文：Chinese SimpleQA、HalluQA
 data/dev/               开发集 dev_v1（450 题）、留出集 holdout_v1（3000 题，未使用）、各小样
@@ -93,6 +105,8 @@ serve/proxy.py          OpenAI 格式代理，各版本策略（STRATEGY=v1…�
 docs/实验日志.md         原始逐版实验日志（原样保留）
 docs/外审意见.md         对报告与脚本的审稿意见及修改记录
 docs/裁判一致性分析.md    跨裁判 / 同裁判重测的一致率与 κ、不一致样本归因、人工复核 rubric 与抽样方案
+docs/面试准备.md         面试准备
+docs/一页纸摘要.md       可打印的一页纸摘要
 ```
 
 ## 指标口径
