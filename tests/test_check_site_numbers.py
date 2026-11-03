@@ -10,7 +10,7 @@ def test_full_check_passes():
     assert p.returncode == 0, p.stdout[-2000:] + p.stderr[-2000:]
     assert "全部一致。" in p.stdout
     for name in ("analysis/稳健性分析.md", "docs/en/deep-dive-qa.md", "slides/project-talk.en.md", "docs/复现指南.md"):
-        assert name in p.stdout
+        assert name in p.stdout.replace("\\", "/")
 
 
 def test_facts_keys():
