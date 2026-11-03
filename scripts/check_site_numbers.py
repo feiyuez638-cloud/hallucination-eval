@@ -20,7 +20,14 @@
   题号、Marp 图片尺寸、列表序号、「1 分钟版」这类结构性数字先去掉再查；
 - 本地链接和图片必须存在；40 问恰好 40 题、幻灯片不超过 12 页、讲解稿含 Mermaid 图。
 analysis/badcase画廊.md 是脚本输出，回答原文里的数字不在报告里，所以改为重新运行 analysis/badcase_gallery.py
-生成一份并逐字比对。以上新文件和画廊都不许出现邮箱、手机号这类联系方式。
+生成一份并逐字比对；analysis/稳健性分析.md 同理，重新运行 analysis/robustness.py 逐字比对。
+
+英文面试材料（docs/en/interview-script.md、docs/en/deep-dive-qa.md、slides/project-talk.en.md）规则同中文面试材料，
+但允许的来源是中文报告 + analysis/稳健性分析.md（后者已逐字核对为脚本输出）；另查 20 问恰好 20 题、英文幻灯片不超过 12 页、
+讲解稿含 1 分钟与 3 分钟两版。
+docs/复现指南.md：去掉代码块、行内代码与结构性编号后，数字必须出现在中文报告、README.md 或稳健性分析里；
+其中每个 `文件:行号` 引用后面必须跟一个 `代码片段`，片段必须原样出现在那个文件的那一行（行号漂移时报错）。
+以上新文件和两份生成文件都不许出现邮箱、手机号这类联系方式。
 
 只用标准库，不调用任何模型或 API。
 """
@@ -38,8 +45,18 @@ DERIVED_DOCS = [ROOT / "report/Hallucination-Evaluation-Report.md", ROOT / "READ
 REPORT = ZH[0]
 INTERVIEW_DOCS = [ROOT / "docs/面试讲解稿.md", ROOT / "docs/项目深挖40问.md", ROOT / "slides/项目讲解.md"]
 GALLERY, GALLERY_SCRIPT = ROOT / "analysis/badcase画廊.md", ROOT / "analysis/badcase_gallery.py"
+ROBUST, ROBUST_SCRIPT = ROOT / "analysis/稳健性分析.md", ROOT / "analysis/robustness.py"
+GENERATED = [(GALLERY, GALLERY_SCRIPT), (ROBUST, ROBUST_SCRIPT)]
+EN_DOCS = [ROOT / "docs/en/interview-script.md", ROOT / "docs/en/deep-dive-qa.md", ROOT / "slides/project-talk.en.md"]
+GUIDE = ROOT / "docs/复现指南.md"
 # 结构性数字：问题编号、Marp 图片尺寸、有序列表序号、讲稿时长 / 题数 / 页数、图号、章节号
 STRUCT = re.compile(r"Q\d+|\b[wh]:\d+|^\s*\d+\.\s|\d+\s*分钟|\d+\s*问|\d+\s*页|图\s*\d+|§\d+(?:\.\d+)*", re.M)
+# 英文材料的结构性数字：问题编号、Marp 图片尺寸、有序列表序号、「1-minute」这类时长、图号、章节号、「Slide 3」
+STRUCT_EN = re.compile(r"Q\d+|\b[wh]:\d+|^\s*\d+\.\s|\b\d+-minute\b|\b\d+\s*minutes?\b|\bFigure\s*\d+|"
+                       r"§\d+(?:\.\d+)*|\b[Ss]lide\s*\d+", re.M)
+CODE = re.compile(r"```.*?```|`[^`\n]*`", re.S)
+LINEREF = re.compile(r"`([\w./\-]+\.(?:py|sql)):(\d+)`")
+LINEREF_SNIP = re.compile(r"`([\w./\-]+\.(?:py|sql)):(\d+)`\s*\|\s*`([^`\n]+)`")
 PCT = re.compile(r"\d+(?:\.\d+)?%")
 PVAL = re.compile(r"p\s*[=<]\s*\d+(?:\.\d+)?")
 CONTACT = re.compile(r"[\w.+-]+@[\w-]+\.[\w.]+|(?<!\d)1[3-9]\d{9}(?!\d)|微信|wechat|QQ\s*[:：]?\s*\d", re.I)
@@ -155,6 +172,71 @@ def facts():
     return F
 
 
+def strict_doc_issues(p, src_nums, src_flat, struct=STRUCT, src_name="中文报告"):
+    """面试材料的核对：去掉结构性编号后每个数字都要在来源里出现，百分数与 p 值连符号一起原样出现，本地链接存在。
+    返回 (问题列表, 数字个数, 结构性编号个数)。"""
+    rel = p.relative_to(ROOT) if p.is_relative_to(ROOT) else p
+    if not p.exists():
+        return [f"{rel} 不存在"], 0, 0
+    raw = p.read_text(encoding="utf-8")
+    text = re.sub(r"\A---\n.*?\n---\n", "", raw, flags=re.S)  # Marp 头部（样式里的字号不是指标）
+    n_struct = len(struct.findall(text))
+    body = struct.sub(" ", text)
+    nums = NUM.findall(body)
+    bad = [f"{rel}：数字 {x!r} 没有出现在{src_name}里" for x in sorted({x for x in nums if x not in src_nums})]
+    toks = PCT.findall(body) + PVAL.findall(body)
+    bad += [f"{rel}：{t!r} 没有原样出现在{src_name}里" for t in sorted({t for t in toks if re.sub(r"\s+", "", t) not in src_flat})]
+    bad += link_issues(p, raw)
+    return bad, len(nums) + len(toks), n_struct
+
+
+def link_issues(p, raw):
+    rel = p.relative_to(ROOT) if p.is_relative_to(ROOT) else p
+    out = []
+    for ref in MDLINK.findall(raw):
+        path = ref.split("#")[0]
+        if path and not ref.startswith(("http://", "https://")) and not (p.parent / unquote(path)).exists():
+            out.append(f"{rel}：链接目标不存在：{ref}")
+    return out
+
+
+def guide_issues(p, src_nums):
+    """复现指南：数字来自报告 / README / 稳健性分析；每个「文件:行号」引用都带代码片段，片段原样出现在那一行。
+    返回 (问题列表, 数字个数, 行号引用个数)。"""
+    rel = p.relative_to(ROOT) if p.is_relative_to(ROOT) else p
+    if not p.exists():
+        return [f"{rel} 不存在"], 0, 0
+    raw = p.read_text(encoding="utf-8")
+    bad = link_issues(p, raw)
+    snips = {(m.start(), m.group(1), int(m.group(2)), m.group(3)) for m in LINEREF_SNIP.finditer(raw)}
+    starts = {x[0] for x in snips}
+    for m in LINEREF.finditer(raw):
+        if m.start() not in starts:
+            bad.append(f"{rel}：引用 {m.group(1)}:{m.group(2)} 后面缺少 `代码片段`")
+    for _, f, ln, snip in sorted(snips, key=lambda x: x[0]):
+        fp = ROOT / f
+        lines = fp.read_text(encoding="utf-8").splitlines() if fp.exists() else []
+        if not fp.exists():
+            bad.append(f"{rel}：引用的文件不存在：{f}")
+        elif not 1 <= ln <= len(lines) or snip.replace("\\|", "|") not in lines[ln - 1]:
+            got = lines[ln - 1].strip()[:80] if 1 <= ln <= len(lines) else "（超出文件行数）"
+            bad.append(f"{rel}：{f}:{ln} 不含片段 {snip!r}（该行现在是：{got}）")
+    body = STRUCT.sub(" ", CODE.sub(" ", raw))
+    nums = NUM.findall(body)
+    bad += [f"{rel}：数字 {x!r} 没有出现在中文报告 / README / 稳健性分析里" for x in sorted({x for x in nums if x not in src_nums})]
+    return bad, len(nums), len(snips)
+
+
+def regen_issues(target, script):
+    """重新运行生成脚本，与已提交的文件逐字比对。返回 (问题列表, 是否一致)。"""
+    tmp = Path(tempfile.mkdtemp()) / target.name
+    r = subprocess.run([sys.executable, str(script), "--out", str(tmp)], capture_output=True, text=True, encoding="utf-8")
+    if r.returncode:
+        return [f"{script.name} 运行失败：{(r.stderr or r.stdout).strip()[-300:]}"], False
+    ok = target.exists() and tmp.read_text(encoding="utf-8") == target.read_text(encoding="utf-8")
+    return ([] if ok else [f"{target.relative_to(ROOT)} 与脚本重新生成的结果不一致（请运行 python {script.relative_to(ROOT)}）"]), ok
+
+
 class Page(HTMLParser):
     def __init__(self):
         super().__init__()
@@ -256,40 +338,47 @@ def main():
     rep = REPORT.read_text(encoding="utf-8")
     rep_nums, rep_flat = set(NUM.findall(rep)), re.sub(r"\s+", "", rep)
     for p in INTERVIEW_DOCS:
-        rel = p.relative_to(ROOT)
+        issues, n, n_struct = strict_doc_issues(p, rep_nums, rep_flat)
+        bad += issues
         if not p.exists():
-            bad.append(f"{rel} 不存在")
             continue
         raw = p.read_text(encoding="utf-8")
-        text = re.sub(r"\A---\n.*?\n---\n", "", raw, flags=re.S)  # Marp 头部（样式里的字号不是指标）
-        n_struct = len(STRUCT.findall(text))
-        body = STRUCT.sub(" ", text)
-        nums = NUM.findall(body)
-        for x in sorted({x for x in nums if x not in rep_nums}):
-            bad.append(f"{rel}：数字 {x!r} 没有出现在中文报告里")
-        toks = PCT.findall(body) + PVAL.findall(body)
-        for t in sorted({t for t in toks if re.sub(r"\s+", "", t) not in rep_flat}):
-            bad.append(f"{rel}：{t!r} 没有原样出现在中文报告里")
-        for ref in MDLINK.findall(raw):
-            path = ref.split("#")[0]
-            if path and not ref.startswith(("http://", "https://")) and not (p.parent / unquote(path)).exists():
-                bad.append(f"{rel}：链接目标不存在：{ref}")
+        rel = p.relative_to(ROOT)
+        text = re.sub(r"\A---\n.*?\n---\n", "", raw, flags=re.S)
         if p.name == "项目深挖40问.md" and (k := len(re.findall(r"^\*\*Q\d+\.", raw, re.M))) != 40:
             bad.append(f"{rel}：应为 40 题，实际 {k} 题")
         if p.name == "项目讲解.md" and (k := len(re.findall(r"^---$", text, re.M)) + 1) > 12:
             bad.append(f"{rel}：幻灯片 {k} 页，超过 12 页")
         if p.name == "面试讲解稿.md" and "```mermaid" not in raw:
             bad.append(f"{rel}：缺少 Mermaid 白板图")
-        doc_stats.append((rel, len(nums) + len(toks), n_struct))
+        doc_stats.append((rel, n, n_struct))
 
-    tmp = Path(tempfile.mkdtemp()) / "gallery.md"
-    run_gal = subprocess.run([sys.executable, str(GALLERY_SCRIPT), "--out", str(tmp)], capture_output=True, text=True, encoding="utf-8")
-    gal_ok = run_gal.returncode == 0 and GALLERY.exists() and tmp.read_text(encoding="utf-8") == GALLERY.read_text(encoding="utf-8")
-    if run_gal.returncode:
-        bad.append(f"badcase_gallery.py 运行失败：{run_gal.stderr.strip()[-300:]}")
-    elif not gal_ok:
-        bad.append(f"{GALLERY.relative_to(ROOT)} 与脚本重新生成的结果不一致（请运行 python analysis/badcase_gallery.py）")
-    for p in INTERVIEW_DOCS + [GALLERY, GALLERY_SCRIPT]:
+    gen = {}
+    for target, script in GENERATED:
+        issues, gen[target] = regen_issues(target, script)
+        bad += issues
+
+    rob = ROBUST.read_text(encoding="utf-8") if ROBUST.exists() else ""
+    en_nums, en_flat = rep_nums | set(NUM.findall(rob)), rep_flat + re.sub(r"\s+", "", rob)
+    for p in EN_DOCS:
+        issues, n, n_struct = strict_doc_issues(p, en_nums, en_flat, STRUCT_EN, "中文报告 / 稳健性分析")
+        bad += issues
+        if not p.exists():
+            continue
+        raw, rel = p.read_text(encoding="utf-8"), p.relative_to(ROOT)
+        text = re.sub(r"\A---\n.*?\n---\n", "", raw, flags=re.S)
+        if p.name == "deep-dive-qa.md" and (k := len(re.findall(r"^\*\*Q\d+\.", raw, re.M))) != 20:
+            bad.append(f"{rel}：应为 20 题，实际 {k} 题")
+        if p.name == "project-talk.en.md" and (k := len(re.findall(r"^---$", text, re.M)) + 1) > 12:
+            bad.append(f"{rel}：幻灯片 {k} 页，超过 12 页")
+        if p.name == "interview-script.md" and not all(re.search(rf"^## .*{t}", raw, re.M) for t in ("1-minute", "3-minute")):
+            bad.append(f"{rel}：缺少 1 分钟或 3 分钟版本的小节")
+        doc_stats.append((rel, n, n_struct))
+
+    g_issues, g_nums, g_refs = guide_issues(GUIDE, zh_nums | set(NUM.findall(rob)))
+    bad += g_issues
+
+    for p in INTERVIEW_DOCS + EN_DOCS + [GUIDE] + [x for pair in GENERATED for x in pair]:
         if p.exists():
             for m in CONTACT.finditer(p.read_text(encoding="utf-8")):
                 bad.append(f"{p.relative_to(ROOT)}：疑似联系方式 {m.group()!r}")
@@ -297,12 +386,16 @@ def main():
     print(f"展示页 data-k 数字 {n_k} 处（{len({t['k'] for t in pg.tagged if t['k']})} 个不同的键），"
           f"data-r 原文数字 {n_r} 处，未标注的数字 {n_free} 处；本地链接与锚点 {n_ref} 个")
     for rel, n, u in doc_stats:
-        if rel.parts[0] in ("slides",) or rel.name in ("面试讲解稿.md", "项目深挖40问.md"):
+        if ROOT / rel in EN_DOCS:
+            print(f"{rel}：数字 {n} 处（另有结构性编号 {u} 处已排除），逐个在中文报告 / 稳健性分析里查找")
+        elif rel.parts[0] in ("slides",) or rel.name in ("面试讲解稿.md", "项目深挖40问.md"):
             print(f"{rel}：数字 {n} 处（另有结构性编号 {u} 处已排除），逐个在中文报告里查找")
         else:
             print(f"{rel}：数字 {n} 处（{u} 个不同的值），逐个在中文报告 / README 里查找")
-    if run_gal.returncode == 0:
-        print(f"{GALLERY.relative_to(ROOT)}：{'与' if gal_ok else '不同于'} badcase_gallery.py 重新生成的结果{'逐字一致' if gal_ok else ''}")
+    if GUIDE.exists():
+        print(f"{GUIDE.relative_to(ROOT)}：数字 {g_nums} 处，逐个在中文报告 / README / 稳健性分析里查找；「文件:行号」引用 {g_refs} 处，逐行核对代码片段")
+    for target, script in GENERATED:
+        print(f"{target.relative_to(ROOT)}：{'与' if gen[target] else '不同于'} {script.name} 重新生成的结果{'逐字一致' if gen[target] else ''}")
     if bad:
         print(f"\n发现 {len(bad)} 个问题：")
         for b in bad:

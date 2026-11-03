@@ -6,3 +6,4 @@ logs/
 *.local
 .env
 *.sqlite
+.pytest_cache/

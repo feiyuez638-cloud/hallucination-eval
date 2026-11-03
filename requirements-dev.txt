@@ -1,0 +1,2 @@
+# 跑 tests/ 只需要 pytest；脚本本身只用标准库（画图另需 requirements.txt 里的 matplotlib）
+pytest>=8

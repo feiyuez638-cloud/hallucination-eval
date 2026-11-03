@@ -1,0 +1,31 @@
+# 只跑脚本与测试：重算数字、重新生成稳健性分析并比对、数字核对、pytest。不部署、不调用任何模型或外部 API。
+name: tests
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 安装测试依赖
+        run: python -m pip install -r requirements-dev.txt
+      - name: 重算报告数字
+        run: python scripts/reproduce_metrics.py > /dev/null
+      - name: 稳健性分析可复现
+        run: |
+          python analysis/robustness.py --out "$RUNNER_TEMP/robust.md"
+          cmp "$RUNNER_TEMP/robust.md" analysis/稳健性分析.md
+      - name: 数字核对
+        run: python scripts/check_site_numbers.py
+      - name: pytest
+        run: python -m pytest -q

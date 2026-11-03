@@ -30,6 +30,14 @@ Qwen3-4B，dev_v1 450 题，裁判 agnes-2.5-flash。所有数字都是本地 LL
 
 ![各版本幻觉率与结果构成](report/figures/fig1_versions.png)
 
+## 稳健性：哪些结论站得住
+
+[analysis/稳健性分析.md](analysis/稳健性分析.md) 由 `python analysis/robustness.py` 一键生成（只用已有判定、固定种子、逐字可复现），对报告的 14 个配对检验逐条做 bootstrap 区间、Holm 校正、按题型分层、留一类别（9 类）、7 种裁判口径和裁判噪声模拟：
+
+- **站得住（9 条）**：提示约束、放宽拒答、检索三步各自的幻觉与答对变化，「先挑错」提示让幻觉增加，8B 上 V4 配置的两项改善。
+- **不确定（2 条）**：重排的答对增加（+19 题，Holm 后 p=0.092；只差 2 题就显著，但同一对里回答一字未改、裁判换了判法的翻转就有 12 题）；V8 的幻觉减少（Holm 后 p=0.143，按缺判定的补法不同在 0.002 与 1.000 之间摆动，且是样本内结果）。
+- **无显著差异（3 条）**：重排对幻觉、「先挑错」提示对答对、V8 对答对。
+
 ## 面试与讲解材料
 
 | 材料 | 内容 |
@@ -38,8 +46,11 @@ Qwen3-4B，dev_v1 450 题，裁判 agnes-2.5-flash。所有数字都是本地 LL
 | [docs/面试讲解稿.md](docs/面试讲解稿.md) | 一分钟、三分钟、八分钟三个版本的口述稿，附 Mermaid 白板图（评测流水线、版本演进） |
 | [docs/项目深挖40问.md](docs/项目深挖40问.md) | 方法、统计、裁判、数据、局限、如果重做六组追问，每题给答题要点并标注报告章节 |
 | [slides/项目讲解.md](slides/项目讲解.md) | Marp 格式讲解幻灯片，复用 `report/figures/`；本地导出：`npx @marp-team/marp-cli slides/项目讲解.md --pdf --allow-local-files` |
+| [docs/en/interview-script.md](docs/en/interview-script.md) | 英文讲解稿：1 分钟、3 分钟两个版本 |
+| [docs/en/deep-dive-qa.md](docs/en/deep-dive-qa.md) | 英文深挖 20 问与答题要点（含稳健性分析的追问） |
+| [slides/project-talk.en.md](slides/project-talk.en.md) | 英文 Marp 幻灯片（10 页），导出方式同上 |
 
-这些材料里的数字也由 `python scripts/check_site_numbers.py` 核对：讲解稿、深挖问答和幻灯片里的每个数字都必须在中文报告里原样出现，画廊则重新生成一份逐字比对。
+这些材料里的数字也由 `python scripts/check_site_numbers.py` 核对：讲解稿、深挖问答和幻灯片里的每个数字都必须在中文报告里原样出现（英文材料另认稳健性分析），画廊和稳健性分析则重新生成一份逐字比对。
 
 ## 怎么复现
 
@@ -55,10 +66,20 @@ python scripts/make_figures.py
 第一条打印报告里的全部表格数字（只用标准库），第二条重画 `report/figures/` 下的 4 张图。两者只读 `eval/runs/` 里已有的作答与裁判判定，**不调用任何模型或付费 API，不需要 GPU**。
 
 ```bash
+python analysis/robustness.py
+```
+
+```bash
 python scripts/check_site_numbers.py
 ```
 
-这条把展示页上的每个数字与 `reproduce_metrics.py`、`judge_agreement.py`、`check_sql.py` 的输出逐项核对，并检查页面上没有未标注来源的数字、本地链接都存在；英文报告、英文 README 和一页纸摘要里的每个数字也都必须在中文报告 / README 里出现过；面试材料的核对规则见上一节。
+```bash
+python -m pytest
+```
+
+第三条重新生成稳健性分析。第四条把展示页上的每个数字与 `reproduce_metrics.py`、`judge_agreement.py`、`check_sql.py` 的输出逐项核对，并检查页面上没有未标注来源的数字、本地链接都存在；英文报告、英文 README 和一页纸摘要里的每个数字也都必须在中文报告 / README 里出现过；面试材料的核对规则见上一节。最后一条跑 `tests/` 下的单元测试与数字回归测试（需 `pip install -r requirements-dev.txt`）。推送后 GitHub Actions（`.github/workflows/ci.yml`）会自动跑重算、稳健性分析比对、数字核对和测试，只跑脚本、不部署。
+
+从零环境到重算全部数字的完整步骤，以及每个数字由哪个脚本哪一行产生，见 [docs/复现指南.md](docs/复现指南.md)。
 
 ## 用 SQL 复现
 
@@ -99,8 +120,11 @@ python scripts/judge_agreement.py
 
 ```
 site/index.html         作品展示页（纯静态单文件，本地双击打开）
-slides/项目讲解.md       Marp 讲解幻灯片
-analysis/               badcase_gallery.py（生成 badcase 画廊）与生成的 badcase画廊.md
+slides/项目讲解.md       Marp 讲解幻灯片（中文）；slides/project-talk.en.md 为英文版
+analysis/               badcase_gallery.py（生成 badcase 画廊）与生成的 badcase画廊.md；
+                        robustness.py（稳健性分析）与生成的 稳健性分析.md
+tests/                  pytest：统计函数单元测试、报告数字回归测试、生成文件与数字核对的测试
+.github/workflows/ci.yml  CI：重算、稳健性分析比对、数字核对、pytest（只跑脚本，不部署）
 report/                 评测报告（中文原版 + 英文版）与插图
 scripts/                reproduce_metrics.py（重算全部数字）、make_figures.py（画图）、
                         judge_agreement.py（裁判一致性）、build_sqlite.py / check_sql.py（建库、SQL 与 Python 比对）、
@@ -122,6 +146,8 @@ docs/面试准备.md         面试准备（高频问题与参考回答）
 docs/面试讲解稿.md       一分钟 / 三分钟 / 八分钟讲解口述稿与白板图
 docs/项目深挖40问.md     深挖追问与答题要点
 docs/一页纸摘要.md       可打印的一页纸摘要
+docs/复现指南.md         从零环境重算全部数字的步骤与「数字 → 脚本:行号」对照
+docs/en/                英文讲解稿（1 / 3 分钟）与深挖 20 问
 ```
 
 ## 指标口径
