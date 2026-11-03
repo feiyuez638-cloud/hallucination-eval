@@ -15,6 +15,13 @@
 另外核对 report/Hallucination-Evaluation-Report.md、README.en.md、docs/一页纸摘要.md：其中出现的每个数字
 都必须在中文报告或 README.md 里出现过（这些文档只换语言或压缩，不产生新数字）。
 
+面试材料（docs/面试讲解稿.md、docs/项目深挖40问.md、slides/项目讲解.md）更严：
+- 每个数字都必须在中文报告里出现过（只认报告，不认 README）；百分数要连「%」一起、p 值要连「p=」「p<」一起原样出现；
+  题号、Marp 图片尺寸、列表序号、「1 分钟版」这类结构性数字先去掉再查；
+- 本地链接和图片必须存在；40 问恰好 40 题、幻灯片不超过 12 页、讲解稿含 Mermaid 图。
+analysis/badcase画廊.md 是脚本输出，回答原文里的数字不在报告里，所以改为重新运行 analysis/badcase_gallery.py
+生成一份并逐字比对。以上新文件和画廊都不许出现邮箱、手机号这类联系方式。
+
 只用标准库，不调用任何模型或 API。
 """
 import argparse, ast, json, re, subprocess, sys, tempfile
@@ -28,6 +35,15 @@ SCRIPTS, SITE = ROOT / "scripts", ROOT / "site"
 PAGE = SITE / "index.html"
 ZH = [ROOT / "report/大模型幻觉评测报告.md", ROOT / "README.md"]
 DERIVED_DOCS = [ROOT / "report/Hallucination-Evaluation-Report.md", ROOT / "README.en.md", ROOT / "docs/一页纸摘要.md"]
+REPORT = ZH[0]
+INTERVIEW_DOCS = [ROOT / "docs/面试讲解稿.md", ROOT / "docs/项目深挖40问.md", ROOT / "slides/项目讲解.md"]
+GALLERY, GALLERY_SCRIPT = ROOT / "analysis/badcase画廊.md", ROOT / "analysis/badcase_gallery.py"
+# 结构性数字：问题编号、Marp 图片尺寸、有序列表序号、讲稿时长 / 题数 / 页数、图号、章节号
+STRUCT = re.compile(r"Q\d+|\b[wh]:\d+|^\s*\d+\.\s|\d+\s*分钟|\d+\s*问|\d+\s*页|图\s*\d+|§\d+(?:\.\d+)*", re.M)
+PCT = re.compile(r"\d+(?:\.\d+)?%")
+PVAL = re.compile(r"p\s*[=<]\s*\d+(?:\.\d+)?")
+CONTACT = re.compile(r"[\w.+-]+@[\w-]+\.[\w.]+|(?<!\d)1[3-9]\d{9}(?!\d)|微信|wechat|QQ\s*[:：]?\s*\d", re.I)
+MDLINK = re.compile(r"!?\[[^\]]*\]\(([^)\s]+)\)")
 # 英文里换了写法的数字：英文写法 -> 中文原文片段（片段必须出现在中文报告里）
 EN_REWRITES = {"1.38": "138 万篇", "3.59": "359 万段"}
 # 页面正文里允许出现的、不是指标的带数字标识符
@@ -237,10 +253,56 @@ def main():
         for x in extra:
             bad.append(f"{p.relative_to(ROOT)}：数字 {x!r} 没有出现在中文报告 / README 里")
 
+    rep = REPORT.read_text(encoding="utf-8")
+    rep_nums, rep_flat = set(NUM.findall(rep)), re.sub(r"\s+", "", rep)
+    for p in INTERVIEW_DOCS:
+        rel = p.relative_to(ROOT)
+        if not p.exists():
+            bad.append(f"{rel} 不存在")
+            continue
+        raw = p.read_text(encoding="utf-8")
+        text = re.sub(r"\A---\n.*?\n---\n", "", raw, flags=re.S)  # Marp 头部（样式里的字号不是指标）
+        n_struct = len(STRUCT.findall(text))
+        body = STRUCT.sub(" ", text)
+        nums = NUM.findall(body)
+        for x in sorted({x for x in nums if x not in rep_nums}):
+            bad.append(f"{rel}：数字 {x!r} 没有出现在中文报告里")
+        toks = PCT.findall(body) + PVAL.findall(body)
+        for t in sorted({t for t in toks if re.sub(r"\s+", "", t) not in rep_flat}):
+            bad.append(f"{rel}：{t!r} 没有原样出现在中文报告里")
+        for ref in MDLINK.findall(raw):
+            path = ref.split("#")[0]
+            if path and not ref.startswith(("http://", "https://")) and not (p.parent / unquote(path)).exists():
+                bad.append(f"{rel}：链接目标不存在：{ref}")
+        if p.name == "项目深挖40问.md" and (k := len(re.findall(r"^\*\*Q\d+\.", raw, re.M))) != 40:
+            bad.append(f"{rel}：应为 40 题，实际 {k} 题")
+        if p.name == "项目讲解.md" and (k := len(re.findall(r"^---$", text, re.M)) + 1) > 12:
+            bad.append(f"{rel}：幻灯片 {k} 页，超过 12 页")
+        if p.name == "面试讲解稿.md" and "```mermaid" not in raw:
+            bad.append(f"{rel}：缺少 Mermaid 白板图")
+        doc_stats.append((rel, len(nums) + len(toks), n_struct))
+
+    tmp = Path(tempfile.mkdtemp()) / "gallery.md"
+    run_gal = subprocess.run([sys.executable, str(GALLERY_SCRIPT), "--out", str(tmp)], capture_output=True, text=True, encoding="utf-8")
+    gal_ok = run_gal.returncode == 0 and GALLERY.exists() and tmp.read_text(encoding="utf-8") == GALLERY.read_text(encoding="utf-8")
+    if run_gal.returncode:
+        bad.append(f"badcase_gallery.py 运行失败：{run_gal.stderr.strip()[-300:]}")
+    elif not gal_ok:
+        bad.append(f"{GALLERY.relative_to(ROOT)} 与脚本重新生成的结果不一致（请运行 python analysis/badcase_gallery.py）")
+    for p in INTERVIEW_DOCS + [GALLERY, GALLERY_SCRIPT]:
+        if p.exists():
+            for m in CONTACT.finditer(p.read_text(encoding="utf-8")):
+                bad.append(f"{p.relative_to(ROOT)}：疑似联系方式 {m.group()!r}")
+
     print(f"展示页 data-k 数字 {n_k} 处（{len({t['k'] for t in pg.tagged if t['k']})} 个不同的键），"
           f"data-r 原文数字 {n_r} 处，未标注的数字 {n_free} 处；本地链接与锚点 {n_ref} 个")
     for rel, n, u in doc_stats:
-        print(f"{rel}：数字 {n} 处（{u} 个不同的值），逐个在中文报告 / README 里查找")
+        if rel.parts[0] in ("slides",) or rel.name in ("面试讲解稿.md", "项目深挖40问.md"):
+            print(f"{rel}：数字 {n} 处（另有结构性编号 {u} 处已排除），逐个在中文报告里查找")
+        else:
+            print(f"{rel}：数字 {n} 处（{u} 个不同的值），逐个在中文报告 / README 里查找")
+    if run_gal.returncode == 0:
+        print(f"{GALLERY.relative_to(ROOT)}：{'与' if gal_ok else '不同于'} badcase_gallery.py 重新生成的结果{'逐字一致' if gal_ok else ''}")
     if bad:
         print(f"\n发现 {len(bad)} 个问题：")
         for b in bad:

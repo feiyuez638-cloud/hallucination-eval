@@ -30,6 +30,17 @@ Qwen3-4B，dev_v1 450 题，裁判 agnes-2.5-flash。所有数字都是本地 LL
 
 ![各版本幻觉率与结果构成](report/figures/fig1_versions.png)
 
+## 面试与讲解材料
+
+| 材料 | 内容 |
+|---|---|
+| [analysis/badcase画廊.md](analysis/badcase画廊.md) | 按幻觉类型 × 实验版本挑出的代表性 badcase，并排展示改进前后的回答、裁判理由和检索词条，每条一句成因；由 `python analysis/badcase_gallery.py` 一键重新生成 |
+| [docs/面试讲解稿.md](docs/面试讲解稿.md) | 一分钟、三分钟、八分钟三个版本的口述稿，附 Mermaid 白板图（评测流水线、版本演进） |
+| [docs/项目深挖40问.md](docs/项目深挖40问.md) | 方法、统计、裁判、数据、局限、如果重做六组追问，每题给答题要点并标注报告章节 |
+| [slides/项目讲解.md](slides/项目讲解.md) | Marp 格式讲解幻灯片，复用 `report/figures/`；本地导出：`npx @marp-team/marp-cli slides/项目讲解.md --pdf --allow-local-files` |
+
+这些材料里的数字也由 `python scripts/check_site_numbers.py` 核对：讲解稿、深挖问答和幻灯片里的每个数字都必须在中文报告里原样出现，画廊则重新生成一份逐字比对。
+
 ## 怎么复现
 
 ```bash
@@ -47,7 +58,7 @@ python scripts/make_figures.py
 python scripts/check_site_numbers.py
 ```
 
-这条把展示页上的每个数字与 `reproduce_metrics.py`、`judge_agreement.py`、`check_sql.py` 的输出逐项核对，并检查页面上没有未标注来源的数字、本地链接都存在；英文报告、英文 README 和一页纸摘要里的每个数字也都必须在中文报告 / README 里出现过。
+这条把展示页上的每个数字与 `reproduce_metrics.py`、`judge_agreement.py`、`check_sql.py` 的输出逐项核对，并检查页面上没有未标注来源的数字、本地链接都存在；英文报告、英文 README 和一页纸摘要里的每个数字也都必须在中文报告 / README 里出现过；面试材料的核对规则见上一节。
 
 ## 用 SQL 复现
 
@@ -88,10 +99,12 @@ python scripts/judge_agreement.py
 
 ```
 site/index.html         作品展示页（纯静态单文件，本地双击打开）
+slides/项目讲解.md       Marp 讲解幻灯片
+analysis/               badcase_gallery.py（生成 badcase 画廊）与生成的 badcase画廊.md
 report/                 评测报告（中文原版 + 英文版）与插图
 scripts/                reproduce_metrics.py（重算全部数字）、make_figures.py（画图）、
                         judge_agreement.py（裁判一致性）、build_sqlite.py / check_sql.py（建库、SQL 与 Python 比对）、
-                        check_site_numbers.py（展示页与译文数字核对）
+                        check_site_numbers.py（展示页、译文与面试材料的数字核对）
 sql/metrics.sql         用 SQL 重算表 1～3 + 8 条分析型查询
 data/external/          公开数据集原文：Chinese SimpleQA、HalluQA
 data/dev/               开发集 dev_v1（450 题）、留出集 holdout_v1（3000 题，未使用）、各小样
@@ -105,7 +118,9 @@ serve/proxy.py          OpenAI 格式代理，各版本策略（STRATEGY=v1…�
 docs/实验日志.md         原始逐版实验日志（原样保留）
 docs/外审意见.md         对报告与脚本的审稿意见及修改记录
 docs/裁判一致性分析.md    跨裁判 / 同裁判重测的一致率与 κ、不一致样本归因、人工复核 rubric 与抽样方案
-docs/面试准备.md         面试准备
+docs/面试准备.md         面试准备（高频问题与参考回答）
+docs/面试讲解稿.md       一分钟 / 三分钟 / 八分钟讲解口述稿与白板图
+docs/项目深挖40问.md     深挖追问与答题要点
 docs/一页纸摘要.md       可打印的一页纸摘要
 ```
 
